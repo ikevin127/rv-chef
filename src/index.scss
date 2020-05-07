@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: "Jost";
+  background-color: gray;
+  height: 200vh;
+  text-align: center;
+  overflow-x: hidden;
+
+  .black {
+    background-color: rgba($color: #000000, $alpha: 0.8) !important;
+    transition: all 0.7s ease;
+  }
+
+  .main-nav {
+    z-index: 1;
+    width: 100vw;
+    height: 8vw;
+    background-color: transparent;
+    position: fixed;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.7s ease;
+
+    .logo-area {
+      align-self: flex-end;
+      margin-bottom: 0.7vw;
+      img {
+        width: 8vw;
+        filter: drop-shadow(1px 1px 0 #222);
+      }
+    }
+
+    .main-menu {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .nav-list {
+        padding: 1vw;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .btn-home,
+        .btn-menu,
+        .btn-recipes,
+        .btn-about,
+        .btn-contact {
+          margin-left: 2vw;
+          color: white;
+          text-shadow: 1px 1px black;
+          font-size: 1.5vw;
+          font-weight: bold;
+          cursor: pointer;
+
+          &:hover {
+            color: rgb(233, 233, 233);
+          }
+
+          &:active {
+            position: relative;
+            top: 1px;
+          }
+        }
+
+        #fb {
+          margin-left: 5vw;
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .fa-facebook-square {
+            font-size: 2vw;
+            color: white;
+            filter: drop-shadow(1px 1px 0 #222);
+
+            &:hover {
+              color: rgb(233, 233, 233);
+            }
+          }
+
+          &:active {
+            position: relative;
+            top: 1px;
+          }
+        }
+
+        #ig {
+          margin-left: 2vw;
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .fa-instagram {
+            font-size: 2vw;
+            color: white;
+            filter: drop-shadow(1px 1px 0 #222);
+
+            &:hover {
+              color: rgb(233, 233, 233);
+            }
+          }
+
+          &:active {
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  .react-parallax {
+    #img {
+      height: 100vh;
+    }
+
+    #span {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba($color: #000, $alpha: 0.4);
+
+      p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 8vw;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: white;
+        text-shadow: 2px 2px black;
+      }
+
+      span {
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+
+        .fa-chevron-down {
+          color: white;
+          font-size: 4vw;
+          filter: drop-shadow(1px 1px black);
+        }
+
+        #next-page {
+          font-size: 1.4vw;
+          position: relative;
+          top: 98%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          text-shadow: 2px 2px black;
+          cursor: pointer;
+          opacity: 0;
+          transition: all 0.5s ease;
+        }
+
+        &:hover {
+          #next-page {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
