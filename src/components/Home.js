@@ -7,70 +7,79 @@ import Nav from "./Nav";
 import { Parallax } from "react-parallax";
 
 // Images
-
 import img0 from "../img0.jpg";
-
-// const image1 =
-//   "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
-// const image2 =
-//   "https://img00.deviantart.net/2bd0/i/2009/276/c/9/magic_forrest_wallpaper_by_goergen.jpg";
-// const image3 =
-//   "https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5297440765001_5280261645001-vs.jpg?pubId=5104226627001&videoId=5280261645001";
-// const image4 =
-//   "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/empire-state-building-black-and-white-square-format-john-farnan.jpg";
+import img1 from "../img1.jpg";
+import img2 from "../img2.jpg";
+import img3 from "../img3.jpg";
 
 class Home extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+
+    this.aboutRef = React.createRef();
+  }
+
   render() {
     return (
       <>
         <Nav />
-        <Parallax bgImage={img0} strength={400}>
+        <Parallax bgImage={img0} strength={600}>
           <div id="img" />
           <div id="span">
             <p>Vidican Raul</p>
-            <span>
+            <span
+              onClick={() =>
+                window.scrollTo(0, this.aboutRef.current.offsetTop)
+              }
+            >
               <p id="next-page">Pagina următoare</p>
               <i className="fas fa-chevron-down"></i>
             </span>
           </div>
         </Parallax>
-        {/* <Parallax bgImage={image1} blur={{ min: -1, max: 6 }} strength={500}>
-          <div id="img" />
-          <div id="span">
-            <p>Blur</p>
+        <div ref={this.aboutRef} className="about-chef">
+          <div className="portrait">
+            <img src={img1} alt="Vidican Raul Portret" />
           </div>
-        </Parallax>
-        <Parallax bgImage={image3} strength={-250}>
-          <div id="img" />
-          <div id="span">
-            <p>Reverse</p>
-          </div>
-        </Parallax>
-        <Parallax
-          bgImage={image4}
-          strength={1500}
-          renderLayer={(percentage) => (
-            <div>
-              <div
-                style={{
-                  position: "absolute",
-                  background: `rgba(255, 125, 0, ${percentage * 1})`,
-                  left: "50%",
-                  top: "50%",
-                  borderRadius: "50%",
-                  transform: "translate(-50%,-50%)",
-                  width: percentage * 450,
-                  height: percentage * 450,
-                }}
-              />
+          <div className="about-text">
+            <div className="title-sep">
+              <h1 id="meet">Cunoaşte bucătarul</h1>
+              <hr />
             </div>
-          )}
-        >
-          <div id="img" />
-          <div id="span">
-            <p>Popout</p>
+            <p id="text">
+              I'm a paragraph. Click here to add your own text and edit me. It’s
+              easy. Just click “Edit Text” or double click me to add your own
+              content and make changes to the font. Feel free to drag and drop
+              me anywhere you like on your page. I’m a great place for you to
+              tell a story and let your users know a little more about you.
+            </p>
+            <p id="contact">Tel: 123-456-7890 | Email: info@mysite.com</p>
           </div>
-        </Parallax> */}
+        </div>
+        <Parallax className="parallax2" bgImage={img2} strength={700}>
+          <div id="img2" />
+          <h1>Poc pită cu unsoare</h1>
+        </Parallax>
+        <div className="about-chef">
+          <div className="portrait">
+            <img src={img3} alt="Vidican Raul Portret" />
+          </div>
+          <div className="about-text">
+            <div className="title-sep">
+              <h1 id="meet">Îţi iei cuţâte</h1>
+              <hr />
+            </div>
+            <p id="text">
+              I'm a paragraph. Click here to add your own text and edit me. It’s
+              easy. Just click “Edit Text” or double click me to add your own
+              content and make changes to the font. Feel free to drag and drop
+              me anywhere you like on your page. I’m a great place for you to
+              tell a story and let your users know a little more about you.
+            </p>
+            <p id="contact">Tel: 123-456-7890 | Email: info@mysite.com</p>
+          </div>
+        </div>
       </>
     );
   }

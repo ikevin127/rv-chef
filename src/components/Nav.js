@@ -27,7 +27,7 @@ class Nav extends Component {
           </div>
           <div className="main-menu">
             <ul className="nav-list">
-              <span className="btn-home">Prima pagină</span>
+              <span className="btn-home ">Prima pagină</span>
               <span className="btn-menu">Meniu</span>
               <span className="btn-recipes">Reţete</span>
               <span className="btn-about">Despre mine</span>

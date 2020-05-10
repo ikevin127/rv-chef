@@ -9,12 +9,13 @@ html,
 body {
   font-family: "Jost";
   background-color: gray;
-  height: 200vh;
+  height: auto;
   text-align: center;
   overflow-x: hidden;
 
   .black {
-    background-color: rgba($color: #000000, $alpha: 0.8) !important;
+    background-color: black !important;
+    box-shadow: 0 0.5px 5px 0 black;
     transition: all 0.7s ease;
   }
 
@@ -66,6 +67,7 @@ body {
           font-size: 1.5vw;
           font-weight: bold;
           cursor: pointer;
+          width: auto;
 
           &:hover {
             color: rgb(233, 233, 233);
@@ -148,14 +150,13 @@ body {
         transform: translate(-50%, -50%);
         font-size: 8vw;
         font-weight: bold;
-        font-family: sans-serif;
         color: white;
         text-shadow: 2px 2px black;
       }
 
       span {
         position: absolute;
-        top: 95%;
+        top: 92%;
         left: 50%;
         transform: translate(-50%, -50%);
         cursor: pointer;
@@ -167,13 +168,13 @@ body {
         }
 
         #next-page {
-          font-size: 1.4vw;
+          font-size: 1.8vw;
           position: relative;
           top: 98%;
           left: 50%;
           transform: translate(-50%, -50%);
           color: white;
-          text-shadow: 2px 2px black;
+          text-shadow: 1px 1px black;
           cursor: pointer;
           opacity: 0;
           transition: all 0.5s ease;
@@ -183,6 +184,84 @@ body {
           #next-page {
             opacity: 1;
           }
+        }
+      }
+    }
+  }
+
+  .parallax2 {
+    #img2 {
+      height: 60vh;
+    }
+    h1 {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 8vw;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px black;
+    }
+  }
+
+  .parallax3 {
+    #img3 {
+      height: 80vh;
+    }
+  }
+
+  .about-chef {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+
+    .portrait {
+      width: 50%;
+      height: auto;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          transform: scale(1.1);
+          transform-origin: 50% 50%;
+        }
+      }
+    }
+
+    .about-text {
+      width: 50%;
+      height: auto;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      background-color: white;
+
+      .title-sep,
+      #text,
+      #contact {
+        margin: 4vw 5vw;
+      }
+
+      .title-sep {
+        h1 {
+          margin-bottom: 1.5vw;
+        }
+        hr {
+          border: 1px solid black;
         }
       }
     }
