@@ -131,8 +131,9 @@ class Home extends React.Component {
       });
       let { name, phone, mess } = this.state;
       // https://spleeter.co.uk/vr
+      // http://localhost:3005/vr
       axios
-        .post("http://localhost:3005/vr", {
+        .post("https://spleeter.co.uk/vr", {
           name,
           phone,
           text: mess,
