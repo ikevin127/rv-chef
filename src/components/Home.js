@@ -26,10 +26,13 @@ import cook from "../cook.jpg";
 import swipe from "../swipe.png";
 import trad from "../trad.jpg";
 import recipes from "../recipes.jpg";
-import img0 from "../img0.jpg";
-import img1 from "../img1.jpg";
-import img4 from "../img4.jpg";
-import img5 from "../img5.jpg";
+const img0 =
+  "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-0/p640x640/38680482_2184443528250283_8744042914843197440_o.jpg?_nc_cat=106&_nc_sid=110474&_nc_ohc=iQuwpU_a0k8AX-6xcHT&_nc_ht=scontent-lht6-1.xx&_nc_tp=6&oh=26ff88ae1ec4e0c9409842f7112eb28c&oe=5EDFE3A1";
+const img1 =
+  "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/s960x960/88110956_3240180806009878_887671939382902784_o.jpg?_nc_cat=106&_nc_sid=110474&_nc_ohc=FTGFfTm-RS8AX8pUzT8&_nc_ht=scontent-lht6-1.xx&_nc_tp=7&oh=9a35bf2570c7225dbf1bcb0ec2a64498&oe=5EE0D381";
+const img4 = "https://wallpapersmug.com/large/930962/vegetables-fresh.jpg";
+const img5 =
+  "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-0/p640x640/89250627_3252348751459750_4295944469779316736_o.jpg?_nc_cat=107&_nc_sid=110474&_nc_ohc=7vDHXaYG3KQAX8uqFoX&_nc_ht=scontent-lhr8-1.xx&_nc_tp=6&oh=5228247015a7c3f1905109c4d104a2ef&oe=5EE0BDA6";
 
 const end =
   "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-0/p640x640/76778234_102413797893748_7436713577848766464_o.jpg?_nc_cat=107&_nc_sid=0be424&_nc_ohc=aZ9TOz-eQzAAX9k5wAg&_nc_ht=scontent-lhr8-1.xx&_nc_tp=6&oh=98d849845c1121104d1df75c39044654&oe=5EDF57FE";
@@ -110,11 +113,7 @@ class Home extends React.Component {
       error: false,
     });
 
-    if (this.state.phone === null) {
-      this.setState({
-        loading: false,
-      });
-    } else if (this.state.nameValidation === false) {
+    if (this.state.nameValidation === false) {
       this.setState({
         loading: false,
       });
@@ -131,8 +130,9 @@ class Home extends React.Component {
         loading: true,
       });
       let { name, phone, mess } = this.state;
+      // https://spleeter.co.uk/vr
       axios
-        .post("https://spleeter.co.uk/vr", {
+        .post("http://localhost:3005/vr", {
           name,
           phone,
           text: mess,
@@ -182,6 +182,7 @@ class Home extends React.Component {
   render() {
     let { name, phone, mess } = this.state;
 
+    console.log(this.state.phoneValidation);
     let currentYear = new Date().getFullYear();
     return (
       <>
@@ -622,11 +623,15 @@ Adelina Iancu"
                   this.setState({ phone });
                 }}
                 onBlur={(e) => {
-                  if (this.state.phone === "") {
+                  if (this.state.phone.length > 10) {
                     this.setState({
                       phoneValidation: false,
                     });
-                  } else {
+                  } else if (this.state.phone.length < 10) {
+                    this.setState({
+                      phoneValidation: false,
+                    });
+                  } else if (this.state.phone.length === 10) {
                     this.setState({
                       phoneValidation: true,
                     });
@@ -637,10 +642,12 @@ Adelina Iancu"
                   required: true, //Optional.[Bool].Default: true. To determin if it is a required field.
                   msgOnError: "Numărul de telefon nu poate fi omis",
                   customFunc: (value) => {
-                    if (value.match(/\d/g).length === 10) {
-                      return true;
-                    } else {
+                    if (value.match(/\d/g).length < 10) {
                       return "Numărul de telefon nu este corect";
+                    } else if (value.match(/\d/g).length > 10) {
+                      return "Numărul de telefon nu este corect";
+                    } else {
+                      return true;
                     }
                   },
                 }}
