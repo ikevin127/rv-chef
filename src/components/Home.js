@@ -113,7 +113,11 @@ class Home extends React.Component {
       error: false,
     });
 
-    if (this.state.nameValidation === false) {
+    if (this.state.phone === "") {
+      this.setState({
+        loading: false,
+      });
+    } else if (this.state.nameValidation === false) {
       this.setState({
         loading: false,
       });
