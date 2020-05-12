@@ -365,7 +365,7 @@ class Home extends React.Component {
             <p>Vidican Raul</p>
             <span
               onClick={() =>
-                window.scrollTo(0, this.aboutRef.current.offsetTop - 77)
+                window.scrollTo(0, this.aboutRef.current.offsetTop)
               }
             >
               <p id="next-page">Pagina următoare</p>
