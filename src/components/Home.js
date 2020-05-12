@@ -14,6 +14,9 @@ import "react-inputs-validation/lib/react-inputs-validation.min.css";
 // Spinner
 import FadeLoader from "react-spinners/FadeLoader";
 
+// Click Outside
+import OnOutsideClick from "react-outclick";
+
 // AJAX
 import axios from "axios";
 
@@ -23,19 +26,16 @@ import { CSSTransition } from "react-transition-group";
 // Hamburger
 import HamburgerMenu from "react-hamburger-menu";
 
+// JSON Array
+import arr from "../menu.json";
+
 // Images
 import logo from "../rv.png";
-import cook from "../cook.jpg";
 import swipe from "../swipe.png";
-import trad from "../trad.jpg";
-import recipes from "../recipes.jpg";
-const img0 =
-  "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-0/p640x640/38680482_2184443528250283_8744042914843197440_o.jpg?_nc_cat=106&_nc_sid=110474&_nc_ohc=iQuwpU_a0k8AX-6xcHT&_nc_ht=scontent-lht6-1.xx&_nc_tp=6&oh=26ff88ae1ec4e0c9409842f7112eb28c&oe=5EDFE3A1";
-const img1 =
-  "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/s960x960/88110956_3240180806009878_887671939382902784_o.jpg?_nc_cat=106&_nc_sid=110474&_nc_ohc=FTGFfTm-RS8AX8pUzT8&_nc_ht=scontent-lht6-1.xx&_nc_tp=7&oh=9a35bf2570c7225dbf1bcb0ec2a64498&oe=5EE0D381";
-const img4 = "https://wallpapersmug.com/large/930962/vegetables-fresh.jpg";
-const img5 =
-  "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-0/p640x640/89250627_3252348751459750_4295944469779316736_o.jpg?_nc_cat=107&_nc_sid=110474&_nc_ohc=7vDHXaYG3KQAX8uqFoX&_nc_ht=scontent-lhr8-1.xx&_nc_tp=6&oh=5228247015a7c3f1905109c4d104a2ef&oe=5EE0BDA6";
+import img0 from "../img0.jpg";
+import img1 from "../img1.jpg";
+import img4 from "../veg.jpg";
+import img5 from "../img4.jpg";
 
 const end =
   "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-0/p640x640/76778234_102413797893748_7436713577848766464_o.jpg?_nc_cat=107&_nc_sid=0be424&_nc_ohc=aZ9TOz-eQzAAX9k5wAg&_nc_ht=scontent-lhr8-1.xx&_nc_tp=6&oh=98d849845c1121104d1df75c39044654&oe=5EDF57FE";
@@ -81,15 +81,22 @@ class Home extends React.Component {
       success: false,
       error: false,
       isOpen: false,
+      loadMenu: false,
+      loadMenuErr: false,
+      cards: true,
+      sb: false,
+      ar: false,
+      ph: false,
+      cj: false,
       status: undefined,
+      // menu: [],
     };
 
     this.firstRef = React.createRef();
-    this.prezRef = React.createRef();
+    this.aboutRef = React.createRef();
     this.retRef = React.createRef();
     this.revRef = React.createRef();
     this.contactRef = React.createRef();
-    this.aboutRef = React.createRef();
   }
 
   componentDidMount() {
@@ -99,6 +106,24 @@ class Home extends React.Component {
         this.setState({ isTop });
       }
     });
+    // this.setState({
+    //   loadMenu: true,
+    // });
+    // axios
+    //   .get("http://localhost:3005/db")
+    //   .then((res) => {
+    //     this.setState({
+    //       menu: res.data.menu,
+    //       loadMenu: false,
+    //     });
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     this.setState({
+    //       loadMenu: false,
+    //       loadMenuErr: true,
+    //     });
+    //   });
   }
 
   handleClick() {
@@ -190,97 +215,103 @@ class Home extends React.Component {
   render() {
     let { name, phone, mess } = this.state;
     let currentYear = new Date().getFullYear();
+
+    // let menu = this.state.menu.map((obj) => ({
+    //   key: JSON.stringify(obj.id),
+    //   img: obj.img,
+    //   title: obj.title,
+    //   location: obj.location,
+    //   text: obj.text,
+    // }));
     return (
       <>
         <span ref={this.firstRef}></span>
-        <CSSTransition
-          in={this.state.isOpen}
-          timeout={200}
-          classNames="ham"
-          unmountOnExit
+        <OnOutsideClick
+          onOutsideClick={() => {
+            this.setState({ isOpen: false });
+          }}
         >
-          <div className="h-nav">
-            <ul className="nav-list">
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.firstRef.current.offsetTop);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-home "
-              >
-                Prima pagină
-              </span>
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.aboutRef.current.offsetTop);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-about"
-              >
-                Despre Chef
-              </span>
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.prezRef.current.offsetTop);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-recipes"
-              >
-                Reţete
-              </span>
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.retRef.current.offsetTop);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-menu"
-              >
-                Postări
-              </span>
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.revRef.current.offsetTop);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-menu"
-              >
-                Recenzii
-              </span>
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.contactRef.current.offsetTop);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-contact"
-              >
-                Contact
-              </span>
-              <div className="sm">
-                <a id="fb" href="https://www.facebook.com/vidicanraul1/">
-                  <i
-                    className="fab fa-facebook-square"
-                    title="Pagină Facebook"
-                  ></i>
-                </a>
-                <a id="ig" href="https://www.instagram.com/raul_vidican1/">
-                  <i className="fab fa-instagram" title="Pagină Instagram"></i>
-                </a>
-              </div>
-            </ul>
-          </div>
-        </CSSTransition>
+          <CSSTransition
+            in={this.state.isOpen}
+            timeout={1200}
+            classNames="ham"
+            unmountOnExit
+          >
+            <div className="h-nav">
+              <ul className="nav-list">
+                <span
+                  onClick={() => {
+                    window.scrollTo(0, this.firstRef.current.offsetTop);
+                    this.setState({
+                      isOpen: !this.state.isOpen,
+                    });
+                  }}
+                  className="btn-home "
+                >
+                  Prima pagină
+                </span>
+                <span
+                  onClick={() => {
+                    window.scrollTo(0, this.aboutRef.current.offsetTop);
+                    this.setState({
+                      isOpen: !this.state.isOpen,
+                    });
+                  }}
+                  className="btn-about"
+                >
+                  Chef
+                </span>
+                <span
+                  onClick={() => {
+                    window.scrollTo(0, this.retRef.current.offsetTop);
+                    this.setState({
+                      isOpen: !this.state.isOpen,
+                    });
+                  }}
+                  className="btn-recipes"
+                >
+                  Meniuri
+                </span>
+                <span
+                  onClick={() => {
+                    window.scrollTo(0, this.revRef.current.offsetTop);
+                    this.setState({
+                      isOpen: !this.state.isOpen,
+                    });
+                  }}
+                  className="btn-menu"
+                >
+                  Recenzii
+                </span>
+                <span
+                  onClick={() => {
+                    window.scrollTo(0, this.contactRef.current.offsetTop);
+                    this.setState({
+                      isOpen: !this.state.isOpen,
+                    });
+                  }}
+                  className="btn-contact"
+                >
+                  Contact
+                </span>
+                <div className="sm">
+                  <a id="fb" href="https://www.facebook.com/vidicanraul1/">
+                    <i
+                      className="fab fa-facebook-square"
+                      title="Pagină Facebook"
+                    ></i>
+                  </a>
+                  <a id="ig" href="https://www.instagram.com/raul_vidican1/">
+                    <i
+                      className="fab fa-instagram"
+                      title="Pagină Instagram"
+                    ></i>
+                  </a>
+                </div>
+              </ul>
+            </div>
+          </CSSTransition>
+        </OnOutsideClick>
         <div className={this.state.isTop ? "main-nav" : "main-nav black"}>
           <div className="logo-area">
             <img src={logo} alt="Vidican Raul Logo" />
@@ -301,23 +332,15 @@ class Home extends React.Component {
                 }
                 className="btn-about"
               >
-                Despre Chef
-              </span>
-              <span
-                onClick={() =>
-                  window.scrollTo(0, this.prezRef.current.offsetTop)
-                }
-                className="btn-recipes"
-              >
-                Reţete
+                Chef
               </span>
               <span
                 onClick={() =>
                   window.scrollTo(0, this.retRef.current.offsetTop)
                 }
-                className="btn-menu"
+                className="btn-recipes"
               >
-                Postări
+                Meniuri
               </span>
               <span
                 onClick={() =>
@@ -359,10 +382,10 @@ class Home extends React.Component {
             />
           </div>
         </div>
-        <Parallax bgImage={img0} strength={1000}>
+        <Parallax bgImage={img0} strength={400}>
           <div id="img" />
           <div id="span">
-            <p>Vidican Raul</p>
+            <p>Raul Vidican</p>
             <span
               onClick={() =>
                 window.scrollTo(0, this.aboutRef.current.offsetTop)
@@ -379,122 +402,199 @@ class Home extends React.Component {
           </div>
           <div className="about-text">
             <div className="title-sep">
-              <h1 id="meet">Chef Vidican Raul</h1>
+              <h1 id="meet">Chef - Raul Vidican</h1>
               <hr />
             </div>
             <p id="text">
-              I'm a paragraph. Click here to add your own text and edit me. It’s
-              easy. Just click “Edit Text” or double click me to add your own
-              content.
+              Bucătar şef la Roca Brună, tânărul Raul Vidican a lucrat câțiva
+              ani în restaurante din Germania, perioadă în care a ajuns să se
+              califice în semifinalele regionale ale competiției S.Pellegrino
+              Young Chef 2018, concurând pentru regiunea Germania - Austria.
+              Reîntors în țară, a colaborat cu mai multe restaurante din zona
+              Transilvaniei, pentru ca anul trecut să se implice în proiectul
+              Roca Brună.
+              <br />
+              <br />
+              „Roca Brună este unul din motivele întoarcerii mele în țară,
+              discutam cu Dan despre acest proiect încă de când lucram în
+              Germania. Nu am stat prea mult pe gânduri să mă alătur, pentru că
+              este un restaurant exact cum îmi doresc și este acasă. Este tot ce
+              aveam nevoie. Meniul restaurantului este destul de simplu: se
+              schimbă în funcție de sezon și ținem cont de ce putem achiziționa
+              de la producătorii locali. Încet, încet am început să dezvoltăm
+              mai mult meniul, să oferim clienților diverse combinații de
+              mâncare, mai altfel. Un astfel de exemplu este preparatul realizat
+              din piept și pulpe de rață gătite confit, trase apoi într-o crustă
+              de panko, servite cu piure de migdale, ciuperci la tigaie și o
+              cremă de vișine", povestește Raul.
             </p>
-            <p id="contact">Tel: 123-456-7890 | Email: info@mysite.com</p>
           </div>
         </div>
-        <span ref={this.prezRef} />
-        <Parallax className="parallax2" bgImage={img4} strength={400}>
+        <Parallax className="parallax2" bgImage={img4} strength={700}>
           <div id="img2" />
-          <Carousel
-            animationSpeed={1500}
-            stopAutoPlayOnHover={true}
-            keepDirectionWhenDragging={true}
-            arrows={false}
-            centered
-            autoPlay={5000}
-            infinite={true}
-          >
-            <div className="card1">
-              <div className="media">
-                <img src={recipes} alt="Carte de reţete" />
-              </div>
-              <h1 id="title1">Carte de reţete</h1>
-              <span id="line" />
-              <p id="text">
-                I'm a paragraph. Click here to add your own text and edit me.
-                It’s easy.
-              </p>
-              <span id="link">Spre meniu ></span>
-            </div>
-            <div className="card2">
-              <div className="media">
-                <img src={cook} alt="Carte de reţete" />
-              </div>
-              <h1 id="title1">Alegerea bucătarului</h1>
-              <span id="line" />
-              <p id="text">
-                I'm a paragraph. Click here to add your own text and edit me.
-                It’s easy.
-              </p>
-              <span id="link">Spre alegeri ></span>
-            </div>
-            <div className="card3">
-              <div className="media">
-                <img src={trad} alt="Carte de reţete" />
-              </div>
-              <h1 id="title1">Tradiţional</h1>
-              <span id="line" />
-              <p id="text">
-                I'm a paragraph. Click here to add your own text and edit me.
-                It’s easy.
-              </p>
-              <span id="link">Spre tradiţie ></span>
-            </div>
-          </Carousel>
-          <div className="swipe-container">
-            <img id="swipe" src={swipe} alt="Indicator Swipe" />
-          </div>
         </Parallax>
         <div ref={this.retRef} className="posts">
-          <div className="card2">
-            <div className="media">
-              <img src={cook} alt="Carte de reţete" />
-            </div>
-            <h1 id="title1">Alegerea bucătarului</h1>
-            <span id="line" />
-            <p id="text">
-              I'm a paragraph. Click here to add your own text and edit me. It’s
-              easy.
-            </p>
-            <span id="link">Spre alegeri ></span>
-          </div>
-          <div className="card2">
-            <div className="media">
-              <img src={cook} alt="Carte de reţete" />
-            </div>
-            <h1 id="title1">Alegerea bucătarului</h1>
-            <span id="line" />
-            <p id="text">
-              I'm a paragraph. Click here to add your own text and edit me. It’s
-              easy.
-            </p>
-            <span id="link">Spre alegeri ></span>
-          </div>
-          <div className="card2">
-            <div className="media">
-              <img src={cook} alt="Carte de reţete" />
-            </div>
-            <h1 id="title1">Alegerea bucătarului</h1>
-            <span id="line" />
-            <p id="text">
-              I'm a paragraph. Click here to add your own text and edit me. It’s
-              easy.
-            </p>
-            <span id="link">Spre alegeri ></span>
-          </div>
-          <div className="card2">
-            <div className="media">
-              <img src={cook} alt="Carte de reţete" />
-            </div>
-            <h1 id="title1">Alegerea bucătarului</h1>
-            <span id="line" />
-            <p id="text">
-              I'm a paragraph. Click here to add your own text and edit me. It’s
-              easy.
-            </p>
-            <span id="link">Spre alegeri ></span>
-          </div>
+          {this.state.cards ? (
+            <>
+              {this.state.loadMenuErr ? <h3>Eroare încărcare meniu!</h3> : null}
+              {this.state.loadMenu ? (
+                <FadeLoader
+                  height={15}
+                  width={5}
+                  radius={2}
+                  margin={2}
+                  color={"black"}
+                  loading={true}
+                />
+              ) : (
+                <>
+                  {arr.menu.map((obj) => (
+                    <div key={obj.id} className="card2">
+                      <div className="media">
+                        <img src={obj.img} alt={obj.title} />
+                      </div>
+                      <h1 id="title1">{obj.title}</h1>
+                      <section id="location-section">
+                        <i className="fas fa-map-marker-alt"></i>
+                        <label>{obj.location}</label>
+                      </section>
+                      <span id="line" />
+                      <p id="text">{obj.text}</p>
+                      <span
+                        onClick={() => {
+                          if (obj.id === 4) {
+                            this.setState({
+                              cards: false,
+                            });
+                            this.setState({
+                              sb: true,
+                            });
+                          } else if (obj.id === 8) {
+                            this.setState({
+                              cards: false,
+                            });
+                            this.setState({
+                              sb: false,
+                            });
+                            this.setState({
+                              ph: true,
+                            });
+                          } else if (obj.id === 9) {
+                            this.setState({
+                              cards: false,
+                            });
+                            this.setState({
+                              sb: false,
+                            });
+                            this.setState({
+                              ph: false,
+                            });
+                            this.setState({
+                              ar: true,
+                            });
+                          } else if (obj.id === 6) {
+                            this.setState({
+                              cards: false,
+                            });
+                            this.setState({
+                              sb: false,
+                            });
+                            this.setState({
+                              ph: false,
+                            });
+                            this.setState({
+                              ar: false,
+                            });
+                            this.setState({
+                              cj: true,
+                            });
+                          }
+                        }}
+                        id="link"
+                      >
+                        Detalii >
+                      </span>
+                    </div>
+                  ))}
+                </>
+              )}
+            </>
+          ) : null}
+          <CSSTransition
+            in={this.state.sb}
+            timeout={1000}
+            classNames="sb"
+            unmountOnExit
+          >
+            <>
+              <div className="sibiu">
+                <h1>Sibiu</h1>
+                <br />
+                <button
+                  onClick={() => this.setState({ cards: true, sb: false })}
+                >
+                  Înapoi
+                </button>
+              </div>
+            </>
+          </CSSTransition>
+          <CSSTransition
+            in={this.state.ar}
+            timeout={1000}
+            classNames="ar"
+            unmountOnExit
+          >
+            <>
+              <div className="arad">
+                <h1>Arad</h1>
+                <br />
+                <button
+                  onClick={() => this.setState({ cards: true, ar: false })}
+                >
+                  Înapoi
+                </button>
+              </div>
+            </>
+          </CSSTransition>
+          <CSSTransition
+            in={this.state.ph}
+            timeout={1000}
+            classNames="ph"
+            unmountOnExit
+          >
+            <>
+              <div className="prahova">
+                <h1>Prahova</h1>
+                <br />
+                <button
+                  onClick={() => this.setState({ cards: true, ph: false })}
+                >
+                  Înapoi
+                </button>
+              </div>
+            </>
+          </CSSTransition>
+          <CSSTransition
+            in={this.state.cj}
+            timeout={1000}
+            classNames="cj"
+            unmountOnExit
+          >
+            <>
+              <div className="cluj">
+                <h1>Cluj-Napoca</h1>
+                <br />
+                <button
+                  onClick={() => this.setState({ cards: true, cj: false })}
+                >
+                  Înapoi
+                </button>
+              </div>
+            </>
+          </CSSTransition>
         </div>
         <span ref={this.revRef}></span>
-        <Parallax className="parallax3" bgImage={img5} strength={300}>
+        <Parallax className="parallax3" bgImage={img5} strength={400}>
           <div id="img3" />
           <Carousel
             animationSpeed={1500}
@@ -586,7 +686,7 @@ Adelina Iancu"
         </Parallax>
         <div ref={this.contactRef} className="contact-form">
           <h1>La serviciul dumneavoastră</h1>
-          <p>Tel: 123-456-7890 | Email: info@mysite.com</p>
+          <p>Tel: 0751 988 273 | Email: info@mysite.com</p>
           <span id="line"></span>
           <form>
             <div className="form-group">
@@ -723,7 +823,7 @@ Adelina Iancu"
             </div>
           </form>
         </div>
-        <Parallax className="parallax4" bgImage={end} strength={200}>
+        <Parallax className="parallax4" bgImage={end} strength={400}>
           <div id="img4" />
         </Parallax>
         <div className="footer">
@@ -737,8 +837,8 @@ Adelina Iancu"
             <img src={ac5} alt="Artă culinară #5" />
           </div>
           <div className="footer-data">
-            <h1>#ChefVidicanRaul</h1>
-            <p id="contact-data">Tel: 123-456-7890 | Email: info@mysite.com</p>
+            <h1>#ChefRaulVidican</h1>
+            <p id="contact-data">Tel: 0751 988 273 | Email: info@mysite.com</p>
             <p id="copy">
               {currentYear} &copy;{" "}
               <a href="https://baderproductions.net/">BADERproductions</a>
