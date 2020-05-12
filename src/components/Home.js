@@ -731,7 +731,6 @@ Adelina Iancu"
             <span id="ac1">
               <img src={ac1} alt="Artă culinară #1" />
             </span>
-
             <img src={ac2} alt="Artă culinară #2" />
             <img src={ac3} alt="Artă culinară #3" />
             <img src={ac4} alt="Artă culinară #4" />
