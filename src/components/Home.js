@@ -17,6 +17,9 @@ import FadeLoader from "react-spinners/FadeLoader";
 // AJAX
 import axios from "axios";
 
+// React Transition
+import { CSSTransition } from "react-transition-group";
+
 // Hamburger
 import HamburgerMenu from "react-hamburger-menu";
 
@@ -186,13 +189,16 @@ class Home extends React.Component {
 
   render() {
     let { name, phone, mess } = this.state;
-
-    console.log(this.state.phoneValidation);
     let currentYear = new Date().getFullYear();
     return (
       <>
         <span ref={this.firstRef}></span>
-        {this.state.isOpen ? (
+        <CSSTransition
+          in={this.state.isOpen}
+          timeout={200}
+          classNames="ham"
+          unmountOnExit
+        >
           <div className="h-nav">
             <ul className="nav-list">
               <span
@@ -208,7 +214,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() => {
-                  window.scrollTo(0, this.aboutRef.current.offsetTop - 60);
+                  window.scrollTo(0, this.aboutRef.current.offsetTop);
                   this.setState({
                     isOpen: !this.state.isOpen,
                   });
@@ -219,7 +225,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() => {
-                  window.scrollTo(0, this.prezRef.current.offsetTop - 60);
+                  window.scrollTo(0, this.prezRef.current.offsetTop);
                   this.setState({
                     isOpen: !this.state.isOpen,
                   });
@@ -230,7 +236,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() => {
-                  window.scrollTo(0, this.retRef.current.offsetTop - 60);
+                  window.scrollTo(0, this.retRef.current.offsetTop);
                   this.setState({
                     isOpen: !this.state.isOpen,
                   });
@@ -241,7 +247,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() => {
-                  window.scrollTo(0, this.revRef.current.offsetTop - 60);
+                  window.scrollTo(0, this.revRef.current.offsetTop);
                   this.setState({
                     isOpen: !this.state.isOpen,
                   });
@@ -252,7 +258,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() => {
-                  window.scrollTo(0, this.contactRef.current.offsetTop - 638);
+                  window.scrollTo(0, this.contactRef.current.offsetTop);
                   this.setState({
                     isOpen: !this.state.isOpen,
                   });
@@ -274,7 +280,7 @@ class Home extends React.Component {
               </div>
             </ul>
           </div>
-        ) : null}
+        </CSSTransition>
         <div className={this.state.isTop ? "main-nav" : "main-nav black"}>
           <div className="logo-area">
             <img src={logo} alt="Vidican Raul Logo" />
@@ -291,7 +297,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() =>
-                  window.scrollTo(0, this.aboutRef.current.offsetTop - 77)
+                  window.scrollTo(0, this.aboutRef.current.offsetTop)
                 }
                 className="btn-about"
               >
@@ -299,7 +305,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() =>
-                  window.scrollTo(0, this.prezRef.current.offsetTop - 78)
+                  window.scrollTo(0, this.prezRef.current.offsetTop)
                 }
                 className="btn-recipes"
               >
@@ -307,7 +313,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() =>
-                  window.scrollTo(0, this.retRef.current.offsetTop - 79)
+                  window.scrollTo(0, this.retRef.current.offsetTop)
                 }
                 className="btn-menu"
               >
@@ -315,7 +321,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() =>
-                  window.scrollTo(0, this.revRef.current.offsetTop - 80)
+                  window.scrollTo(0, this.revRef.current.offsetTop)
                 }
                 className="btn-menu"
               >
@@ -323,7 +329,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() =>
-                  window.scrollTo(0, this.contactRef.current.offsetTop - 678)
+                  window.scrollTo(0, this.contactRef.current.offsetTop)
                 }
                 className="btn-contact"
               >
@@ -506,8 +512,7 @@ class Home extends React.Component {
               <p id="text">
                 Raul Vidican este un tanar de o valoare inestimabila, cu viziuni
                 inalte si potential inegalabil...Raul te felicit si te urmaresc
-                cu mult interes!!!!! Si te sustin dorindu-ti sa atingi
-                apogeul!!!!!
+                cu mult interes!!!!!
               </p>
               <span id="line" />
               <div className="media2">
@@ -579,7 +584,7 @@ Adelina Iancu"
             <img id="swipe" src={swipe} alt="Indicator Swipe" />
           </div>
         </Parallax>
-        <div className="contact-form">
+        <div ref={this.contactRef} className="contact-form">
           <h1>La serviciul dumneavoastră</h1>
           <p>Tel: 123-456-7890 | Email: info@mysite.com</p>
           <span id="line"></span>
@@ -689,7 +694,7 @@ Adelina Iancu"
                 }}
               />
             </div>
-            <div ref={this.contactRef} className="contact-response">
+            <div className="contact-response">
               {this.state.loading ? (
                 <FadeLoader
                   height={15}
