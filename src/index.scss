@@ -772,6 +772,72 @@ body {
     }
   }
 
+  .arad {
+    width: 100%;
+    height: auto;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+
+    button {
+      font-family: "Jost";
+      font-weight: bold;
+      width: 100px;
+      background-color: transparent;
+      color: black;
+      border: 1px solid black;
+      transition: all 0.4s ease;
+      position: relative;
+      margin: 0 auto;
+      margin-top: 40px !important;
+      padding: 10px 0;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+
+      &:active {
+        position: relative;
+        top: 1px;
+      }
+
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
+
+    .images {
+      width: 100%;
+      height: auto;
+      background: white;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin: 20px 0;
+      border-top: 1px solid black;
+
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        transition: all 0.3s ease;
+        margin: 20px;
+
+        &:hover {
+          transform: scale(1.1);
+          transform-origin: 50% 50%;
+        }
+      }
+    }
+  }
+
   .footer {
     width: 100%;
     height: auto;
@@ -868,7 +934,7 @@ body {
   .h-nav {
     padding-top: 60px;
     position: fixed;
-    z-index: 1;
+    z-index: 5 !important;
     top: 0 !important;
     width: 100vw;
     height: 60vw;
@@ -1019,7 +1085,7 @@ body {
   }
 
   .main-nav {
-    z-index: 10 !important;
+    z-index: 8 !important;
     width: 100vw;
     height: 8vw;
     background-color: black !important;

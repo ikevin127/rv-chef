@@ -14,9 +14,6 @@ import "react-inputs-validation/lib/react-inputs-validation.min.css";
 // Spinner
 import FadeLoader from "react-spinners/FadeLoader";
 
-// Click Outside
-import OnOutsideClick from "react-outclick";
-
 // AJAX
 import axios from "axios";
 
@@ -36,6 +33,16 @@ import img0 from "../img0.jpg";
 import img1 from "../img1.jpg";
 import img4 from "../veg.jpg";
 import img5 from "../img4.jpg";
+
+import i1 from "../1.jpeg";
+import i2 from "../2.jpeg";
+import i3 from "../3.jpeg";
+import i4 from "../4.jpeg";
+import i5 from "../5.jpeg";
+import i6 from "../6.jpeg";
+import i7 from "../7.jpeg";
+import i8 from "../8.jpeg";
+import i9 from "../9.jpeg";
 
 const end =
   "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-0/p640x640/76778234_102413797893748_7436713577848766464_o.jpg?_nc_cat=107&_nc_sid=0be424&_nc_ohc=aZ9TOz-eQzAAX9k5wAg&_nc_ht=scontent-lhr8-1.xx&_nc_tp=6&oh=98d849845c1121104d1df75c39044654&oe=5EDF57FE";
@@ -132,6 +139,12 @@ class Home extends React.Component {
     });
   }
 
+  handleOut() {
+    this.setState({
+      isOpen: false,
+    });
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -215,7 +228,6 @@ class Home extends React.Component {
   render() {
     let { name, phone, mess } = this.state;
     let currentYear = new Date().getFullYear();
-
     // let menu = this.state.menu.map((obj) => ({
     //   key: JSON.stringify(obj.id),
     //   img: obj.img,
@@ -223,95 +235,87 @@ class Home extends React.Component {
     //   location: obj.location,
     //   text: obj.text,
     // }));
+
     return (
       <>
         <span ref={this.firstRef}></span>
-        <OnOutsideClick
-          onOutsideClick={() => {
-            this.setState({ isOpen: false });
-          }}
+        <CSSTransition
+          in={this.state.isOpen}
+          timeout={1200}
+          classNames="ham"
+          unmountOnExit
         >
-          <CSSTransition
-            in={this.state.isOpen}
-            timeout={1200}
-            classNames="ham"
-            unmountOnExit
-          >
-            <div className="h-nav">
-              <ul className="nav-list">
-                <span
-                  onClick={() => {
-                    window.scrollTo(0, this.firstRef.current.offsetTop);
-                    this.setState({
-                      isOpen: !this.state.isOpen,
-                    });
-                  }}
-                  className="btn-home "
-                >
-                  Prima pagină
-                </span>
-                <span
-                  onClick={() => {
-                    window.scrollTo(0, this.aboutRef.current.offsetTop);
-                    this.setState({
-                      isOpen: !this.state.isOpen,
-                    });
-                  }}
-                  className="btn-about"
-                >
-                  Chef
-                </span>
-                <span
-                  onClick={() => {
-                    window.scrollTo(0, this.retRef.current.offsetTop);
-                    this.setState({
-                      isOpen: !this.state.isOpen,
-                    });
-                  }}
-                  className="btn-recipes"
-                >
-                  Meniuri
-                </span>
-                <span
-                  onClick={() => {
-                    window.scrollTo(0, this.revRef.current.offsetTop);
-                    this.setState({
-                      isOpen: !this.state.isOpen,
-                    });
-                  }}
-                  className="btn-menu"
-                >
-                  Recenzii
-                </span>
-                <span
-                  onClick={() => {
-                    window.scrollTo(0, this.contactRef.current.offsetTop);
-                    this.setState({
-                      isOpen: !this.state.isOpen,
-                    });
-                  }}
-                  className="btn-contact"
-                >
-                  Contact
-                </span>
-                <div className="sm">
-                  <a id="fb" href="https://www.facebook.com/vidicanraul1/">
-                    <i
-                      className="fab fa-facebook-square"
-                      title="Pagină Facebook"
-                    ></i>
-                  </a>
-                  <a id="ig" href="https://www.instagram.com/raul_vidican1/">
-                    <i
-                      className="fab fa-instagram"
-                      title="Pagină Instagram"
-                    ></i>
-                  </a>
-                </div>
-              </ul>
-            </div>
-          </CSSTransition>
-        </OnOutsideClick>
+          <div className="h-nav">
+            <ul className="nav-list">
+              <span
+                onClick={() => {
+                  window.scrollTo(0, this.firstRef.current.offsetTop);
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+                className="btn-home "
+              >
+                Prima pagină
+              </span>
+              <span
+                onClick={() => {
+                  window.scrollTo(0, this.aboutRef.current.offsetTop);
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+                className="btn-about"
+              >
+                Chef
+              </span>
+              <span
+                onClick={() => {
+                  window.scrollTo(0, this.retRef.current.offsetTop);
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+                className="btn-recipes"
+              >
+                Meniuri
+              </span>
+              <span
+                onClick={() => {
+                  window.scrollTo(0, this.revRef.current.offsetTop);
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+                className="btn-menu"
+              >
+                Recenzii
+              </span>
+              <span
+                onClick={() => {
+                  window.scrollTo(0, this.contactRef.current.offsetTop);
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+                className="btn-contact"
+              >
+                Contact
+              </span>
+              <div className="sm">
+                <a id="fb" href="https://www.facebook.com/vidicanraul1/">
+                  <i
+                    className="fab fa-facebook-square"
+                    title="Pagină Facebook"
+                  ></i>
+                </a>
+                <a id="ig" href="https://www.instagram.com/raul_vidican1/">
+                  <i className="fab fa-instagram" title="Pagină Instagram"></i>
+                </a>
+              </div>
+            </ul>
+          </div>
+        </CSSTransition>
         <div className={this.state.isTop ? "main-nav" : "main-nav black"}>
           <div className="logo-area">
             <img src={logo} alt="Vidican Raul Logo" />
@@ -369,7 +373,7 @@ class Home extends React.Component {
               </a>
             </ul>
             <HamburgerMenu
-              isOpen={this.state.isOpen}
+              isOpen={this.state.isOpen === true}
               menuClicked={this.handleClick.bind(this)}
               className="hamburger"
               width={35}
@@ -378,7 +382,7 @@ class Home extends React.Component {
               rotate={180}
               color="white"
               borderRadius={0}
-              animationDuration={0.3}
+              animationDuration={0.4}
             />
           </div>
         </div>
@@ -469,6 +473,7 @@ class Home extends React.Component {
                             this.setState({
                               sb: true,
                             });
+                            window.scrollTo(0, this.retRef.current.offsetTop);
                           } else if (obj.id === 8) {
                             this.setState({
                               cards: false,
@@ -479,6 +484,7 @@ class Home extends React.Component {
                             this.setState({
                               ph: true,
                             });
+                            window.scrollTo(0, this.retRef.current.offsetTop);
                           } else if (obj.id === 9) {
                             this.setState({
                               cards: false,
@@ -492,6 +498,7 @@ class Home extends React.Component {
                             this.setState({
                               ar: true,
                             });
+                            window.scrollTo(0, this.retRef.current.offsetTop);
                           } else if (obj.id === 6) {
                             this.setState({
                               cards: false,
@@ -508,6 +515,7 @@ class Home extends React.Component {
                             this.setState({
                               cj: true,
                             });
+                            window.scrollTo(0, this.retRef.current.offsetTop);
                           }
                         }}
                         id="link"
@@ -531,7 +539,10 @@ class Home extends React.Component {
                 <h1>Sibiu</h1>
                 <br />
                 <button
-                  onClick={() => this.setState({ cards: true, sb: false })}
+                  onClick={() => {
+                    this.setState({ cards: true, sb: false });
+                    window.scrollTo(0, this.retRef.current.offsetTop);
+                  }}
                 >
                   Înapoi
                 </button>
@@ -547,9 +558,23 @@ class Home extends React.Component {
             <>
               <div className="arad">
                 <h1>Arad</h1>
+                <div className="images">
+                  <img src={i1} alt="Artă culinară #1" />
+                  <img src={i2} alt="Artă culinară #2" />
+                  <img src={i3} alt="Artă culinară #3" />
+                  <img src={i4} alt="Artă culinară #4" />
+                  <img src={i5} alt="Artă culinară #5" />
+                  <img src={i6} alt="Artă culinară #1" />
+                  <img src={i7} alt="Artă culinară #2" />
+                  <img src={i8} alt="Artă culinară #3" />
+                  <img src={i9} alt="Artă culinară #4" />
+                </div>
                 <br />
                 <button
-                  onClick={() => this.setState({ cards: true, ar: false })}
+                  onClick={() => {
+                    this.setState({ cards: true, ar: false });
+                    window.scrollTo(0, this.retRef.current.offsetTop);
+                  }}
                 >
                   Înapoi
                 </button>
@@ -567,7 +592,10 @@ class Home extends React.Component {
                 <h1>Prahova</h1>
                 <br />
                 <button
-                  onClick={() => this.setState({ cards: true, ph: false })}
+                  onClick={() => {
+                    this.setState({ cards: true, ph: false });
+                    window.scrollTo(0, this.retRef.current.offsetTop);
+                  }}
                 >
                   Înapoi
                 </button>
@@ -585,7 +613,10 @@ class Home extends React.Component {
                 <h1>Cluj-Napoca</h1>
                 <br />
                 <button
-                  onClick={() => this.setState({ cards: true, cj: false })}
+                  onClick={() => {
+                    this.setState({ cards: true, cj: false });
+                    window.scrollTo(0, this.retRef.current.offsetTop);
+                  }}
                 >
                   Înapoi
                 </button>
