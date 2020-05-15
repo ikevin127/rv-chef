@@ -3,28 +3,28 @@
     {
       "id": 4,
       "img": "https://i.epvpimg.com/u1ptbab.jpg",
-      "title": "Degustare de vinuri",
+      "title": "Degustare vinuri",
       "location": "Sibiu",
       "text": "Degustare de vinuri asociate cu mâncare la Sibiu."
     },
     {
       "id": 8,
       "img": "https://i.epvpimg.com/aUiAeab.jpg",
-      "title": "Pensiune Atra",
+      "title": "Atra",
       "location": "Prahova",
-      "text": "Meniu Atra, Prahova de Primăvară."
+      "text": "Meniu de Primăvară, Pensiune Atra, Prahova."
     },
     {
       "id": 9,
       "img": "https://i.epvpimg.com/gsJcgab.png",
-      "title": "Restaurant Art Cafe",
+      "title": "Art Cafe",
       "location": "Arad",
       "text": "Am pregătit un meniu călduros pentru sezonul rece, meniu toamnă-iarnă."
     },
     {
       "id": 6,
       "img": "https://i.epvpimg.com/Y1OIfab.jpg",
-      "title": "Restaurantul Nuka",
+      "title": "Nuka",
       "location": "Cluj-Napoca",
       "text": "Restaurantul Nuka din Cluj, unde am pregatit un meniu de toamnă-iarnă."
     }

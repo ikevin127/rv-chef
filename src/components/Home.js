@@ -31,18 +31,52 @@ import logo from "../rv.png";
 import swipe from "../swipe.png";
 import img0 from "../img0.jpg";
 import img1 from "../img1.jpg";
-import img4 from "../veg.jpg";
-import img5 from "../img4.jpg";
+import img2 from "../img2.jpg";
+import img3 from "../img3.jpg";
 
-import i1 from "../1.jpeg";
-import i2 from "../2.jpeg";
-import i3 from "../3.jpeg";
-import i4 from "../4.jpeg";
-import i5 from "../5.jpeg";
-import i6 from "../6.jpeg";
-import i7 from "../7.jpeg";
-import i8 from "../8.jpeg";
-import i9 from "../9.jpeg";
+// Art Cafe
+
+import i1 from "../img/1.jpeg";
+import i2 from "../img/2.jpeg";
+import i3 from "../img/3.jpeg";
+import i4 from "../img/4.jpeg";
+import i5 from "../img/5.jpeg";
+import i6 from "../img/6.jpeg";
+import i7 from "../img/7.jpeg";
+import i8 from "../img/8.jpeg";
+import i9 from "../img/9.jpeg";
+
+// Atra Prahova
+
+import e1 from "../img/11.jpg";
+import e2 from "../img/22.jpg";
+import e3 from "../img/33.jpg";
+import e4 from "../img/44.jpg";
+import e5 from "../img/55.jpg";
+import e6 from "../img/66.jpg";
+
+// Degustare Sibiu
+
+import s1 from "../img/110.jpg";
+import s2 from "../img/120.jpg";
+import s3 from "../img/130.jpg";
+import s4 from "../img/140.jpg";
+import s5 from "../img/150.jpg";
+import s6 from "../img/160.jpg";
+import s7 from "../img/170.jpg";
+
+// Nuka Cluj
+
+import c1 from "../img/c1.JPG";
+import c2 from "../img/c2.JPG";
+import c3 from "../img/c3.JPG";
+import c4 from "../img/c4.JPG";
+import c5 from "../img/c5.JPG";
+import c6 from "../img/c6.JPG";
+import c7 from "../img/c7.JPG";
+import c8 from "../img/c8.JPG";
+import c9 from "../img/c9.JPG";
+import c10 from "../img/c10.JPG";
 
 const end =
   "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-0/p640x640/76778234_102413797893748_7436713577848766464_o.jpg?_nc_cat=107&_nc_sid=0be424&_nc_ohc=aZ9TOz-eQzAAX9k5wAg&_nc_ht=scontent-lhr8-1.xx&_nc_tp=6&oh=98d849845c1121104d1df75c39044654&oe=5EDF57FE";
@@ -61,17 +95,6 @@ const p4 =
 
 const p5 =
   "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/s960x960/79425522_820764835032057_2338512639296012288_o.jpg?_nc_cat=111&_nc_sid=85a577&_nc_ohc=W1HPUuOGGckAX-1DACe&_nc_ht=scontent-lhr8-1.xx&_nc_tp=7&oh=fb96fe396195293fbf7ea8b7a056a42f&oe=5EDFF0C3";
-
-const ac1 =
-  "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/s960x960/75271562_102421687892959_6158217649097539584_o.jpg?_nc_cat=109&_nc_sid=0be424&_nc_ohc=__gcKB0dNJ4AX8FuCXa&_nc_ht=scontent-lhr8-1.xx&_nc_tp=7&oh=cda8db659a8b968cb08ff02ef49eb3aa&oe=5EDD4A63";
-const ac2 =
-  "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-0/p640x640/76654421_102417297893398_5057291233324433408_o.jpg?_nc_cat=109&_nc_sid=0be424&_nc_ohc=Ub-8ZWsSTgUAX98QfQu&_nc_ht=scontent-lhr8-1.xx&_nc_tp=6&oh=8f3fe7762d9ff33b428cd7f0a49e2723&oe=5EDFD28C";
-const ac3 =
-  "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-0/p640x640/77426659_116582016476926_3562538573028655104_o.jpg?_nc_cat=108&_nc_sid=0be424&_nc_ohc=ARu7w-RNDzoAX-GkTlz&_nc_ht=scontent-lht6-1.xx&_nc_tp=6&oh=76e6eb640a8adf2508dbe1a06b5b1e2d&oe=5EDF73A2";
-const ac4 =
-  "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/s960x960/75264956_102421594559635_5718470383045181440_o.jpg?_nc_cat=108&_nc_sid=0be424&_nc_ohc=0X9rLHegpgcAX81yFxN&_nc_ht=scontent-lht6-1.xx&_nc_tp=7&oh=5379307aae93d81b33cb982a42371e54&oe=5EDDCD72";
-const ac5 =
-  "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-0/p640x640/78745601_116581773143617_3978982862656372736_o.jpg?_nc_cat=109&_nc_sid=0be424&_nc_ohc=iOX4Ymva0fIAX-8Hcx-&_nc_ht=scontent-lhr8-1.xx&_nc_tp=6&oh=86537458d4c2aaab0004a146f7320464&oe=5EDD90B1";
 
 class Home extends React.Component {
   constructor() {
@@ -249,6 +272,17 @@ class Home extends React.Component {
             <ul className="nav-list">
               <span
                 onClick={() => {
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                  alert("În lucru...");
+                }}
+                className="btn-la"
+              >
+                LaPachet
+              </span>
+              <span
+                onClick={() => {
                   window.scrollTo(0, this.firstRef.current.offsetTop);
                   this.setState({
                     isOpen: !this.state.isOpen,
@@ -260,7 +294,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() => {
-                  window.scrollTo(0, this.aboutRef.current.offsetTop);
+                  window.scrollTo(0, this.aboutRef.current.offsetTop - 40);
                   this.setState({
                     isOpen: !this.state.isOpen,
                   });
@@ -271,14 +305,14 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() => {
-                  window.scrollTo(0, this.retRef.current.offsetTop);
+                  window.scrollTo(0, this.retRef.current.offsetTop - 35);
                   this.setState({
                     isOpen: !this.state.isOpen,
                   });
                 }}
                 className="btn-recipes"
               >
-                Meniuri
+                Portofoliu
               </span>
               <span
                 onClick={() => {
@@ -320,6 +354,14 @@ class Home extends React.Component {
           <div className="logo-area">
             <img src={logo} alt="Vidican Raul Logo" />
           </div>
+          <span
+            onClick={() => {
+              alert("În lucru...");
+            }}
+            className="btn-la"
+          >
+            LaPachet
+          </span>
           <div className="main-menu">
             <ul className="nav-list">
               <span
@@ -332,7 +374,7 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() =>
-                  window.scrollTo(0, this.aboutRef.current.offsetTop)
+                  window.scrollTo(0, this.aboutRef.current.offsetTop - 70)
                 }
                 className="btn-about"
               >
@@ -340,11 +382,11 @@ class Home extends React.Component {
               </span>
               <span
                 onClick={() =>
-                  window.scrollTo(0, this.retRef.current.offsetTop)
+                  window.scrollTo(0, this.retRef.current.offsetTop - 65)
                 }
                 className="btn-recipes"
               >
-                Meniuri
+                Portofoliu
               </span>
               <span
                 onClick={() =>
@@ -392,7 +434,7 @@ class Home extends React.Component {
             <p>Raul Vidican</p>
             <span
               onClick={() =>
-                window.scrollTo(0, this.aboutRef.current.offsetTop)
+                window.scrollTo(0, this.aboutRef.current.offsetTop - 70)
               }
             >
               <p id="next-page">Pagina următoare</p>
@@ -434,7 +476,7 @@ class Home extends React.Component {
             </p>
           </div>
         </div>
-        <Parallax className="parallax2" bgImage={img4} strength={700}>
+        <Parallax className="parallax2" bgImage={img2} strength={700}>
           <div id="img2" />
         </Parallax>
         <div ref={this.retRef} className="posts">
@@ -473,7 +515,10 @@ class Home extends React.Component {
                             this.setState({
                               sb: true,
                             });
-                            window.scrollTo(0, this.retRef.current.offsetTop);
+                            window.scrollTo(
+                              0,
+                              this.retRef.current.offsetTop - 60
+                            );
                           } else if (obj.id === 8) {
                             this.setState({
                               cards: false,
@@ -484,7 +529,10 @@ class Home extends React.Component {
                             this.setState({
                               ph: true,
                             });
-                            window.scrollTo(0, this.retRef.current.offsetTop);
+                            window.scrollTo(
+                              0,
+                              this.retRef.current.offsetTop - 60
+                            );
                           } else if (obj.id === 9) {
                             this.setState({
                               cards: false,
@@ -498,7 +546,10 @@ class Home extends React.Component {
                             this.setState({
                               ar: true,
                             });
-                            window.scrollTo(0, this.retRef.current.offsetTop);
+                            window.scrollTo(
+                              0,
+                              this.retRef.current.offsetTop - 60
+                            );
                           } else if (obj.id === 6) {
                             this.setState({
                               cards: false,
@@ -515,12 +566,15 @@ class Home extends React.Component {
                             this.setState({
                               cj: true,
                             });
-                            window.scrollTo(0, this.retRef.current.offsetTop);
+                            window.scrollTo(
+                              0,
+                              this.retRef.current.offsetTop - 60
+                            );
                           }
                         }}
                         id="link"
                       >
-                        Detalii >
+                        Galerie >
                       </span>
                     </div>
                   ))}
@@ -536,12 +590,21 @@ class Home extends React.Component {
           >
             <>
               <div className="sibiu">
-                <h1>Sibiu</h1>
+                <h1>Degustare vinuri, Sibiu - Galerie</h1>
+                <div className="images">
+                  <img src={s1} alt="Artă culinară #1" />
+                  <img src={s2} alt="Artă culinară #2" />
+                  <img src={s3} alt="Artă culinară #3" />
+                  <img src={s4} alt="Artă culinară #4" />
+                  <img src={s5} alt="Artă culinară #5" />
+                  <img src={s6} alt="Artă culinară #6" />
+                  <img src={s7} alt="Artă culinară #7" />
+                </div>
                 <br />
                 <button
                   onClick={() => {
                     this.setState({ cards: true, sb: false });
-                    window.scrollTo(0, this.retRef.current.offsetTop);
+                    window.scrollTo(0, this.retRef.current.offsetTop - 60);
                   }}
                 >
                   Înapoi
@@ -557,7 +620,7 @@ class Home extends React.Component {
           >
             <>
               <div className="arad">
-                <h1>Arad</h1>
+                <h1>Art Cafe, Arad - Galerie</h1>
                 <div className="images">
                   <img src={i1} alt="Artă culinară #1" />
                   <img src={i2} alt="Artă culinară #2" />
@@ -573,7 +636,7 @@ class Home extends React.Component {
                 <button
                   onClick={() => {
                     this.setState({ cards: true, ar: false });
-                    window.scrollTo(0, this.retRef.current.offsetTop);
+                    window.scrollTo(0, this.retRef.current.offsetTop - 60);
                   }}
                 >
                   Înapoi
@@ -589,12 +652,20 @@ class Home extends React.Component {
           >
             <>
               <div className="prahova">
-                <h1>Prahova</h1>
+                <h1>Atra, Prahova - Galerie</h1>
+                <div className="images">
+                  <img src={e1} alt="Artă culinară #1" />
+                  <img src={e2} alt="Artă culinară #2" />
+                  <img src={e3} alt="Artă culinară #3" />
+                  <img src={e4} alt="Artă culinară #4" />
+                  <img src={e5} alt="Artă culinară #5" />
+                  <img src={e6} alt="Artă culinară #6" />
+                </div>
                 <br />
                 <button
                   onClick={() => {
                     this.setState({ cards: true, ph: false });
-                    window.scrollTo(0, this.retRef.current.offsetTop);
+                    window.scrollTo(0, this.retRef.current.offsetTop - 60);
                   }}
                 >
                   Înapoi
@@ -610,12 +681,24 @@ class Home extends React.Component {
           >
             <>
               <div className="cluj">
-                <h1>Cluj-Napoca</h1>
+                <h1>Nuka, Cluj-Napoca - Galerie</h1>
+                <div className="images">
+                  <img src={c1} alt="Artă culinară #1" />
+                  <img src={c2} alt="Artă culinară #2" />
+                  <img src={c3} alt="Artă culinară #3" />
+                  <img src={c4} alt="Artă culinară #4" />
+                  <img src={c5} alt="Artă culinară #5" />
+                  <img src={c6} alt="Artă culinară #6" />
+                  <img src={c7} alt="Artă culinară #7" />
+                  <img src={c8} alt="Artă culinară #8" />
+                  <img src={c9} alt="Artă culinară #9" />
+                  <img src={c10} alt="Artă culinară #10" />
+                </div>
                 <br />
                 <button
                   onClick={() => {
                     this.setState({ cards: true, cj: false });
-                    window.scrollTo(0, this.retRef.current.offsetTop);
+                    window.scrollTo(0, this.retRef.current.offsetTop - 60);
                   }}
                 >
                   Înapoi
@@ -625,7 +708,7 @@ class Home extends React.Component {
           </CSSTransition>
         </div>
         <span ref={this.revRef}></span>
-        <Parallax className="parallax3" bgImage={img5} strength={400}>
+        <Parallax className="parallax3" bgImage={img3} strength={400}>
           <div id="img3" />
           <Carousel
             animationSpeed={1500}
@@ -858,15 +941,6 @@ Adelina Iancu"
           <div id="img4" />
         </Parallax>
         <div className="footer">
-          <div className="images">
-            <span id="ac1">
-              <img src={ac1} alt="Artă culinară #1" />
-            </span>
-            <img src={ac2} alt="Artă culinară #2" />
-            <img src={ac3} alt="Artă culinară #3" />
-            <img src={ac4} alt="Artă culinară #4" />
-            <img src={ac5} alt="Artă culinară #5" />
-          </div>
           <div className="footer-data">
             <h1>#ChefRaulVidican</h1>
             <p id="contact-data">Tel: 0751 988 273 | Email: info@mysite.com</p>

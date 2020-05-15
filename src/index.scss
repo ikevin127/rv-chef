@@ -176,6 +176,24 @@ body {
       }
     }
 
+    .btn-la {
+      color: white;
+      text-shadow: 1px 1px black;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 5px 8px;
+      border: 0.5px solid white;
+
+      &:hover {
+        color: rgb(233, 233, 233);
+      }
+
+      &:active {
+        position: relative;
+        top: 1px;
+      }
+    }
+
     .main-menu {
       display: flex;
       flex-wrap: nowrap;
@@ -498,7 +516,7 @@ body {
       position: relative;
       height: 0.5px;
       width: 85%;
-      background-color: rgb(148, 148, 148);
+      background-color: rgba($color: #000000, $alpha: 0.2);
     }
 
     form {
@@ -653,13 +671,14 @@ body {
         justify-content: center;
         align-items: center;
         margin-bottom: 2vw;
+        overflow: hidden;
 
         img {
           width: 225px;
           height: 120px;
           padding: 1.5px;
           object-fit: cover;
-          border: 0.5px solid rgb(92, 92, 92);
+          border: 0.5px solid rgba($color: #000000, $alpha: 0.2);
         }
       }
 
@@ -674,6 +693,10 @@ body {
         justify-content: center;
         align-items: center;
 
+        label {
+          font-size: 14px;
+        }
+
         .fa-map-marker-alt {
           margin-right: 5px;
         }
@@ -685,7 +708,7 @@ body {
         position: relative;
         height: 0.5px;
         width: 200px;
-        background-color: rgb(148, 148, 148);
+        background-color: rgba($color: #000000, $alpha: 0.2);
       }
 
       #text {
@@ -697,13 +720,16 @@ body {
 
       #link {
         margin-top: 30px;
+        margin-bottom: 15px;
         cursor: pointer;
         transition: all 0.4s ease;
-        padding: 5px;
-        border: 0.5px solid rgb(163, 163, 163);
+        padding: 5px 8px;
+        color: black;
+        border: 0.5px solid black;
 
         &:hover {
-          color: rgb(105, 105, 105);
+          background-color: black;
+          color: white;
         }
 
         &:active {
@@ -793,7 +819,205 @@ body {
       transition: all 0.4s ease;
       position: relative;
       margin: 0 auto;
-      margin-top: 40px !important;
+      margin-bottom: 35px;
+      padding: 10px 0;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+
+      &:active {
+        position: relative;
+        top: 1px;
+      }
+
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
+
+    .images {
+      width: 100%;
+      height: auto;
+      background: white;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin: 20px 0;
+      border-top: 1px solid black;
+
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        transition: all 0.3s ease;
+        margin: 20px;
+
+        &:hover {
+          transform: scale(1.1);
+          transform-origin: 50% 50%;
+        }
+      }
+    }
+  }
+
+  .prahova {
+    width: 100%;
+    height: auto;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+
+    button {
+      font-family: "Jost";
+      font-weight: bold;
+      width: 100px;
+      background-color: transparent;
+      color: black;
+      border: 1px solid black;
+      transition: all 0.4s ease;
+      position: relative;
+      margin: 0 auto;
+      margin-bottom: 35px;
+      padding: 10px 0;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+
+      &:active {
+        position: relative;
+        top: 1px;
+      }
+
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
+
+    .images {
+      width: 100%;
+      height: auto;
+      background: white;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin: 20px 0;
+      border-top: 1px solid black;
+
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        transition: all 0.3s ease;
+        margin: 20px;
+
+        &:hover {
+          transform: scale(1.1);
+          transform-origin: 50% 50%;
+        }
+      }
+    }
+  }
+
+  .sibiu {
+    width: 100%;
+    height: auto;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+
+    button {
+      font-family: "Jost";
+      font-weight: bold;
+      width: 100px;
+      background-color: transparent;
+      color: black;
+      border: 1px solid black;
+      transition: all 0.4s ease;
+      position: relative;
+      margin: 0 auto;
+      margin-bottom: 35px;
+      padding: 10px 0;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+
+      &:active {
+        position: relative;
+        top: 1px;
+      }
+
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
+
+    .images {
+      width: 100%;
+      height: auto;
+      background: white;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin: 20px 0;
+      border-top: 1px solid black;
+
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        transition: all 0.3s ease;
+        margin: 20px;
+
+        &:hover {
+          transform: scale(1.1);
+          transform-origin: 50% 50%;
+        }
+      }
+    }
+  }
+
+  .cluj {
+    width: 100%;
+    height: auto;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+
+    button {
+      font-family: "Jost";
+      font-weight: bold;
+      width: 100px;
+      background-color: transparent;
+      color: black;
+      border: 1px solid black;
+      transition: all 0.4s ease;
+      position: relative;
+      margin: 0 auto;
+      margin-bottom: 35px;
       padding: 10px 0;
       cursor: pointer;
       text-decoration: none;
@@ -850,35 +1074,9 @@ body {
     overflow: hidden;
     border-top: 1px solid black;
 
-    .images {
-      width: 100%;
-      height: auto;
-      background: white;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      margin: 20px 0;
-
-      img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        transition: all 0.3s ease;
-        margin: 20px;
-
-        &:hover {
-          transform: scale(1.1);
-          transform-origin: 50% 50%;
-        }
-      }
-    }
-
     .footer-data {
       width: 100%;
-      height: 20vh;
+      height: auto;
       background: white;
       display: flex;
       flex-wrap: wrap;
@@ -888,14 +1086,15 @@ body {
 
       h1 {
         margin: 10px 0;
+        margin-top: 60px !important;
       }
 
       #copy {
         margin-top: 40px;
-        color: rgba($color: #000000, $alpha: 0.3);
+        color: rgba($color: #000000, $alpha: 0.2);
 
         a {
-          color: rgba($color: #000000, $alpha: 0.3);
+          color: rgba($color: #000000, $alpha: 0.2);
 
           &:hover {
             text-decoration: underline;
@@ -968,6 +1167,27 @@ body {
         font-weight: bold;
         cursor: pointer;
         width: auto;
+
+        &:hover {
+          color: rgb(233, 233, 233);
+        }
+
+        &:active {
+          position: relative;
+          top: 1px;
+        }
+      }
+
+      .btn-la {
+        margin-bottom: 15px;
+        color: white;
+        text-shadow: 1px 1px black;
+        font-size: 20px;
+        padding: 5px 8px;
+        font-weight: bold;
+        cursor: pointer;
+        width: auto;
+        border: 0.5px solid white;
 
         &:hover {
           color: rgb(233, 233, 233);
@@ -1106,6 +1326,10 @@ body {
         width: 8vw;
         filter: drop-shadow(1px 1px 0 #222);
       }
+    }
+
+    .btn-la {
+      display: none;
     }
 
     .main-menu {
@@ -1955,7 +2179,7 @@ body {
     position: fixed;
     z-index: 8 !important;
     width: 100vw;
-    height: 120vw;
+    height: 120vw !important;
     background-color: black;
     display: flex;
     flex-wrap: nowrap;
