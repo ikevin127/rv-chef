@@ -541,10 +541,6 @@ body {
       border-top: 1px solid black;
       border-bottom: 1px solid black;
 
-      h2 {
-        position: absolute;
-      }
-
       .card2 {
         width: 250px;
         height: auto;
@@ -556,7 +552,7 @@ body {
         align-items: center;
         padding: 10px;
         border-radius: 2px;
-        margin: 80px 20px;
+        margin: 20px;
         border: 1px solid rgba($color: #000000, $alpha: 0.3);
 
         .media {

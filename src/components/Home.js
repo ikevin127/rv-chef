@@ -538,7 +538,6 @@ class Home extends React.Component {
                 <div id="img2" />
               </Parallax>
               <div ref={this.retRef} className="posts">
-                <h2>Portofoliu</h2>
                 {this.state.cards ? (
                   <>
                     {this.state.loadMenuErr ? (
