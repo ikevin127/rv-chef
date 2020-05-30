@@ -1,11 +1,9 @@
 # Introduction
 
-I builded this website as a show-off platform to expose all my Web Development projects Frontend, Backend and Full Stack.<br> This particular website is builded with React and is hosted on [Netlify](https://www.netlify.com/) with a **custom domain**.<br>
-Can be seen at https://baderproductions.net/
+I builded this website as a show-off platform to expose all my Web Development projects Frontend, Backend and Full Stack.<br> This particular website is builded with React and is hosted on [Netlify](https://www.netlify.com/).<br>
+Can be seen at https://fervent-booth-05a86d.netlify.app/
 
 # Packages used for this website
-
-- [react-messenger-customer-chat](https://www.npmjs.com/package/react-messenger-customer-chat) - Facebook Messenger's Customer Chat API
 - [node-sass](https://www.npmjs.com/package/node-sass) for live hot-reloading SCSS directly from one file without CSS to SCSS conversion
 
 # Technologies used
