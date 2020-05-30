@@ -1,68 +1,22 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Introduction
 
-## Available Scripts
+Frontend, Backend and Full-stack website.<br> This particular website is builded with React as Frontend and Node/Express in the Backend and is hosted on [Netlify](https://www.netlify.com/).<br>
+Can be seen at this temporary Netlify domain https://fervent-booth-05a86d.netlify.app/
 
-In the project directory, you can run:
+# Packages used for this website
 
-### `npm start`
+- [node-sass](https://www.npmjs.com/package/node-sass) for live hot-reloading SCSS directly from one file without CSS to SCSS conversion
+- [react-parallax](https://www.npmjs.com/package/react-parallax) parallax effect that can be seen on the website
+- [@brainhubeu/react-carousel](https://github.com/brainhubeu/react-carousel) used in the reviews area of the website
+- [react-inputs-validation](https://www.npmjs.com/package/react-inputs-validation) validation for the Contact form
+- [react-spinners](https://www.npmjs.com/package/react-spinners) spinner used within the Contact form when loading/sending
+- ["axios](https://www.npmjs.com/package/axios) for fetching from the JSON Server and sending the Contact form information using nodemailer
+- ["json-server](https://www.npmjs.com/package/json-server) for hosting json data in the backend
+- ["cors](https://www.npmjs.com/package/cors) middleware that can be used to enable CORS with various options for backend security to prevent access from outside domains
+- ["react-hamburger-menu](https://www.npmjs.com/package/react-hamburger-menu) for the hanburger UI component
+- ["react-modal](https://www.npmjs.com/package/react-modal) accessible modal dialog component for React.Js
+- ["react-transition-group](https://www.npmjs.com/package/react-transition-group) a set of components for managing component states, including mounting and unmounting over time, specifically designed with animation in mind
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Technologies used
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![](http://i.epvpimg.com/lxJHaab.png) ![](http://i.epvpimg.com/161Wbab.png) ![](http://i.epvpimg.com/sc20bab.png) ![](http://i.epvpimg.com/mduSeab.png) ![](https://i.epvpimg.com/Ej2ceab.png) ![](http://i.epvpimg.com/Ixvvfab.png) ![](http://i.epvpimg.com/j1Ycgab.png)
