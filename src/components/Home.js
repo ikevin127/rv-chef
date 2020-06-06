@@ -17,6 +17,9 @@ import FadeLoader from "react-spinners/FadeLoader";
 // AJAX
 import axios from "axios";
 
+// Emotion CSS
+import { css } from "@emotion/core";
+
 // Hamburger
 import HamburgerMenu from "react-hamburger-menu";
 
@@ -113,6 +116,17 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
   },
 };
+
+// Loader Styles
+
+// position: absolute;
+//   top: 55%;
+//   left: 50%;
+//   transform: translate(-50%, -50%)
+
+const loader = css`
+  align-self: center;
+`;
 
 class Home extends React.Component {
   constructor() {
@@ -312,6 +326,15 @@ class Home extends React.Component {
               <br />
               Servicii: Catering, Semipreparate
             </div>
+            <FadeLoader
+              css={loader}
+              height={15}
+              width={5}
+              radius={2}
+              margin={2}
+              color={"black"}
+              loading={true}
+            />
           </div>
         </Modal>
         {this.state.modal ? null : (
@@ -352,7 +375,7 @@ class Home extends React.Component {
                         onClick={() => {
                           window.scrollTo(
                             0,
-                            this.aboutRef.current.offsetTop - 40
+                            this.aboutRef.current.offsetTop - 130
                           );
                           this.setState({
                             isOpen: !this.state.isOpen,
@@ -366,7 +389,7 @@ class Home extends React.Component {
                         onClick={() => {
                           window.scrollTo(
                             0,
-                            this.retRef.current.offsetTop - 35
+                            this.retRef.current.offsetTop - 120
                           );
                           this.setState({
                             isOpen: !this.state.isOpen,
@@ -378,7 +401,10 @@ class Home extends React.Component {
                       </span>
                       <span
                         onClick={() => {
-                          window.scrollTo(0, this.revRef.current.offsetTop);
+                          window.scrollTo(
+                            0,
+                            this.revRef.current.offsetTop - 120
+                          );
                           this.setState({
                             isOpen: !this.state.isOpen,
                           });
@@ -389,7 +415,10 @@ class Home extends React.Component {
                       </span>
                       <span
                         onClick={() => {
-                          window.scrollTo(0, this.contactRef.current.offsetTop);
+                          window.scrollTo(
+                            0,
+                            this.contactRef.current.offsetTop - 120
+                          );
                           this.setState({
                             isOpen: !this.state.isOpen,
                           });
@@ -444,7 +473,10 @@ class Home extends React.Component {
                     </span>
                     <span
                       onClick={() =>
-                        window.scrollTo(0, this.aboutRef.current.offsetTop - 70)
+                        window.scrollTo(
+                          0,
+                          this.aboutRef.current.offsetTop - 130
+                        )
                       }
                       className="btn-about"
                     >
@@ -452,7 +484,7 @@ class Home extends React.Component {
                     </span>
                     <span
                       onClick={() =>
-                        window.scrollTo(0, this.retRef.current.offsetTop - 65)
+                        window.scrollTo(0, this.retRef.current.offsetTop - 120)
                       }
                       className="btn-recipes"
                     >
@@ -460,7 +492,7 @@ class Home extends React.Component {
                     </span>
                     <span
                       onClick={() =>
-                        window.scrollTo(0, this.revRef.current.offsetTop)
+                        window.scrollTo(0, this.revRef.current.offsetTop - 120)
                       }
                       className="btn-menu"
                     >
@@ -468,7 +500,10 @@ class Home extends React.Component {
                     </span>
                     <span
                       onClick={() =>
-                        window.scrollTo(0, this.contactRef.current.offsetTop)
+                        window.scrollTo(
+                          0,
+                          this.contactRef.current.offsetTop - 120
+                        )
                       }
                       className="btn-contact"
                     >
@@ -511,7 +546,7 @@ class Home extends React.Component {
               <p>Raul Vidican</p>
               <span
                 onClick={() =>
-                  window.scrollTo(0, this.aboutRef.current.offsetTop - 70)
+                  window.scrollTo(0, this.aboutRef.current.offsetTop)
                 }
               >
                 <p id="next-page">Pagina următoare</p>
@@ -526,7 +561,7 @@ class Home extends React.Component {
             <div className="about-text">
               <div className="title-sep">
                 <h1 id="meet">Chef - Raul Vidican</h1>
-                <hr />
+                <span />
               </div>
               <p id="text">
                 Bucătar şef la Roca Brună, tânărul Raul Vidican a lucrat câțiva
@@ -596,7 +631,7 @@ class Home extends React.Component {
                               });
                               window.scrollTo(
                                 0,
-                                this.retRef.current.offsetTop - 60
+                                this.retRef.current.offsetTop - 120
                               );
                             } else if (obj.id === 8) {
                               this.setState({
@@ -610,7 +645,7 @@ class Home extends React.Component {
                               });
                               window.scrollTo(
                                 0,
-                                this.retRef.current.offsetTop - 60
+                                this.retRef.current.offsetTop - 120
                               );
                             } else if (obj.id === 9) {
                               this.setState({
@@ -627,7 +662,7 @@ class Home extends React.Component {
                               });
                               window.scrollTo(
                                 0,
-                                this.retRef.current.offsetTop - 60
+                                this.retRef.current.offsetTop - 120
                               );
                             } else if (obj.id === 6) {
                               this.setState({
@@ -647,7 +682,7 @@ class Home extends React.Component {
                               });
                               window.scrollTo(
                                 0,
-                                this.retRef.current.offsetTop - 60
+                                this.retRef.current.offsetTop - 120
                               );
                             }
                           }}
@@ -683,7 +718,7 @@ class Home extends React.Component {
                   <button
                     onClick={() => {
                       this.setState({ cards: true, sb: false });
-                      window.scrollTo(0, this.retRef.current.offsetTop - 60);
+                      window.scrollTo(0, this.retRef.current.offsetTop - 120);
                     }}
                   >
                     Înapoi
@@ -715,7 +750,7 @@ class Home extends React.Component {
                   <button
                     onClick={() => {
                       this.setState({ cards: true, ar: false });
-                      window.scrollTo(0, this.retRef.current.offsetTop - 60);
+                      window.scrollTo(0, this.retRef.current.offsetTop - 120);
                     }}
                   >
                     Înapoi
@@ -744,7 +779,7 @@ class Home extends React.Component {
                   <button
                     onClick={() => {
                       this.setState({ cards: true, ph: false });
-                      window.scrollTo(0, this.retRef.current.offsetTop - 60);
+                      window.scrollTo(0, this.retRef.current.offsetTop - 120);
                     }}
                   >
                     Înapoi
@@ -777,7 +812,7 @@ class Home extends React.Component {
                   <button
                     onClick={() => {
                       this.setState({ cards: true, cj: false });
-                      window.scrollTo(0, this.retRef.current.offsetTop - 60);
+                      window.scrollTo(0, this.retRef.current.offsetTop - 120);
                     }}
                   >
                     Înapoi
