@@ -17,14 +17,8 @@ import FadeLoader from "react-spinners/FadeLoader";
 // AJAX
 import axios from "axios";
 
-// Emotion CSS
-import { css } from "@emotion/core";
-
 // Hamburger
 import HamburgerMenu from "react-hamburger-menu";
-
-// React Modal
-import Modal from "react-modal";
 
 // React Transition
 import { CSSTransition } from "react-transition-group";
@@ -35,7 +29,6 @@ import arr from "../menu.json";
 // Images
 import swipe from "../swipe.png";
 import logo from "../rv.png";
-import pachet from "../pachet.png";
 import img0 from "../img0.jpg";
 import img1 from "../img1.jpg";
 import img2 from "../img2.jpg";
@@ -85,48 +78,14 @@ import c8 from "../img/c8.JPG";
 import c9 from "../img/c9.JPG";
 import c10 from "../img/c10.JPG";
 
-const end =
-  "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-0/p640x640/76778234_102413797893748_7436713577848766464_o.jpg?_nc_cat=107&_nc_sid=0be424&_nc_ohc=aZ9TOz-eQzAAX9k5wAg&_nc_ht=scontent-lhr8-1.xx&_nc_tp=6&oh=98d849845c1121104d1df75c39044654&oe=5EDF57FE";
+// Review images & last parallax
 
-const p1 =
-  "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/s960x960/92303633_2487360384910023_5423096286574280704_o.jpg?_nc_cat=102&_nc_sid=85a577&_nc_ohc=gLuO80lGA9YAX-dsPHZ&_nc_ht=scontent-lhr8-1.xx&_nc_tp=7&oh=7861c80f8dd77c9efd15aed439d5e897&oe=5EE0574A";
-
-const p2 =
-  "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/s960x960/51295915_1343727049098298_849775974051479552_o.jpg?_nc_cat=103&_nc_sid=85a577&_nc_ohc=raaSB_gMqUIAX_7Go3f&_nc_ht=scontent-lht6-1.xx&_nc_tp=7&oh=1c9ce4741f4f9065a9434d3e7dd57af3&oe=5EDDA1B8";
-
-const p3 =
-  "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/p960x960/76994992_10156857249989077_7757636081121492992_o.jpg?_nc_cat=103&_nc_sid=85a577&_nc_ohc=38ROeJBS_f4AX9Ywf7d&_nc_ht=scontent-lht6-1.xx&_nc_tp=6&oh=8b86a1ae829fcd8a4236bf5e83a78873&oe=5EE020DF";
-
-const p4 =
-  "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/92203217_1329170700608606_1664428530189991936_n.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=-Oc-X9jxJogAX-Cwxg2&_nc_ht=scontent-lhr8-1.xx&oh=ecd71a9e03e778edcc3382a635a763dc&oe=5EDDCD13";
-
-const p5 =
-  "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/s960x960/79425522_820764835032057_2338512639296012288_o.jpg?_nc_cat=111&_nc_sid=85a577&_nc_ohc=W1HPUuOGGckAX-1DACe&_nc_ht=scontent-lhr8-1.xx&_nc_tp=7&oh=fb96fe396195293fbf7ea8b7a056a42f&oe=5EDFF0C3";
-
-// Modal Styles
-
-const customStyles = {
-  content: {
-    width: "90%",
-    height: "90%",
-    overflow: "hidden",
-    padding: "0",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
-
-// Loader Styles
-
-// position: absolute;
-//   top: 55%;
-//   left: 50%;
-//   transform: translate(-50%, -50%)
-
-const loader = css`
-  align-self: center;
-`;
+import end from "../end.jpg";
+import p1 from "../0.jpg";
+import p2 from "../1.jpg";
+import p3 from "../2.jpg";
+import p4 from "../3.jpg";
+import p5 from "../4.jpg";
 
 class Home extends React.Component {
   constructor() {
@@ -138,7 +97,6 @@ class Home extends React.Component {
       isTop: true,
       change: false,
       pachet: false,
-      modal: false,
       nameValidation: false,
       phoneValidation: false,
       messValidation: false,
@@ -303,242 +261,170 @@ class Home extends React.Component {
     return (
       <>
         <span ref={this.firstRef}></span>
-        <Modal
-          isOpen={this.state.modal}
-          onRequestClose={this.closeModal.bind(this)}
-          style={customStyles}
-          ariaHideApp={false}
+        <CSSTransition
+          in={this.state.isOpen}
+          timeout={1200}
+          classNames="ham"
+          unmountOnExit
         >
-          <div className="products-wrapper">
-            <span
-              title="Închide"
-              onClick={() => this.setState({ modal: false })}
-            >
-              X
-            </span>
-            <div className="pachet-logo">
-              <img src={pachet} alt="Logo LaPachet" />
-            </div>
-            <div className="info-area">
-              Rază acoperire livrări: Arad
-              <br />
-              Telefon: 0751 988 273
-              <br />
-              Servicii: Catering, Semipreparate
-            </div>
-            <FadeLoader
-              css={loader}
-              height={15}
-              width={5}
-              radius={2}
-              margin={2}
-              color={"black"}
-              loading={true}
-            />
-          </div>
-        </Modal>
-        {this.state.modal ? null : (
-          <>
-            <CSSTransition
-              in={this.state.isOpen}
-              timeout={1200}
-              classNames="ham"
-              unmountOnExit
-            >
-              <div className="h-nav">
-                <ul className="nav-list">
-                  <span
-                    onClick={() => {
-                      this.setState({
-                        isOpen: !this.state.isOpen,
-                        modal: !this.state.modal,
-                      });
-                    }}
-                    className="btn-la"
-                  >
-                    {this.state.modal ? "Înapoi" : "LaPachet"}
-                  </span>
-                  {this.state.modal ? null : (
-                    <>
-                      <span
-                        onClick={() => {
-                          window.scrollTo(0, this.firstRef.current.offsetTop);
-                          this.setState({
-                            isOpen: !this.state.isOpen,
-                          });
-                        }}
-                        className="btn-home"
-                      >
-                        Prima pagină
-                      </span>
-                      <span
-                        onClick={() => {
-                          window.scrollTo(
-                            0,
-                            this.aboutRef.current.offsetTop - 130
-                          );
-                          this.setState({
-                            isOpen: !this.state.isOpen,
-                          });
-                        }}
-                        className="btn-about"
-                      >
-                        Chef
-                      </span>
-                      <span
-                        onClick={() => {
-                          window.scrollTo(
-                            0,
-                            this.retRef.current.offsetTop - 120
-                          );
-                          this.setState({
-                            isOpen: !this.state.isOpen,
-                          });
-                        }}
-                        className="btn-recipes"
-                      >
-                        Portofoliu
-                      </span>
-                      <span
-                        onClick={() => {
-                          window.scrollTo(
-                            0,
-                            this.revRef.current.offsetTop - 120
-                          );
-                          this.setState({
-                            isOpen: !this.state.isOpen,
-                          });
-                        }}
-                        className="btn-menu"
-                      >
-                        Recenzii
-                      </span>
-                      <span
-                        onClick={() => {
-                          window.scrollTo(
-                            0,
-                            this.contactRef.current.offsetTop - 120
-                          );
-                          this.setState({
-                            isOpen: !this.state.isOpen,
-                          });
-                        }}
-                        className="btn-contact"
-                      >
-                        Contact
-                      </span>
-                    </>
-                  )}
-                  <div className="sm">
-                    <a id="fb" href="https://www.facebook.com/vidicanraul1/">
-                      <i
-                        className="fab fa-facebook-square"
-                        title="Pagină Facebook"
-                      ></i>
-                    </a>
-                    <a id="ig" href="https://www.instagram.com/raul_vidican1/">
-                      <i
-                        className="fab fa-instagram"
-                        title="Pagină Instagram"
-                      ></i>
-                    </a>
-                  </div>
-                </ul>
-              </div>
-            </CSSTransition>
-            <div className={this.state.isTop ? "main-nav" : "main-nav black"}>
-              <div className="logo-area">
-                <img src={logo} alt="Vidican Raul Logo" />
-              </div>
+          <div className="h-nav">
+            <ul className="nav-list">
               <span
-                onClick={() => {
-                  this.setState({
-                    modal: !this.state.modal,
-                  });
-                }}
+                onClick={() =>
+                  (window.location.href =
+                    "https://www.facebook.com/lapachet01/")
+                }
                 className="btn-la"
               >
-                {this.state.modal ? "Înapoi" : "LaPachet"}
+                LaPachet
               </span>
-              <div className="main-menu">
-                {this.state.modal ? null : (
-                  <ul className="nav-list">
-                    <span
-                      onClick={() =>
-                        window.scrollTo(0, this.firstRef.current.offsetTop)
-                      }
-                      className="btn-home"
-                    >
-                      Prima pagină
-                    </span>
-                    <span
-                      onClick={() =>
-                        window.scrollTo(
-                          0,
-                          this.aboutRef.current.offsetTop - 130
-                        )
-                      }
-                      className="btn-about"
-                    >
-                      Chef
-                    </span>
-                    <span
-                      onClick={() =>
-                        window.scrollTo(0, this.retRef.current.offsetTop - 120)
-                      }
-                      className="btn-recipes"
-                    >
-                      Portofoliu
-                    </span>
-                    <span
-                      onClick={() =>
-                        window.scrollTo(0, this.revRef.current.offsetTop - 120)
-                      }
-                      className="btn-menu"
-                    >
-                      Recenzii
-                    </span>
-                    <span
-                      onClick={() =>
-                        window.scrollTo(
-                          0,
-                          this.contactRef.current.offsetTop - 120
-                        )
-                      }
-                      className="btn-contact"
-                    >
-                      Contact
-                    </span>
-                    <a id="fb" href="https://www.facebook.com/vidicanraul1/">
-                      <i
-                        className="fab fa-facebook-square"
-                        title="Pagină Facebook"
-                      ></i>
-                    </a>
-                    <a id="ig" href="https://www.instagram.com/raul_vidican1/">
-                      <i
-                        className="fab fa-instagram"
-                        title="Pagină Instagram"
-                      ></i>
-                    </a>
-                  </ul>
-                )}
-                <HamburgerMenu
-                  isOpen={this.state.isOpen === true}
-                  menuClicked={this.handleClick.bind(this)}
-                  className="hamburger"
-                  width={35}
-                  height={25}
-                  strokeWidth={2}
-                  rotate={180}
-                  color="white"
-                  borderRadius={0}
-                  animationDuration={0.4}
-                />
+              <span
+                onClick={() => {
+                  window.scrollTo(0, this.firstRef.current.offsetTop);
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+                className="btn-home"
+              >
+                Prima pagină
+              </span>
+              <span
+                onClick={() => {
+                  window.scrollTo(0, this.aboutRef.current.offsetTop - 130);
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+                className="btn-about"
+              >
+                Chef
+              </span>
+              <span
+                onClick={() => {
+                  window.scrollTo(0, this.retRef.current.offsetTop - 120);
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+                className="btn-recipes"
+              >
+                Portofoliu
+              </span>
+              <span
+                onClick={() => {
+                  window.scrollTo(0, this.revRef.current.offsetTop - 120);
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+                className="btn-menu"
+              >
+                Recenzii
+              </span>
+              <span
+                onClick={() => {
+                  window.scrollTo(0, this.contactRef.current.offsetTop - 120);
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+                className="btn-contact"
+              >
+                Contact
+              </span>
+              <div className="sm">
+                <a id="fb" href="https://www.facebook.com/vidicanraul1/">
+                  <i
+                    className="fab fa-facebook-square"
+                    title="Pagină Facebook"
+                  ></i>
+                </a>
+                <a id="ig" href="https://www.instagram.com/raul_vidican1/">
+                  <i className="fab fa-instagram" title="Pagină Instagram"></i>
+                </a>
               </div>
-            </div>
-          </>
-        )}
+            </ul>
+          </div>
+        </CSSTransition>
+        <div className={this.state.isTop ? "main-nav" : "main-nav black"}>
+          <div className="logo-area">
+            <img src={logo} alt="Vidican Raul Logo" />
+          </div>
+          <span
+            onClick={() =>
+              (window.location.href = "https://www.facebook.com/lapachet01/")
+            }
+            className="btn-la"
+          >
+            LaPachet
+          </span>
+          <div className="main-menu">
+            <ul className="nav-list">
+              <span
+                onClick={() =>
+                  window.scrollTo(0, this.firstRef.current.offsetTop)
+                }
+                className="btn-home"
+              >
+                Prima pagină
+              </span>
+              <span
+                onClick={() =>
+                  window.scrollTo(0, this.aboutRef.current.offsetTop - 130)
+                }
+                className="btn-about"
+              >
+                Chef
+              </span>
+              <span
+                onClick={() =>
+                  window.scrollTo(0, this.retRef.current.offsetTop - 120)
+                }
+                className="btn-recipes"
+              >
+                Portofoliu
+              </span>
+              <span
+                onClick={() =>
+                  window.scrollTo(0, this.revRef.current.offsetTop - 120)
+                }
+                className="btn-menu"
+              >
+                Recenzii
+              </span>
+              <span
+                onClick={() =>
+                  window.scrollTo(0, this.contactRef.current.offsetTop - 120)
+                }
+                className="btn-contact"
+              >
+                Contact
+              </span>
+              <a id="fb" href="https://www.facebook.com/vidicanraul1/">
+                <i
+                  className="fab fa-facebook-square"
+                  title="Pagină Facebook"
+                ></i>
+              </a>
+              <a id="ig" href="https://www.instagram.com/raul_vidican1/">
+                <i className="fab fa-instagram" title="Pagină Instagram"></i>
+              </a>
+            </ul>
+            <HamburgerMenu
+              isOpen={this.state.isOpen === true}
+              menuClicked={this.handleClick.bind(this)}
+              className="hamburger"
+              width={35}
+              height={25}
+              strokeWidth={2}
+              rotate={180}
+              color="white"
+              borderRadius={0}
+              animationDuration={0.4}
+            />
+          </div>
+        </div>
         <div className="home-wrapper">
           <Parallax bgImage={img0} strength={400}>
             <div id="img" />
@@ -688,7 +574,7 @@ class Home extends React.Component {
                           }}
                           id="link"
                         >
-                          Galerie >
+                          Galerie {">"}
                         </span>
                       </div>
                     ))}
@@ -955,7 +841,7 @@ Adelina Iancu"
                   attributesInput={{
                     id: "phone",
                     placeholder: "Telefon (10 cifre)",
-                    type: "text",
+                    type: "number",
                   }}
                   value={phone}
                   onChange={(phone, e) => {
@@ -981,9 +867,15 @@ Adelina Iancu"
                     required: true, //Optional.[Bool].Default: true. To determin if it is a required field.
                     msgOnError: "Numărul de telefon nu poate fi omis",
                     customFunc: (value) => {
-                      if (value.match(/\d/g).length < 10) {
+                      if (
+                        value.match(/\d/g) != null &&
+                        value.match(/\d/g).length < 10
+                      ) {
                         return "Numărul de telefon nu este corect";
-                      } else if (value.match(/\d/g).length > 10) {
+                      } else if (
+                        value.match(/\d/g) != null &&
+                        value.match(/\d/g).length > 10
+                      ) {
                         return "Numărul de telefon nu este corect";
                       } else {
                         return true;
