@@ -1,23 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-const img4 = "https://wallpapersmug.com/large/930962/vegetables-fresh.jpg";
 
-class Not extends Component {
-  render() {
-    return (
-      <>
-        <div className="not">
-          <span id="darken"></span>
-          <img id="not-img" src={img4} alt="Fundal legume" />
-          <NavLink to="/" activeClassName="btn btn-light">
-            <i className="fas fa-chevron-left"></i>
-            Înapoi
-          </NavLink>
-          <h2 id="not-found">Pagina nu a fost găsită</h2>
-        </div>
-      </>
-    );
-  }
+/* FontAwesome */
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+
+export default function Not() {
+  return (
+    <div className="not">
+      <NavLink to="/" activeClassName="btn btn-dark">
+        Înapoi
+      </NavLink>
+      <FontAwesomeIcon icon={faExclamationTriangle} />
+      <h2 id="not-found">Pagina nu a fost găsită</h2>
+    </div>
+  );
 }
-
-export default Not;

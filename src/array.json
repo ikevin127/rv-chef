@@ -1,0 +1,296 @@
+{
+  "portfolios": [
+    {
+      "id": 4,
+      "src": "main/sb.jpg",
+      "title": "Degustare vinuri",
+      "location": "Sibiu",
+      "text": "Degustare de vinuri asociate cu mâncare la Sibiu."
+    },
+    {
+      "id": 8,
+      "src": "main/atra.jpg",
+      "title": "Atra",
+      "location": "Prahova",
+      "text": "Meniu de Primăvară, Pensiune Atra, Prahova."
+    },
+    {
+      "id": 9,
+      "src": "main/art.jpg",
+      "title": "Art Cafe",
+      "location": "Arad",
+      "text": "Am pregătit un meniu călduros pentru sezonul rece, meniu toamnă-iarnă."
+    },
+    {
+      "id": 6,
+      "src": "main/nuka.jpg",
+      "title": "Nuka",
+      "location": "Cluj-Napoca",
+      "text": "Restaurantul Nuka din Cluj, unde am pregatit un meniu de toamnă-iarnă."
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "src": "fb/1.jpg",
+      "name": "Susana Szekely, Lleida",
+      "text": "Raul Vidican este un tânâr de o valoare inestimabilă, cu viziuni înalte şi potenţial inegalabil. Raul te felicit şi te urmăresc cu mult interes!"
+    },
+    {
+      "id": 2,
+      "src": "fb/2.jpg",
+      "name": "Marius Ciobanu, Bucureşti",
+      "text": "Un chef cu o personalitate demnă de toate laudele. Mult succes!"
+    },
+    {
+      "id": 3,
+      "src": "fb/3.jpg",
+      "name": "Gabriela Miu Rînja, Dej",
+      "text": "Un om valoros şi talentat care pune pasiune şi transformă orice aliment în artă!"
+    },
+    {
+      "id": 4,
+      "src": "fb/4.jpg",
+      "name": "Johann Marianne Streit, Timişoara",
+      "text": "Om serios, bine pregătit profesional și cu mult interes pentru prosperitate. Succes și respect pentru tot ceea ce faci!"
+    },
+    {
+      "id": 5,
+      "src": "fb/5.jpg",
+      "name": "Adelina Iancu, Arad",
+      "text": "Un bucătar excelent cu rafinament, simplitate şi gust. Demn de un succes măreţ."
+    }
+  ],
+  "artcafe": [
+    {
+      "id": "5f451624092d6d99c0d14f44",
+      "src": "portfolios/1.jpeg",
+      "width": 3,
+      "height": 2,
+      "title": "Art Cafe #1"
+    },
+    {
+      "id": "5f451624017d917d461fce99",
+      "src": "portfolios/2.jpeg",
+      "width": 3,
+      "height": 2,
+      "title": "Art Cafe #2"
+    },
+    {
+      "id": "5f4516243498930883482647",
+      "src": "portfolios/3.jpeg",
+      "width": 3,
+      "height": 2,
+      "title": "Art Cafe #3"
+    },
+    {
+      "id": "5f451624ddab3494a3810158",
+      "src": "portfolios/4.jpeg",
+      "width": 1.41,
+      "height": 1,
+      "title": "Art Cafe #4"
+    },
+    {
+      "id": "5f4516247afe03259f3dc5b0",
+      "src": "portfolios/5.jpeg",
+      "width": 1.51,
+      "height": 1,
+      "title": "Art Cafe #5"
+    },
+    {
+      "id": "5f451624b4fe5ab3cbfe4bf5",
+      "src": "portfolios/6.jpeg",
+      "width": 3,
+      "height": 2,
+      "title": "Art Cafe #6"
+    },
+    {
+      "id": "5f451624ac8f95ee78952b28",
+      "src": "portfolios/7.jpeg",
+      "width": 3,
+      "height": 2,
+      "title": "Art Cafe #7"
+    },
+    {
+      "id": "5f4516241d5159e12256460f",
+      "src": "portfolios/8.jpeg",
+      "width": 3,
+      "height": 2,
+      "title": "Art Cafe #8"
+    },
+    {
+      "id": "5f45162409e7c7346d4fde33",
+      "src": "portfolios/9.jpeg",
+      "width": 1.57,
+      "height": 1,
+      "title": "Art Cafe #9"
+    }
+  ],
+  "atraprahova": [
+    {
+      "id": "5f451624682c52f84bb808be",
+      "src": "portfolios/11.jpg",
+      "width": 1.49,
+      "height": 1,
+      "title": "Atra #1"
+    },
+    {
+      "id": "5f4516243ad1890bc24d4d04",
+      "src": "portfolios/22.jpg",
+      "width": 1.06,
+      "height": 1,
+      "title": "Atra #2"
+    },
+    {
+      "id": "5f4516243ba8ebc6d832959b",
+      "src": "portfolios/33.jpg",
+      "width": 1.94,
+      "height": 2,
+      "title": "Atra #3"
+    },
+    {
+      "id": "5f45162449d6d4b2b84bcfe8",
+      "src": "portfolios/44.jpg",
+      "width": 1.19,
+      "height": 1,
+      "title": "Atra #4"
+    },
+    {
+      "id": "5f45162409631064a8f5c441",
+      "src": "portfolios/55.jpg",
+      "width": 1.12,
+      "height": 1,
+      "title": "Atra #5"
+    },
+    {
+      "id": "5f45162454100de01dcb298a",
+      "src": "portfolios/66.jpg",
+      "width": 1.34,
+      "height": 2,
+      "title": "Atra #6"
+    }
+  ],
+  "nukacluj": [
+    {
+      "id": "5f451624b3f0321d5bd19558",
+      "src": "portfolios/c1.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "NUKA #1"
+    },
+    {
+      "id": "5f4516248389a58e965907c2",
+      "src": "portfolios/c2.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "NUKA #2"
+    },
+    {
+      "id": "5f4516241b596a117f25746a",
+      "src": "portfolios/c3.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "NUKA #3"
+    },
+    {
+      "id": "5f451624f53b86cd07566d6e",
+      "src": "portfolios/c4.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "NUKA #4"
+    },
+    {
+      "id": "5f451624bad699489c3dabd9",
+      "src": "portfolios/c5.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "NUKA #5"
+    },
+    {
+      "id": "5f4516241b1baa33d808c094",
+      "src": "portfolios/c6.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "NUKA #6"
+    },
+    {
+      "id": "5f451624c0454c9f7f90534c",
+      "src": "portfolios/c7.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "NUKA #7"
+    },
+    {
+      "id": "5f451624c48deb4f9f464086",
+      "src": "portfolios/c8.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "NUKA #8"
+    },
+    {
+      "id": "5f45162482515603f4e8ca18",
+      "src": "portfolios/c9.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "NUKA #9"
+    },
+    {
+      "id": "5f4516244ff9e607b76665dc",
+      "src": "portfolios/c10.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "NUKA #10"
+    }
+  ],
+  "vinsibiu": [
+    {
+      "id": "5f4516245fde498014eabb91",
+      "src": "portfolios/110.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "Sibiu #1"
+    },
+    {
+      "id": "5f4516247a487943b1c49626",
+      "src": "portfolios/120.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "Sibiu #2"
+    },
+    {
+      "id": "5f4516246737e5ff980ead1f",
+      "src": "portfolios/130.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "Sibiu #3"
+    },
+    {
+      "id": "5f451624a0d4056e94aaeb1f",
+      "src": "portfolios/140.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "Sibiu #4"
+    },
+    {
+      "id": "5f451624b9826433643e8f58",
+      "src": "portfolios/150.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "Sibiu #5"
+    },
+    {
+      "id": "5f4516249b9a5e566274d15d",
+      "src": "portfolios/160.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "Sibiu #6"
+    },
+    {
+      "id": "5f451624de17a494554a0e30",
+      "src": "portfolios/170.jpg",
+      "width": 3,
+      "height": 2,
+      "title": "Sibiu #7"
+    }
+  ]
+}

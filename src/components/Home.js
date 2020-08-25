@@ -1,968 +1,327 @@
-import React from "react";
+import React, { useState, useRef } from "react";
+import { useHistory } from "react-router-dom";
+
+/* Bootstrap & FontAwesome */
+import { Button, Card } from "react-bootstrap";
+import ModalBS from "react-bootstrap/Modal";
+import CarouselBS from "react-bootstrap/Carousel";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faMapMarkerAlt, faBars } from "@fortawesome/free-solid-svg-icons";
 
 // Parallax
 import { Parallax } from "react-parallax";
 
-// Carousel
-import Carousel from "@brainhubeu/react-carousel";
-import "@brainhubeu/react-carousel/lib/style.css";
+// Axios
+// import axios from "axios";
 
-// Input validation
-import { Textbox, Textarea } from "react-inputs-validation";
-import "react-inputs-validation/lib/react-inputs-validation.min.css";
+// Array & Images
+import arr from "../array.json";
+import logo from "../img/rv.png";
+import img0 from "../img/parallax/img0.jpg";
+import img1 from "../img/parallax/img1.jpg";
+import img2 from "../img/parallax/img2.jpg";
+import img3 from "../img/parallax/img3.jpg";
 
-// Spinner
-import FadeLoader from "react-spinners/FadeLoader";
+function RocaBrunaModal(props) {
+  return (
+    <ModalBS
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <ModalBS.Header closeButton>
+        <ModalBS.Title id="contained-modal-title-vcenter">
+          Proiectul Roca Brună
+        </ModalBS.Title>
+      </ModalBS.Header>
+      <ModalBS.Body>
+        <a href="https://goo.gl/maps/X441FnwtHkvcY7qy6">
+          <FontAwesomeIcon icon={faMapMarkerAlt} /> Judeţul Arad, Comuna Păuliş
+        </a>
+        <br />
+        <br />
+        <p>
+          <i>
+            „Roca Brună este unul din motivele întoarcerii mele în țară,
+            discutam cu Dan despre acest proiect încă de când lucram în
+            Germania. Nu am stat prea mult pe gânduri să mă alătur, pentru că
+            este un restaurant exact cum îmi doresc și este acasă. Este tot ce
+            aveam nevoie.
+            <br />
+            <br />
+            Meniul restaurantului este destul de simplu: se schimbă în funcție
+            de sezon și ținem cont de ce putem achiziționa de la producătorii
+            locali. Încet, încet am început să dezvoltăm mai mult meniul, să
+            oferim clienților diverse combinații de mâncare, mai altfel.
+            <br />
+            <br />
+            Un astfel de exemplu este preparatul realizat din piept și pulpe de
+            rață gătite confit, trase apoi într-o crustă de panko, servite cu
+            piure de migdale, ciuperci la tigaie și o cremă de vișine.”
+          </i>{" "}
+          povestește Raul.
+        </p>
+      </ModalBS.Body>
+      <ModalBS.Footer>
+        <Button
+          style={{ borderRadius: 0 }}
+          variant="outline-dark"
+          onClick={props.onHide}
+        >
+          Închide
+        </Button>
+      </ModalBS.Footer>
+    </ModalBS>
+  );
+}
 
-// AJAX
-import axios from "axios";
+function ReviewsCarousel() {
+  const [index, setIndex] = useState(0);
 
-// Hamburger
-import HamburgerMenu from "react-hamburger-menu";
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
-// React Transition
-import { CSSTransition } from "react-transition-group";
+  return (
+    <CarouselBS
+      interval={5000}
+      controls={false}
+      indicators={true}
+      activeIndex={index}
+      onSelect={handleSelect}
+    >
+      {arr.reviews.map((obj) => (
+        <CarouselBS.Item key={obj.id}>
+          <Card>
+            <Card.Body>
+              <Card.Text>
+                „<i>{obj.text}</i>”
+              </Card.Text>
+              <span />
+              <Card.Img variant="bottom" src={obj.src} alt={obj.name} />
+              <Card.Subtitle className="mt-2 text-muted">
+                {obj.name}
+              </Card.Subtitle>
+            </Card.Body>
+          </Card>
+        </CarouselBS.Item>
+      ))}
+    </CarouselBS>
+  );
+}
 
-// JSON Array
-import arr from "../menu.json";
+function HomeCarousel() {
+  const [index, setIndex] = useState(0);
 
-// Images
-import swipe from "../swipe.png";
-import logo from "../rv.png";
-import img0 from "../img0.jpg";
-import img1 from "../img1.jpg";
-import img2 from "../img2.jpg";
-import img3 from "../img3.jpg";
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
-// Art Cafe
+  return (
+    <CarouselBS
+      interval={5000}
+      controls={false}
+      indicators={true}
+      activeIndex={index}
+      onSelect={handleSelect}
+    >
+      <CarouselBS.Item>
+        <img className="carousel-img" src={img1} alt="First slide" />
+        <CarouselBS.Caption>
+          <h3>Raul Vidican</h3>
+          <span />
+          <p>
+            Semifinalist competiţia S. Pellegrino Young Chef 2018, regiunea
+            Germania - Austria.
+          </p>
+        </CarouselBS.Caption>
+      </CarouselBS.Item>
+      <CarouselBS.Item>
+        <img className="carousel-img" src={img0} alt="Second slide" />
+        <CarouselBS.Caption>
+          <h3>Atenţie la detalii</h3>
+          <span />
+        </CarouselBS.Caption>
+      </CarouselBS.Item>
+      <CarouselBS.Item>
+        <img className="carousel-img" src={img2} alt="Third slide" />
+        <CarouselBS.Caption>
+          <h3>Pasiune</h3>
+          <span />
+        </CarouselBS.Caption>
+      </CarouselBS.Item>
+    </CarouselBS>
+  );
+}
 
-import i1 from "../img/1.jpeg";
-import i2 from "../img/2.jpeg";
-import i3 from "../img/3.jpeg";
-import i4 from "../img/4.jpeg";
-import i5 from "../img/5.jpeg";
-import i6 from "../img/6.jpeg";
-import i7 from "../img/7.jpeg";
-import i8 from "../img/8.jpeg";
-import i9 from "../img/9.jpeg";
+export default function Home() {
+  // State
+  // const [isTop, setIsTop] = useState(true);
+  const [modalShow, setModalShow] = useState(false);
 
-// Atra Prahova
+  // Refs
+  const homeRef = useRef();
+  const chefRef = useRef();
+  const portfolioRef = useRef();
+  const recenziiRef = useRef();
+  const contactRef = useRef();
 
-import e1 from "../img/11.jpg";
-import e2 from "../img/22.jpg";
-import e3 from "../img/33.jpg";
-import e4 from "../img/44.jpg";
-import e5 from "../img/55.jpg";
-import e6 from "../img/66.jpg";
+  // Variables
+  const history = useHistory();
+  let currentYear = new Date().getFullYear();
 
-// Degustare Sibiu
-
-import s1 from "../img/110.jpg";
-import s2 from "../img/120.jpg";
-import s3 from "../img/130.jpg";
-import s4 from "../img/140.jpg";
-import s5 from "../img/150.jpg";
-import s6 from "../img/160.jpg";
-import s7 from "../img/170.jpg";
-
-// Nuka Cluj
-
-import c1 from "../img/c1.JPG";
-import c2 from "../img/c2.JPG";
-import c3 from "../img/c3.JPG";
-import c4 from "../img/c4.JPG";
-import c5 from "../img/c5.JPG";
-import c6 from "../img/c6.JPG";
-import c7 from "../img/c7.JPG";
-import c8 from "../img/c8.JPG";
-import c9 from "../img/c9.JPG";
-import c10 from "../img/c10.JPG";
-
-// Review images & last parallax
-
-import end from "../end.jpg";
-import p1 from "../0.jpg";
-import p2 from "../1.jpg";
-import p3 from "../2.jpg";
-import p4 from "../3.jpg";
-import p5 from "../4.jpg";
-
-class Home extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: "",
-      phone: "",
-      mess: "",
-      isTop: true,
-      change: false,
-      pachet: false,
-      nameValidation: false,
-      phoneValidation: false,
-      messValidation: false,
-      loading: false,
-      success: false,
-      error: false,
-      isOpen: false,
-      loadMenu: false,
-      loadMenuErr: false,
-      cards: true,
-      sb: false,
-      ar: false,
-      ph: false,
-      cj: false,
-      status: undefined,
-      // menu: [],
-    };
-
-    this.firstRef = React.createRef();
-    this.aboutRef = React.createRef();
-    this.retRef = React.createRef();
-    this.revRef = React.createRef();
-    this.contactRef = React.createRef();
-  }
-
-  componentDidMount() {
-    document.addEventListener("scroll", () => {
-      const isTop = window.scrollY < 100;
-      if (isTop !== this.state.isTop) {
-        this.setState({ isTop });
-      }
-    });
-    // this.setState({
-    //   loadMenu: true,
-    // });
-    // axios
-    //   .get("http://localhost:3005/db")
-    //   .then((res) => {
-    //     this.setState({
-    //       menu: res.data.menu,
-    //       loadMenu: false,
-    //     });
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     this.setState({
-    //       loadMenu: false,
-    //       loadMenuErr: true,
-    //     });
-    //   });
-  }
-
-  closeModal() {
-    this.setState({
-      modal: false,
-    });
-  }
-
-  handleClick() {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  }
-
-  handleOut() {
-    this.setState({
-      isOpen: false,
-    });
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-
-    this.setState({
-      loading: false,
-      success: false,
-      error: false,
-    });
-
-    if (this.state.phone === "") {
-      this.setState({
-        loading: false,
-      });
-    } else if (this.state.nameValidation === false) {
-      this.setState({
-        loading: false,
-      });
-    } else if (this.state.phoneValidation === false) {
-      this.setState({
-        loading: false,
-      });
-    } else if (this.state.messValidation === false) {
-      this.setState({
-        loading: false,
-      });
-    } else {
-      this.setState({
-        loading: true,
-      });
-      let { name, phone, mess } = this.state;
-      // https://spleeter.co.uk/vr
-      // http://localhost:3005/vr
-      axios
-        .post("https://spleeter.co.uk/vr", {
-          name,
-          phone,
-          text: mess,
-        })
-        .then((res) => {
-          this.setState({
-            name: "",
-            phone: "",
-            mess: "",
-          });
-          if (res.data.status === "true") {
-            this.setState({
-              success: true,
-              loading: false,
-            });
-            setTimeout(() => {
-              this.setState({
-                success: false,
-              });
-            }, 5000);
-          } else {
-            this.setState({
-              error: true,
-              loading: false,
-            });
-            setTimeout(() => {
-              this.setState({
-                error: false,
-              });
-            }, 5000);
-          }
-        })
-        .catch((err) => {
-          this.setState({
-            error: true,
-            loading: false,
-          });
-          setTimeout(() => {
-            this.setState({
-              error: false,
-            });
-          }, 5000);
-        });
+  const portFunc = (id) => {
+    switch (id) {
+      case 4:
+        return history.push("/sibiu");
+      case 6:
+        return history.push("/nuka");
+      case 8:
+        return history.push("/atra");
+      case 9:
+        return history.push("/art-cafe");
+      default:
+        return null;
     }
   };
 
-  render() {
-    let { name, phone, mess } = this.state;
-    let currentYear = new Date().getFullYear();
-    // let menu = this.state.menu.map((obj) => ({
-    //   key: JSON.stringify(obj.id),
-    //   img: obj.img,
-    //   title: obj.title,
-    //   location: obj.location,
-    //   text: obj.text,
-    // }));
+  // useEffect(() => {
+  //   // let listener = document.addEventListener("scroll", (e) => {
+  //   //   const Top = window.scrollY < 100;
+  //   //   if (Top !== isTop) {
+  //   //     setIsTop(Top);
+  //   //   }
+  //   // });
+  //   // return () => {
+  //   //   document.removeEventListener("scroll", listener);
+  //   // };
+  // }, [isTop]);
 
-    return (
-      <>
-        <span ref={this.firstRef}></span>
-        <CSSTransition
-          in={this.state.isOpen}
-          timeout={1200}
-          classNames="ham"
-          unmountOnExit
-        >
-          <div className="h-nav">
-            <ul className="nav-list">
-              <span
-                onClick={() =>
-                  (window.location.href =
-                    "https://www.facebook.com/lapachet01/")
-                }
-                className="btn-la"
+  return (
+    <>
+      <RocaBrunaModal show={modalShow} onHide={() => setModalShow(false)} />
+      <span ref={homeRef}></span>
+      <div className="main-nav">
+        <div className="logo-area">
+          <img src={logo} alt="Vidican Raul Logo" />
+        </div>
+        <div className="main-menu">
+          <ul className="nav-list">
+            <span
+              onClick={() => window.scrollTo(0, chefRef.current.offsetTop)}
+              className="btn-about"
+            >
+              Chef
+            </span>
+            <span
+              onClick={() => window.scrollTo(0, portfolioRef.current.offsetTop)}
+              className="btn-recipes"
+            >
+              Portofoliu
+            </span>
+            <span
+              onClick={() => window.scrollTo(0, recenziiRef.current.offsetTop)}
+              className="btn-menu"
+            >
+              Recenzii
+            </span>
+            <span
+              onClick={() => window.scrollTo(0, contactRef.current.offsetTop)}
+              className="btn-contact"
+            >
+              Contact
+            </span>
+            <Button
+              onClick={() =>
+                (window.location.href = "https://www.facebook.com/lapachet01/")
+              }
+              variant="outline-dark"
+            >
+              LaPachet
+            </Button>
+
+            <a id="fb" href="https://www.facebook.com/vidicanraul1/">
+              <FontAwesomeIcon icon={faFacebook} />
+            </a>
+            <a id="ig" href="https://www.instagram.com/raul_vidican1/">
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+          </ul>
+          <FontAwesomeIcon icon={faBars} />
+        </div>
+      </div>
+      <div className="home-wrapper">
+        <div className="home-page">
+          <HomeCarousel />
+          <div ref={chefRef} className="about-text">
+            <div className="title-sep">
+              <h1 id="meet">Chef</h1>
+              <span />
+            </div>
+            <p id="text">
+              Bucătar şef la Roca Brună, Raul Vidican a lucrat câțiva ani în
+              restaurante din Germania, perioadă în care a ajuns să se califice
+              în semifinalele regionale ale competiției S. Pellegrino Young Chef
+              2018, concurând pentru regiunea Germania - Austria.
+              <br />
+              <br />
+              Reîntors în țară, a colaborat cu mai multe restaurante din zona
+              Transilvaniei, pentru ca anul trecut să se implice în{" "}
+              <button
+                className="link-button"
+                onClick={() => setModalShow(true)}
               >
-                LaPachet
-              </span>
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.firstRef.current.offsetTop);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-home"
-              >
-                Prima pagină
-              </span>
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.aboutRef.current.offsetTop - 130);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-about"
-              >
-                Chef
-              </span>
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.retRef.current.offsetTop - 120);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-recipes"
-              >
-                Portofoliu
-              </span>
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.revRef.current.offsetTop - 120);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-menu"
-              >
-                Recenzii
-              </span>
-              <span
-                onClick={() => {
-                  window.scrollTo(0, this.contactRef.current.offsetTop - 120);
-                  this.setState({
-                    isOpen: !this.state.isOpen,
-                  });
-                }}
-                className="btn-contact"
-              >
-                Contact
-              </span>
-              <div className="sm">
-                <a id="fb" href="https://www.facebook.com/vidicanraul1/">
-                  <i
-                    className="fab fa-facebook-square"
-                    title="Pagină Facebook"
-                  ></i>
-                </a>
-                <a id="ig" href="https://www.instagram.com/raul_vidican1/">
-                  <i className="fab fa-instagram" title="Pagină Instagram"></i>
-                </a>
-              </div>
-            </ul>
-          </div>
-        </CSSTransition>
-        <div className={this.state.isTop ? "main-nav" : "main-nav black"}>
-          <div className="logo-area">
-            <img src={logo} alt="Vidican Raul Logo" />
-          </div>
-          <span
-            onClick={() =>
-              (window.location.href = "https://www.facebook.com/lapachet01/")
-            }
-            className="btn-la"
-          >
-            LaPachet
-          </span>
-          <div className="main-menu">
-            <ul className="nav-list">
-              <span
-                onClick={() =>
-                  window.scrollTo(0, this.firstRef.current.offsetTop)
-                }
-                className="btn-home"
-              >
-                Prima pagină
-              </span>
-              <span
-                onClick={() =>
-                  window.scrollTo(0, this.aboutRef.current.offsetTop - 130)
-                }
-                className="btn-about"
-              >
-                Chef
-              </span>
-              <span
-                onClick={() =>
-                  window.scrollTo(0, this.retRef.current.offsetTop - 120)
-                }
-                className="btn-recipes"
-              >
-                Portofoliu
-              </span>
-              <span
-                onClick={() =>
-                  window.scrollTo(0, this.revRef.current.offsetTop - 120)
-                }
-                className="btn-menu"
-              >
-                Recenzii
-              </span>
-              <span
-                onClick={() =>
-                  window.scrollTo(0, this.contactRef.current.offsetTop - 120)
-                }
-                className="btn-contact"
-              >
-                Contact
-              </span>
-              <a id="fb" href="https://www.facebook.com/vidicanraul1/">
-                <i
-                  className="fab fa-facebook-square"
-                  title="Pagină Facebook"
-                ></i>
-              </a>
-              <a id="ig" href="https://www.instagram.com/raul_vidican1/">
-                <i className="fab fa-instagram" title="Pagină Instagram"></i>
-              </a>
-            </ul>
-            <HamburgerMenu
-              isOpen={this.state.isOpen === true}
-              menuClicked={this.handleClick.bind(this)}
-              className="hamburger"
-              width={35}
-              height={25}
-              strokeWidth={2}
-              rotate={180}
-              color="white"
-              borderRadius={0}
-              animationDuration={0.4}
-            />
+                Proiectul Roca Brună
+              </button>
+              .
+            </p>
           </div>
         </div>
-        <div className="home-wrapper">
-          <Parallax bgImage={img0} strength={400}>
-            <div id="img" />
-            <div id="span">
-              <p>Raul Vidican</p>
-              <span
-                onClick={() =>
-                  window.scrollTo(0, this.aboutRef.current.offsetTop)
-                }
-              >
-                <p id="next-page">Pagina următoare</p>
-                <i className="fas fa-chevron-down"></i>
-              </span>
-            </div>
-          </Parallax>
-          <div ref={this.aboutRef} className="about-chef">
-            <div className="portrait">
-              <img src={img1} alt="Vidican Raul Portret" />
-            </div>
-            <div className="about-text">
-              <div className="title-sep">
-                <h1 id="meet">Chef - Raul Vidican</h1>
-                <span />
-              </div>
-              <p id="text">
-                Bucătar şef la Roca Brună, tânărul Raul Vidican a lucrat câțiva
-                ani în restaurante din Germania, perioadă în care a ajuns să se
-                califice în semifinalele regionale ale competiției S.Pellegrino
-                Young Chef 2018, concurând pentru regiunea Germania - Austria.
-                Reîntors în țară, a colaborat cu mai multe restaurante din zona
-                Transilvaniei, pentru ca anul trecut să se implice în proiectul
-                Roca Brună.
-                <br />
-                <br />
-                „Roca Brună este unul din motivele întoarcerii mele în țară,
-                discutam cu Dan despre acest proiect încă de când lucram în
-                Germania. Nu am stat prea mult pe gânduri să mă alătur, pentru
-                că este un restaurant exact cum îmi doresc și este acasă. Este
-                tot ce aveam nevoie. Meniul restaurantului este destul de
-                simplu: se schimbă în funcție de sezon și ținem cont de ce putem
-                achiziționa de la producătorii locali. Încet, încet am început
-                să dezvoltăm mai mult meniul, să oferim clienților diverse
-                combinații de mâncare, mai altfel. Un astfel de exemplu este
-                preparatul realizat din piept și pulpe de rață gătite confit,
-                trase apoi într-o crustă de panko, servite cu piure de migdale,
-                ciuperci la tigaie și o cremă de vișine", povestește Raul.
-              </p>
-            </div>
-          </div>
-          <Parallax className="parallax2" bgImage={img2} strength={700}>
-            <div id="img2" />
-          </Parallax>
-          <div ref={this.retRef} className="posts">
-            {this.state.cards ? (
-              <>
-                {this.state.loadMenuErr ? (
-                  <h3>Eroare încărcare meniu!</h3>
-                ) : null}
-                {this.state.loadMenu ? (
-                  <FadeLoader
-                    height={15}
-                    width={5}
-                    radius={2}
-                    margin={2}
-                    color={"black"}
-                    loading={true}
-                  />
-                ) : (
-                  <>
-                    {arr.menu.map((obj) => (
-                      <div key={obj.id} className="card2">
-                        <div className="media">
-                          <img src={obj.img} alt={obj.title} />
-                        </div>
-                        <h1 id="title1">{obj.title}</h1>
-                        <section id="location-section">
-                          <i className="fas fa-map-marker-alt"></i>
-                          <label>{obj.location}</label>
-                        </section>
-                        <span id="line" />
-                        <p id="text">{obj.text}</p>
-                        <span
-                          onClick={() => {
-                            if (obj.id === 4) {
-                              this.setState({
-                                cards: false,
-                              });
-                              this.setState({
-                                sb: true,
-                              });
-                              window.scrollTo(
-                                0,
-                                this.retRef.current.offsetTop - 120
-                              );
-                            } else if (obj.id === 8) {
-                              this.setState({
-                                cards: false,
-                              });
-                              this.setState({
-                                sb: false,
-                              });
-                              this.setState({
-                                ph: true,
-                              });
-                              window.scrollTo(
-                                0,
-                                this.retRef.current.offsetTop - 120
-                              );
-                            } else if (obj.id === 9) {
-                              this.setState({
-                                cards: false,
-                              });
-                              this.setState({
-                                sb: false,
-                              });
-                              this.setState({
-                                ph: false,
-                              });
-                              this.setState({
-                                ar: true,
-                              });
-                              window.scrollTo(
-                                0,
-                                this.retRef.current.offsetTop - 120
-                              );
-                            } else if (obj.id === 6) {
-                              this.setState({
-                                cards: false,
-                              });
-                              this.setState({
-                                sb: false,
-                              });
-                              this.setState({
-                                ph: false,
-                              });
-                              this.setState({
-                                ar: false,
-                              });
-                              this.setState({
-                                cj: true,
-                              });
-                              window.scrollTo(
-                                0,
-                                this.retRef.current.offsetTop - 120
-                              );
-                            }
-                          }}
-                          id="link"
-                        >
-                          Galerie {">"}
-                        </span>
-                      </div>
-                    ))}
-                  </>
-                )}
-              </>
-            ) : null}
-            <CSSTransition
-              in={this.state.sb}
-              timeout={1000}
-              classNames="sb"
-              unmountOnExit
-            >
-              <>
-                <div className="sibiu">
-                  <h1>Degustare vinuri, Sibiu</h1>
-                  <div className="images">
-                    <img src={s1} alt="Artă culinară #1" />
-                    <img src={s2} alt="Artă culinară #2" />
-                    <img src={s3} alt="Artă culinară #3" />
-                    <img src={s4} alt="Artă culinară #4" />
-                    <img src={s5} alt="Artă culinară #5" />
-                    <img src={s6} alt="Artă culinară #6" />
-                    <img src={s7} alt="Artă culinară #7" />
-                  </div>
-                  <br />
-                  <button
-                    onClick={() => {
-                      this.setState({ cards: true, sb: false });
-                      window.scrollTo(0, this.retRef.current.offsetTop - 120);
-                    }}
-                  >
-                    Înapoi
-                  </button>
-                </div>
-              </>
-            </CSSTransition>
-            <CSSTransition
-              in={this.state.ar}
-              timeout={1000}
-              classNames="ar"
-              unmountOnExit
-            >
-              <>
-                <div className="arad">
-                  <h1>Art Cafe, Arad</h1>
-                  <div className="images">
-                    <img src={i1} alt="Artă culinară #1" />
-                    <img src={i2} alt="Artă culinară #2" />
-                    <img src={i3} alt="Artă culinară #3" />
-                    <img src={i4} alt="Artă culinară #4" />
-                    <img src={i5} alt="Artă culinară #5" />
-                    <img src={i6} alt="Artă culinară #1" />
-                    <img src={i7} alt="Artă culinară #2" />
-                    <img src={i8} alt="Artă culinară #3" />
-                    <img src={i9} alt="Artă culinară #4" />
-                  </div>
-                  <br />
-                  <button
-                    onClick={() => {
-                      this.setState({ cards: true, ar: false });
-                      window.scrollTo(0, this.retRef.current.offsetTop - 120);
-                    }}
-                  >
-                    Înapoi
-                  </button>
-                </div>
-              </>
-            </CSSTransition>
-            <CSSTransition
-              in={this.state.ph}
-              timeout={1000}
-              classNames="ph"
-              unmountOnExit
-            >
-              <>
-                <div className="prahova">
-                  <h1>Atra, Prahova</h1>
-                  <div className="images">
-                    <img src={e1} alt="Artă culinară #1" />
-                    <img src={e2} alt="Artă culinară #2" />
-                    <img src={e3} alt="Artă culinară #3" />
-                    <img src={e4} alt="Artă culinară #4" />
-                    <img src={e5} alt="Artă culinară #5" />
-                    <img src={e6} alt="Artă culinară #6" />
-                  </div>
-                  <br />
-                  <button
-                    onClick={() => {
-                      this.setState({ cards: true, ph: false });
-                      window.scrollTo(0, this.retRef.current.offsetTop - 120);
-                    }}
-                  >
-                    Înapoi
-                  </button>
-                </div>
-              </>
-            </CSSTransition>
-            <CSSTransition
-              in={this.state.cj}
-              timeout={1000}
-              classNames="cj"
-              unmountOnExit
-            >
-              <>
-                <div className="cluj">
-                  <h1>Nuka, Cluj-Napoca</h1>
-                  <div className="images">
-                    <img src={c1} alt="Artă culinară #1" />
-                    <img src={c2} alt="Artă culinară #2" />
-                    <img src={c3} alt="Artă culinară #3" />
-                    <img src={c4} alt="Artă culinară #4" />
-                    <img src={c5} alt="Artă culinară #5" />
-                    <img src={c6} alt="Artă culinară #6" />
-                    <img src={c7} alt="Artă culinară #7" />
-                    <img src={c8} alt="Artă culinară #8" />
-                    <img src={c9} alt="Artă culinară #9" />
-                    <img src={c10} alt="Artă culinară #10" />
-                  </div>
-                  <br />
-                  <button
-                    onClick={() => {
-                      this.setState({ cards: true, cj: false });
-                      window.scrollTo(0, this.retRef.current.offsetTop - 120);
-                    }}
-                  >
-                    Înapoi
-                  </button>
-                </div>
-              </>
-            </CSSTransition>
-          </div>
-          <span ref={this.revRef}></span>
-          <Parallax className="parallax3" bgImage={img3} strength={400}>
-            <div id="img3" />
-            <Carousel
-              animationSpeed={1000}
-              stopAutoPlayOnHover={true}
-              keepDirectionWhenDragging={true}
-              arrows={false}
-              centered
-              autoPlay={5000}
-              infinite={true}
-            >
-              <div className="card1">
-                <div className="media">
-                  <i className="fas fa-quote-left"></i>
-                </div>
-                <p id="text">
-                  Raul Vidican este un tanar de o valoare inestimabila, cu
-                  viziuni inalte si potential inegalabil...Raul te felicit si te
-                  urmaresc cu mult interes!!!!!
-                </p>
-                <span id="line" />
-                <div className="media2">
-                  <img src={p1} alt="Profil Susana Szekely" />
-                </div>
-                <h1 id="title1">Susana Szekely, Lleida</h1>
-              </div>
-              <div className="card2">
-                <div className="media">
-                  <i className="fas fa-quote-left"></i>
-                </div>
-                <p id="text">
-                  Un chef cu o personalitate demna de toate laudele. Mult
-                  succes!
-                </p>
-                <span id="line" />
-                <div className="media2">
-                  <img src={p2} alt="Profil Marius Ciobanu" />
-                </div>
-                <h1 id="title1">Marius Ciobanu, Bucureşti</h1>
-              </div>
-              <div className="card3">
-                <div className="media">
-                  <i className="fas fa-quote-left"></i>
-                </div>
-                <p id="text">
-                  Un om valoros si talentat care pune pasiune si transforma
-                  orice aliment in arta!
-                </p>
-                <span id="line" />
-                <div className="media2">
-                  <img src={p3} alt="Profil Gabriela Miu Rînja" />
-                </div>
-                <h1 id="title1">Gabriela Miu Rînja, Dej</h1>
-              </div>
-              <div className="card4">
-                <div className="media">
-                  <i className="fas fa-quote-left"></i>
-                </div>
-                <p id="text">
-                  Om serios,bine pregătit profesional și cu mult interes pt
-                  prosperitate ! Succes și respect pt tot ceea ce face!
-                </p>
-                <span id="line" />
-                <div className="media2">
-                  <img src={p4} alt="Profil Johann Marianne Streit" />
-                </div>
-                <h1 id="title1">Johann Marianne Streit, Timişoara</h1>
-              </div>
-              <div className="card5">
-                <div className="media">
-                  <i className="fas fa-quote-left"></i>
-                </div>
-                <p id="text">
-                  Un bucatar excelent cu rafinament , simplitate si gust ..demn
-                  de un succes maret
-                </p>
-                <span id="line" />
-                <div className="media2">
-                  <img
-                    src={p5}
-                    alt="Profil 
-Adelina Iancu"
-                  />
-                </div>
-                <h1 id="title1">Adelina Iancu, Arad</h1>
-              </div>
-            </Carousel>
-            <div className="swipe-container">
-              <img id="swipe" src={swipe} alt="Indicator Swipe" />
-            </div>
-          </Parallax>
-          <div ref={this.contactRef} className="contact-form">
-            <h1>La serviciul dumneavoastră</h1>
-            <p>Tel: 0751 988 273 | Email: info@mysite.com</p>
-            <span id="line"></span>
-            <form>
-              <div className="form-group">
-                <label>Nume şi prenume *</label>
-                <Textbox
-                  attributesInput={{
-                    id: "Name",
-                    name: "Name",
-                    type: "text",
-                    placeholder: "Nume şi prenume",
-                  }}
-                  value={name} // Optional.[String].Default: "".
-                  onChange={(name, e) => {
-                    this.setState({ name });
-                  }} // Required.[Func].Default: () => {}. Will return the value.
-                  onBlur={(e) => {
-                    if (this.state.name === "") {
-                      this.setState({
-                        nameValidation: false,
-                      });
-                    } else {
-                      this.setState({
-                        nameValidation: true,
-                      });
-                    }
-                  }} // Optional.[Func].Default: none. In order to validate the value on blur, you MUST provide a function, even if it is an empty function. Missing this, the validation on blur will not work.
-                  validationOption={{
-                    check: true, // Optional.[Bool].Default: true. To determin if you need to validate.
-                    required: true, // Optional.[Bool].Default: true. To determin if it is a required field.
-                    msgOnError: "Numele nu poate fi omis",
-                  }}
-                />
-              </div>
-              <div className="form-group">
-                <label>Telefon *</label>
-                <Textbox
-                  attributesInput={{
-                    id: "phone",
-                    placeholder: "Telefon (10 cifre)",
-                    type: "number",
-                  }}
-                  value={phone}
-                  onChange={(phone, e) => {
-                    this.setState({ phone });
-                  }}
-                  onBlur={(e) => {
-                    if (this.state.phone.length > 10) {
-                      this.setState({
-                        phoneValidation: false,
-                      });
-                    } else if (this.state.phone.length < 10) {
-                      this.setState({
-                        phoneValidation: false,
-                      });
-                    } else if (this.state.phone.length === 10) {
-                      this.setState({
-                        phoneValidation: true,
-                      });
-                    }
-                  }} //Optional.[Func].Default: none. In order to validate the value on blur, you MUST provide a function, even if it is an empty function. Missing this, the validation on blur will not work.
-                  validationOption={{
-                    check: true, //Optional.[Bool].Default: true. To determin if you need to validate.
-                    required: true, //Optional.[Bool].Default: true. To determin if it is a required field.
-                    msgOnError: "Numărul de telefon nu poate fi omis",
-                    customFunc: (value) => {
-                      if (
-                        value.match(/\d/g) != null &&
-                        value.match(/\d/g).length < 10
-                      ) {
-                        return "Numărul de telefon nu este corect";
-                      } else if (
-                        value.match(/\d/g) != null &&
-                        value.match(/\d/g).length > 10
-                      ) {
-                        return "Numărul de telefon nu este corect";
-                      } else {
-                        return true;
-                      }
-                    },
-                  }}
-                />
-              </div>
-              <div className="form-group">
-                <label>Mesaj *</label>
-                <Textarea
-                  attributesInput={{
-                    id: "mess",
-                    name: "Mess",
-                    type: "text",
-                    placeholder: "Mesajul dumneavoastră",
-                  }}
-                  value={mess} // Optional.[String].Default: "".
-                  onChange={(mess, e) => {
-                    this.setState({ mess });
-                  }} // Required.[Func].Default: () => {}. Will return the value.
-                  onBlur={(e) => {
-                    if (this.state.mess === "") {
-                      this.setState({
-                        messValidation: false,
-                      });
-                    } else {
-                      this.setState({
-                        messValidation: true,
-                      });
-                    }
-                  }} // Optional.[Func].Default: none. In order to validate the value on blur, you MUST provide a function, even if it is an empty function. Missing this, the validation on blur will not work.
-                  validationOption={{
-                    check: true, // Optional.[Bool].Default: true. To determin if you need to validate.
-                    required: true, // Optional.[Bool].Default: true. To determin if it is a required field.
-                    msgOnError: "Mesajul nu poate fi omis",
-                  }}
-                />
-              </div>
-              <div className="contact-response">
-                {this.state.loading ? (
-                  <FadeLoader
-                    height={15}
-                    width={5}
-                    radius={2}
-                    margin={2}
-                    color={"black"}
-                    loading={true}
-                  />
-                ) : null}
-                {this.state.success ? (
-                  <p>
-                    <i className="fas fa-check-circle"></i>
-                    Mesajul a fost trimis
-                  </p>
-                ) : null}
-                {this.state.error ? (
-                  <p>
-                    <i className="fas fa-exclamation-circle"></i>
-                    Eroare. Mesajul nu a fost trimis
-                  </p>
-                ) : null}
-              </div>
-              <div onClick={this.handleSubmit} className="btn-10">
-                Trimite
-              </div>
-            </form>
-          </div>
-          <Parallax className="parallax4" bgImage={end} strength={400}>
-            <div id="img4" />
-          </Parallax>
-          <div className="footer">
-            <div className="footer-data">
-              <h1>#ChefRaulVidican</h1>
-              <p id="contact-data">
-                Tel: 0751 988 273 | Email: info@mysite.com
-              </p>
-              <p id="copy">
-                {currentYear} &copy;{" "}
-                <a href="https://baderproductions.net/">BADERproductions</a>
-              </p>
-            </div>
+        <Parallax className="parallax2" bgImage={img3} strength={700}>
+          <div id="img2" />
+        </Parallax>
+        <div ref={portfolioRef} className="posts">
+          {arr.portfolios.map((obj) => (
+            <Card key={obj.id}>
+              <Card.Img
+                onClick={() => portFunc(obj.id)}
+                variant="top"
+                src={obj.src}
+                alt={obj.title}
+              />
+              <Card.Body>
+                <Card.Title>{obj.title}</Card.Title>
+                <Card.Subtitle className="mb-2 mt-2 text-muted">
+                  <FontAwesomeIcon icon={faMapMarkerAlt} /> {obj.location}
+                </Card.Subtitle>
+                <Card.Text>{obj.text}</Card.Text>
+                <Button onClick={() => portFunc(obj.id)} variant="outline-dark">
+                  Galerie
+                </Button>
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
+        <span ref={recenziiRef}></span>
+        <div className="reviews-page">
+          <ReviewsCarousel />
+        </div>
+        <div ref={contactRef} className="contact-form">
+          <h1>La serviciul dumneavoastră</h1>
+          <p>Tel: 0751 988 273</p>
+          <span id="line"></span>
+          <form>CONTACT FORM</form>
+        </div>
+        <div className="footer">
+          <div className="footer-data">
+            <h1>#ChefRaulVidican</h1>
+            <p id="contact-data">Tel: 0751 988 273</p>
+            <p id="copy">RaulVidican.ro &copy; Copyright {currentYear}</p>
           </div>
         </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
 }
-
-export default Home;
