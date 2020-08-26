@@ -2,7 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 // Portfolios & Modals
-import { ArtCafe, AtraPraova, NukaCluj, VinSibiu } from "./Portfolio";
+import {
+  ArtCafe,
+  AtraPraova,
+  CaeliaMamaia,
+  NukaCluj,
+  VinSibiu,
+} from "./Portfolio";
 import { RocaBrunaModal, ReviewsCarousel, HomeCarousel } from "./Carousel";
 
 /* Bootstrap & FontAwesome */
@@ -40,8 +46,9 @@ export default function Home() {
   const [rocaModal, setRocaModal] = useState(false);
   const [openNav, setOpenNav] = useState(false);
   const [art, setArt] = useState(false);
-  const [nuka, setNuka] = useState(false);
   const [atra, setAtra] = useState(false);
+  const [caelia, setCaelia] = useState(false);
+  const [nuka, setNuka] = useState(false);
   const [sibiu, setSibiu] = useState(false);
   const [isLoading, setLoad] = useState(false);
   const [isSuccess, setSuccess] = useState(false);
@@ -124,10 +131,12 @@ export default function Home() {
 
   const portFunc = (id) => {
     switch (id) {
-      case 4:
+      case 5:
         return setSibiu(true);
-      case 3:
+      case 4:
         return setNuka(true);
+      case 3:
+        return setCaelia(true);
       case 2:
         return setAtra(true);
       case 1:
@@ -254,6 +263,7 @@ export default function Home() {
         </div>
       </Menu>
       <ArtCafe show={art} onHide={() => setArt(false)} />
+      <CaeliaMamaia show={caelia} onHide={() => setCaelia(false)} />
       <NukaCluj show={nuka} onHide={() => setNuka(false)} />
       <AtraPraova show={atra} onHide={() => setAtra(false)} />
       <VinSibiu show={sibiu} onHide={() => setSibiu(false)} />

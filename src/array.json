@@ -16,13 +16,20 @@
     },
     {
       "id": 3,
+      "src": "main/caelia.jpg",
+      "caption": "Caelia",
+      "location": "Mamaia",
+      "text": "Meniu de vară, Caelia Beach Mamaia."
+    },
+    {
+      "id": 4,
       "src": "main/nuka.jpg",
       "caption": "Nuka",
       "location": "Cluj-Napoca",
       "text": "Restaurantul Nuka din Cluj, unde am pregatit un meniu de toamnă-iarnă."
     },
     {
-      "id": 4,
+      "id": 5,
       "src": "main/sb.jpg",
       "caption": "Degustare vinuri",
       "location": "Sibiu",
@@ -265,6 +272,88 @@
       "width": 3,
       "height": 2,
       "caption": "NUKA #10"
+    }
+  ],
+  "caeliamamaia": [
+    {
+      "id": "5f451624b3f0321d5bd19558",
+      "src": "portfolios/b1.jpg",
+      "thumbnail": "portfolios/b1.jpg",
+      "width": 1.34,
+      "height": 2,
+      "caption": "Caelia #1"
+    },
+    {
+      "id": "5f4516248389a58e965907c2",
+      "src": "portfolios/b2.jpg",
+      "thumbnail": "portfolios/b2.jpg",
+      "width": 1.34,
+      "height": 2,
+      "caption": "Caelia #2"
+    },
+    {
+      "id": "5f4516241b596a117f25746a",
+      "src": "portfolios/b3.jpg",
+      "thumbnail": "portfolios/b3.jpg",
+      "width": 1,
+      "height": 1,
+      "caption": "Caelia #3"
+    },
+    {
+      "id": "5f451624f53b86cd07566d6e",
+      "src": "portfolios/b4.jpg",
+      "thumbnail": "portfolios/b4.jpg",
+      "width": 1,
+      "height": 1,
+      "caption": "Caelia #4"
+    },
+    {
+      "id": "5f451624bad699489c3dabd9",
+      "src": "portfolios/b5.jpg",
+      "thumbnail": "portfolios/b5.jpg",
+      "width": 1,
+      "height": 1,
+      "caption": "Caelia #5"
+    },
+    {
+      "id": "5f4516241b1baa33d808c094",
+      "src": "portfolios/b6.jpg",
+      "thumbnail": "portfolios/b6.jpg",
+      "width": 1.5,
+      "height": 2,
+      "caption": "Caelia #6"
+    },
+    {
+      "id": "5f451624c0454c9f7f90534c",
+      "src": "portfolios/b7.jpg",
+      "thumbnail": "portfolios/b7.jpg",
+      "width": 1.5,
+      "height": 2,
+      "caption": "Caelia #7"
+    },
+    {
+      "id": "5f451624c48deb4f9f464086",
+      "src": "portfolios/b8.jpg",
+      "thumbnail": "portfolios/b8.jpg",
+      "width": 1,
+      "height": 1,
+      "caption": "Caelia #8"
+    },
+    {
+      "id": "5f45162482515603f4e8ca18",
+      "src": "portfolios/b9.jpg",
+      "thumbnail": "portfolios/b9.jpg",
+      "width": 1,
+      "height": 1,
+      "caption": "Caelia #9"
+    },
+    {
+      "id": "5f4516244ff9e607b76665dc",
+      "src": "portfolios/b10.jpg",
+      "thumbnail": "portfolios/b10.jpg",
+      "width": 1,
+      "height": 1,
+      "caption": "Caelia #10"
     }
   ],
   "vinsibiu": [

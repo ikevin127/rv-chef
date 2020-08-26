@@ -57,6 +57,58 @@ export function ArtCafe(props) {
   );
 }
 
+export function CaeliaMamaia(props) {
+  let Caelia = arr.caeliamamaia.map((obj) => ({
+    key: obj.id,
+    src: obj.src,
+    thumbnail: obj.thumbnail,
+    thumbnailWidth: obj.width,
+    thumbnailHeight: obj.height,
+    caption: obj.caption,
+  }));
+
+  return (
+    <>
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        onEnter={() =>
+          (document.getElementById("html-doc").style.overflow = "hidden")
+        }
+        onExit={() =>
+          (document.getElementById("html-doc").style.overflow = "scroll")
+        }
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            <a href="https://goo.gl/maps/Rmanuf9JXsasZFRo7">
+              <FontAwesomeIcon icon={faMapMarkerAlt} /> Caelia Beach, Mamaia
+            </a>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Gallery
+            onClick={() => {}}
+            backdropClosesModal={true}
+            images={Caelia}
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            style={{ borderRadius: 0 }}
+            variant="outline-dark"
+            onClick={props.onHide}
+          >
+            Închide
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
+
 export function NukaCluj(props) {
   let Nuka = arr.nukacluj.map((obj) => ({
     key: obj.id,
