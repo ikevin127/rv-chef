@@ -17,12 +17,13 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
+    "react-burger-menu": "^2.7.1",
     "react-dom": "^16.13.1",
-    "react-images": "^1.1.7",
+    "react-grid-gallery": "^0.5.5",
     "react-parallax": "^3.0.3",
-    "react-photo-gallery": "^8.0.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.4.3"
+    "react-scripts": "^3.4.3",
+    "react-transition-group": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
