@@ -325,7 +325,7 @@ export default function Home() {
             <span ref={chefRef} />
             <div className="about-text">
               <div className="title-sep">
-                <h1 id="meet">Chef</h1>
+                <h1 id="meet2">Chef</h1>
                 <span />
               </div>
               <p id="text">
