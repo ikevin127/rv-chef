@@ -396,7 +396,10 @@ export default function Home() {
             <span />
           </div>
           <div className="contact-form">
-            <h1>La serviciul dumneavoastră</h1>
+            <h1>
+              La serviciul dumneavoastră pentru diferite evenimente și
+              consultanță
+            </h1>
             <p>Tel: 0751 988 273</p>
             <Form ref={formRef} validated={validated} onSubmit={handleSubmit}>
               <Form.Group controlId="ControlName1">
