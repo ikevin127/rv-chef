@@ -322,7 +322,8 @@ body {
   .home-wrapper {
     .home-page {
       .carousel-caption {
-        width: 60%;
+        height: 60%;
+        width: 95%;
         position: absolute;
         top: 55%;
         left: 50%;
@@ -331,24 +332,23 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 0;
 
         h3 {
-          font-size: 5vh;
+          font-size: 2rem;
           font-weight: bold;
           white-space: nowrap;
           filter: drop-shadow(1px 1px black);
+          margin: 0;
+          padding: 0.5rem 1rem;
+          border: 0.01rem solid white;
         }
 
         p {
           filter: drop-shadow(1px 1px black);
-        }
-
-        span {
-          display: block;
-          height: 0.01rem;
-          margin-bottom: 0.5rem;
-          width: 55%;
-          background-color: white;
+          width: 100%;
+          font-size: 1.2rem;
+          margin: 1rem 0;
         }
       }
 
@@ -431,15 +431,20 @@ body {
           flex-wrap: wrap;
           flex-direction: column;
           justify-content: flex-start;
-          align-items: center;
+          border-top: 1px solid rgb(212, 212, 212);
+          text-align: left;
+
+          .card-title {
+            margin: 0;
+          }
 
           .card-text {
-            text-align: center;
+            text-align: left;
           }
 
           .btn {
             border-radius: 0;
-            align-self: center;
+            align-self: left;
 
             &:focus {
               box-shadow: none !important;
@@ -553,15 +558,17 @@ body {
       h1 {
         font-size: 1.5rem;
         font-weight: 400;
+        margin-bottom: 1rem;
       }
 
       p {
-        margin-top: 0.5rem;
+        margin: 0;
       }
 
       form {
         text-align: left;
         padding: 1rem;
+        margin-top: 1rem;
         color: black;
         display: flex;
         flex-direction: column;

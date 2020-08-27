@@ -125,10 +125,10 @@ export function HomeCarousel() {
         <img className="carousel-img" src={img3} alt="First slide" />
         <Carousel.Caption>
           <h3>Raul Vidican</h3>
-          <span />
           <p>
-            Semifinalist competiţia S. Pellegrino Young Chef 2018, regiunea
-            Germania - Austria.
+            Semifinalist
+            <br />
+            S. Pellegrino Young Chef 2018 <br /> Next Chef Award 2017
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -136,14 +136,12 @@ export function HomeCarousel() {
         <img className="carousel-img" src={img0} alt="Second slide" />
         <Carousel.Caption>
           <h3>Atenţie la detalii</h3>
-          <span />
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="carousel-img" src={img2} alt="Third slide" />
         <Carousel.Caption>
           <h3>Pasiune</h3>
-          <span />
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

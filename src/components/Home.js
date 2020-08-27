@@ -40,6 +40,16 @@ import logo from "../img/rv.png";
 import img1 from "../img/parallax/img1.jpg";
 import end from "../img/parallax/5.jpg";
 
+// Google Analitics
+import TagManager from "react-gtm-module";
+
+// Google Analitics
+const tagManagerArgs = {
+  gtmId: "GTM-MFXND56",
+};
+
+TagManager.initialize(tagManagerArgs);
+
 export default function Home() {
   // State
   const [isTop, setIsTop] = useState(false);
@@ -396,11 +406,13 @@ export default function Home() {
             <span />
           </div>
           <div className="contact-form">
-            <h1>
-              La serviciul dumneavoastră pentru diferite evenimente și
-              consultanță
-            </h1>
-            <p>Tel: 0751 988 273</p>
+            <h1>La serviciul dumneavoastră pentru evenimente și consultanță</h1>
+            <p>
+              <b>Email</b>: vidraul069@gmail.com
+            </p>
+            <p>
+              <b>Tel</b>: 0751 988 273
+            </p>
             <Form ref={formRef} validated={validated} onSubmit={handleSubmit}>
               <Form.Group controlId="ControlName1">
                 <Form.Label>Nume</Form.Label>
@@ -408,7 +420,7 @@ export default function Home() {
                   required
                   value={name}
                   onInvalid={(e) =>
-                    e.target.setCustomValidity("Acest câmp este obligatoriu.")
+                    e.target.setCustomValidity("Câmp obligatoriu.")
                   }
                   onInput={(e) => e.target.setCustomValidity("")}
                   onChange={(e) => setName(e.target.value)}
@@ -422,7 +434,9 @@ export default function Home() {
                   required
                   value={phone}
                   onInvalid={(e) =>
-                    e.target.setCustomValidity("Acest câmp este obligatoriu.")
+                    e.target.setCustomValidity(
+                      "Câmp obligatoriu. Să înceapă cu 07 şi să conţină în total 10 cifre."
+                    )
                   }
                   onInput={(e) => e.target.setCustomValidity("")}
                   onChange={(e) => setPhone(e.target.value)}
@@ -437,7 +451,7 @@ export default function Home() {
                   required
                   value={message}
                   onInvalid={(e) =>
-                    e.target.setCustomValidity("Acest câmp este obligatoriu.")
+                    e.target.setCustomValidity("Câmp obligatoriu.")
                   }
                   onInput={(e) => e.target.setCustomValidity("")}
                   onChange={(e) => setMessage(e.target.value)}

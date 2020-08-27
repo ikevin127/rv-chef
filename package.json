@@ -20,6 +20,7 @@
     "react-burger-menu": "^2.7.1",
     "react-dom": "^16.13.1",
     "react-grid-gallery": "^0.5.5",
+    "react-gtm-module": "^2.0.10",
     "react-parallax": "^3.0.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.3",
