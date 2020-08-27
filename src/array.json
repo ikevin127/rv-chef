@@ -3,35 +3,35 @@
     {
       "id": 1,
       "src": "main/art.jpg",
-      "caption": "Art Cafe",
+      "caption": "Art Cafe, Arad",
       "location": "Arad",
       "text": "Am pregătit un meniu călduros pentru sezonul rece, meniu toamnă-iarnă."
     },
     {
       "id": 2,
       "src": "main/atra.jpg",
-      "caption": "Atra",
+      "caption": "Atra Doftana, Prahova",
       "location": "Prahova",
       "text": "Meniu de primăvară, Pensiune Atra Doftana, Prahova."
     },
     {
       "id": 3,
       "src": "main/caelia.jpg",
-      "caption": "Caelia",
+      "caption": "Caelia, Mamaia",
       "location": "Mamaia",
       "text": "Meniu de vară, Caelia Beach Mamaia."
     },
     {
       "id": 4,
       "src": "main/nuka.jpg",
-      "caption": "Nuka",
+      "caption": "Nuka, Cluj-Napoca",
       "location": "Cluj-Napoca",
       "text": "Restaurantul Nuka din Cluj, unde am pregatit un meniu de toamnă-iarnă."
     },
     {
       "id": 5,
       "src": "main/sb.jpg",
-      "caption": "Degustare vinuri",
+      "caption": "Degustare de Vinuri, Sibiu",
       "location": "Sibiu",
       "text": "Degustare de vinuri asociate cu mâncare la Sibiu."
     }

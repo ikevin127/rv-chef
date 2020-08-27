@@ -214,7 +214,7 @@ export default function Home() {
             <span />
           </div>
           <div className="side-menu">
-            <ul className="nav-list">
+            <div className="nav-list">
               <span
                 onClick={() => {
                   toggleMenu();
@@ -260,7 +260,7 @@ export default function Home() {
               >
                 LaPachet
               </Button>
-            </ul>
+            </div>
           </div>
           <div id="span-line2">
             <span />
@@ -287,7 +287,7 @@ export default function Home() {
             </NavLink>
           </div>
           <div className="main-menu">
-            <ul className="nav-list">
+            <div className="nav-list">
               <span
                 onClick={() => window.scrollTo(0, chefRef.current.offsetTop)}
                 className="btn-about"
@@ -325,7 +325,7 @@ export default function Home() {
               >
                 LaPachet
               </Button>
-            </ul>
+            </div>
             <FontAwesomeIcon onClick={() => setOpenNav(true)} icon={faBars} />
           </div>
         </div>
@@ -371,7 +371,7 @@ export default function Home() {
                   onClick={() => portFunc(obj.id)}
                   variant="top"
                   src={obj.src}
-                  alt={obj.title}
+                  alt={obj.caption}
                 />
                 <Card.Body>
                   <Card.Title>{obj.title}</Card.Title>
