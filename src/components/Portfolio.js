@@ -27,10 +27,10 @@ export function ArtCafe(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() =>
-          (document.getElementById("html-doc").style.overflow = "hidden")
+          (document.getElementById("html").style.overflow = "hidden")
         }
         onExit={() =>
-          (document.getElementById("html-doc").style.overflow = "scroll")
+          (document.getElementById("html").style.overflow = "scroll")
         }
       >
         <Modal.Header closeButton>
@@ -75,10 +75,10 @@ export function CaeliaMamaia(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() =>
-          (document.getElementById("html-doc").style.overflow = "hidden")
+          (document.getElementById("html").style.overflow = "hidden")
         }
         onExit={() =>
-          (document.getElementById("html-doc").style.overflow = "scroll")
+          (document.getElementById("html").style.overflow = "scroll")
         }
       >
         <Modal.Header closeButton>
@@ -127,10 +127,10 @@ export function NukaCluj(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() =>
-          (document.getElementById("html-doc").style.overflow = "hidden")
+          (document.getElementById("html").style.overflow = "hidden")
         }
         onExit={() =>
-          (document.getElementById("html-doc").style.overflow = "scroll")
+          (document.getElementById("html").style.overflow = "scroll")
         }
       >
         <Modal.Header closeButton>
@@ -179,10 +179,10 @@ export function AtraPraova(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() =>
-          (document.getElementById("html-doc").style.overflow = "hidden")
+          (document.getElementById("html").style.overflow = "hidden")
         }
         onExit={() =>
-          (document.getElementById("html-doc").style.overflow = "scroll")
+          (document.getElementById("html").style.overflow = "scroll")
         }
       >
         <Modal.Header closeButton>
@@ -231,10 +231,10 @@ export function VinSibiu(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() =>
-          (document.getElementById("html-doc").style.overflow = "hidden")
+          (document.getElementById("html").style.overflow = "hidden")
         }
         onExit={() =>
-          (document.getElementById("html-doc").style.overflow = "scroll")
+          (document.getElementById("html").style.overflow = "scroll")
         }
       >
         <Modal.Header closeButton>
