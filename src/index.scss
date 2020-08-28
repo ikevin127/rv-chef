@@ -4,7 +4,7 @@
   text-decoration: none;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-family: "Jost";
+  font-family: "Alata", Helvetica;
 }
 
 html,
@@ -545,7 +545,13 @@ body {
 
               .card-text {
                 text-align: center;
+                color: grey;
                 margin: 0;
+                font-weight: lighter;
+              }
+
+              .h6 {
+                color: black !important;
               }
             }
           }
