@@ -40,16 +40,6 @@ import logo from "../img/rv.png";
 import img1 from "../img/parallax/img1.jpg";
 import end from "../img/parallax/5.jpg";
 
-// Google Analitics
-import TagManager from "react-gtm-module";
-
-// Google Analitics
-const tagManagerArgs = {
-  gtmId: "GTM-MFXND56",
-};
-
-TagManager.initialize(tagManagerArgs);
-
 export default function Home() {
   // State
   const [isTop, setIsTop] = useState(false);
