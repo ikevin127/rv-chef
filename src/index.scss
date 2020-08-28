@@ -732,8 +732,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: white;
 
-  .btn-dark {
+  .btn {
     position: absolute;
     top: 4%;
     left: 5%;
@@ -755,6 +756,7 @@ body {
   .fa-exclamation-triangle {
     font-size: 5rem;
     margin: 2rem;
+    color: black;
   }
 }
 

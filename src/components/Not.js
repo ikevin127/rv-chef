@@ -8,7 +8,7 @@ import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 export default function Not() {
   return (
     <div className="not">
-      <NavLink to="/" activeClassName="btn btn-dark">
+      <NavLink to="/" activeClassName="btn btn-outline-dark">
         Înapoi
       </NavLink>
       <FontAwesomeIcon icon={faExclamationTriangle} />
