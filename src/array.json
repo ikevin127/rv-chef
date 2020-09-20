@@ -23,13 +23,20 @@
     },
     {
       "id": 4,
+      "src": "main/roca.png",
+      "caption": "Botez, Roca Brună",
+      "location": "Păuliş",
+      "text": "Botez, Roca Brună, un meniu special creat pentru un eveniment unic."
+    },
+    {
+      "id": 5,
       "src": "main/nuka.jpg",
       "caption": "Nuka, Cluj-Napoca",
       "location": "Cluj-Napoca",
       "text": "Restaurantul Nuka din Cluj, unde am pregatit un meniu de toamnă-iarnă."
     },
     {
-      "id": 5,
+      "id": 6,
       "src": "main/sb.jpg",
       "caption": "Degustare de Vinuri, Sibiu",
       "location": "Sibiu",
@@ -190,6 +197,72 @@
       "width": 1.34,
       "height": 2,
       "caption": "Atra Doftana #6"
+    }
+  ],
+  "rocabruna": [
+    {
+      "id": "5f4516240d92d6d99c0d14f44",
+      "src": "portfolios/d1.jpg",
+      "thumbnail": "portfolios/d1.jpg",
+      "width": 1.5,
+      "height": 2,
+      "caption": "Roca Brună #1"
+    },
+    {
+      "id": "5f451624017dg917d461fce99",
+      "src": "portfolios/d2.jpg",
+      "thumbnail": "portfolios/d2.jpg",
+      "width": 1.5,
+      "height": 2,
+      "caption": "Roca Brună #2"
+    },
+    {
+      "id": "5f45162434g98930883482647",
+      "src": "portfolios/d3.jpg",
+      "thumbnail": "portfolios/d3.jpg",
+      "width": 1.5,
+      "height": 2,
+      "caption": "Roca Brună #3"
+    },
+    {
+      "id": "5f451624ddhab3494a3810158",
+      "src": "portfolios/d4.jpg",
+      "thumbnail": "portfolios/d4.jpg",
+      "width": 1.5,
+      "height": 2,
+      "caption": "Roca Brună #4"
+    },
+    {
+      "id": "5f4516247afe0k3259f3dc5b0",
+      "src": "portfolios/d5.jpg",
+      "thumbnail": "portfolios/d5.jpg",
+      "width": 1.5,
+      "height": 2,
+      "caption": "Roca Brună #5"
+    },
+    {
+      "id": "5f451624b4fe5lab3cbfe4bf5",
+      "src": "portfolios/d6.jpg",
+      "thumbnail": "portfolios/d6.jpg",
+      "width": 1.5,
+      "height": 2,
+      "caption": "Roca Brună #6"
+    },
+    {
+      "id": "5f451624kac8f95ee78952b28",
+      "src": "portfolios/d7.jpg",
+      "thumbnail": "portfolios/d7.jpg",
+      "width": 1.34,
+      "height": 2,
+      "caption": "Roca Brună #7"
+    },
+    {
+      "id": "5f4516241d51j59e12256460f",
+      "src": "portfolios/d8.jpg",
+      "thumbnail": "portfolios/d8.jpg",
+      "width": 1.34,
+      "height": 2,
+      "caption": "Roca Brună #8"
     }
   ],
   "nukacluj": [

@@ -6,6 +6,7 @@ import {
   ArtCafe,
   AtraPraova,
   CaeliaMamaia,
+  RocaBruna,
   NukaCluj,
   VinSibiu,
 } from "./Portfolio";
@@ -56,6 +57,7 @@ export default function Home() {
   const [art, setArt] = useState(false);
   const [atra, setAtra] = useState(false);
   const [caelia, setCaelia] = useState(false);
+  const [roca, setRoca] = useState(false);
   const [nuka, setNuka] = useState(false);
   const [sibiu, setSibiu] = useState(false);
   const [isLoading, setLoad] = useState(false);
@@ -139,10 +141,12 @@ export default function Home() {
 
   const portFunc = (id) => {
     switch (id) {
-      case 5:
+      case 6:
         return setSibiu(true);
-      case 4:
+      case 5:
         return setNuka(true);
+      case 4:
+        return setRoca(true);
       case 3:
         return setCaelia(true);
       case 2:
@@ -272,6 +276,7 @@ export default function Home() {
       </Menu>
       <ArtCafe show={art} onHide={() => setArt(false)} />
       <CaeliaMamaia show={caelia} onHide={() => setCaelia(false)} />
+      <RocaBruna show={roca} onHide={() => setRoca(false)} />
       <NukaCluj show={nuka} onHide={() => setNuka(false)} />
       <AtraPraova show={atra} onHide={() => setAtra(false)} />
       <VinSibiu show={sibiu} onHide={() => setSibiu(false)} />
