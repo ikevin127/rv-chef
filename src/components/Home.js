@@ -98,7 +98,7 @@ export default function Home() {
     setValidated(true);
     setLoad(true);
     axios
-      .post("https://spleeter.co.uk/rv", {
+      .post("https://europe-west2-zapp-native.cloudfunctions.net/api/rv", {
         name: name,
         phone: phone,
         text: message,
