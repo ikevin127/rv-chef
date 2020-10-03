@@ -13,6 +13,7 @@ export default function Not() {
       </NavLink>
       <FontAwesomeIcon icon={faExclamationTriangle} />
       <h2 id="not-found">Pagina nu a fost găsită</h2>
+      <h2>{process.env.REACT_APP_TEST}</h2>
     </div>
   );
 }

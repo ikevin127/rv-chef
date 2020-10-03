@@ -98,7 +98,7 @@ export default function Home() {
     setValidated(true);
     setLoad(true);
     axios
-      .post("https://europe-west2-zapp-native.cloudfunctions.net/api/rv", {
+      .post(process.env.REACT_APP_EMAIL, {
         name: name,
         phone: phone,
         text: message,
@@ -167,7 +167,6 @@ export default function Home() {
         } else {
           setIsTop(false);
         }
-
         return () => {
           document.removeEventListener("scroll");
         };
@@ -345,7 +344,7 @@ export default function Home() {
                 Bucătar şef la Roca Brună, Raul Vidican a lucrat câțiva ani în
                 restaurante din Germania, perioadă în care a ajuns să se
                 califice în semifinalele regionale ale competiției S. Pellegrino
-                Young Chef 2018, concurând pentru regiunea Germania - Austria.
+                Young Chef 2018, concurând pentru regiunea Germania - Austria
                 <br />
                 <br />
                 Reîntors în țară, a colaborat cu mai multe restaurante din zona
@@ -356,7 +355,6 @@ export default function Home() {
                 >
                   Proiectul Roca Brună
                 </button>
-                .
               </p>
             </div>
           </div>
@@ -423,7 +421,7 @@ export default function Home() {
                   required
                   value={name}
                   onInvalid={(e) =>
-                    e.target.setCustomValidity("Câmp obligatoriu.")
+                    e.target.setCustomValidity("Câmp obligatoriu")
                   }
                   onInput={(e) => e.target.setCustomValidity("")}
                   onChange={(e) => setName(e.target.value)}
@@ -438,7 +436,7 @@ export default function Home() {
                   value={phone}
                   onInvalid={(e) =>
                     e.target.setCustomValidity(
-                      "Câmp obligatoriu. Să înceapă cu 07 şi să conţină în total 10 cifre."
+                      "Câmp obligatoriu. Să înceapă cu 07 şi să conţină în total 10 cifre"
                     )
                   }
                   onInput={(e) => e.target.setCustomValidity("")}
@@ -454,7 +452,7 @@ export default function Home() {
                   required
                   value={message}
                   onInvalid={(e) =>
-                    e.target.setCustomValidity("Câmp obligatoriu.")
+                    e.target.setCustomValidity("Câmp obligatoriu")
                   }
                   onInput={(e) => e.target.setCustomValidity("")}
                   onChange={(e) => setMessage(e.target.value)}
