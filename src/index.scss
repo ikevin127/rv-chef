@@ -284,7 +284,7 @@ body {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin: 0 3rem;
+        margin: 0 1rem;
 
         .btn-home,
         .btn-menu,
@@ -295,7 +295,7 @@ body {
           color: black;
           font-size: 1.2rem;
           font-weight: bold;
-          padding: 1rem;
+          padding: 1rem 1.5rem;
 
           &:active {
             position: relative;
@@ -363,7 +363,7 @@ body {
 
       .carousel-img {
         width: 100%;
-        height: 27rem;
+        height: 93vh;
         object-fit: cover;
         filter: brightness(60%);
       }
@@ -411,7 +411,7 @@ body {
 
     .parallax2 {
       #img2 {
-        height: 20rem;
+        height: 30rem;
       }
     }
 
@@ -423,6 +423,24 @@ body {
       align-items: flex-start;
       padding: 2rem 0;
       background-color: white;
+
+      .youtube-video {
+        width: 560px;
+        height: 315px;
+        margin: 1rem;
+        box-shadow: 0 0 12px rgba($color: #000, $alpha: 0.2);
+        transition: 0.5s ease;
+
+        @media (max-width: 560px) {
+          width: 280px;
+          height: 157.5px;
+        }
+
+        @media (max-width: 280px) {
+          width: 250px;
+          height: 127.5px;
+        }
+      }
 
       .card {
         width: 25rem;
@@ -502,6 +520,11 @@ body {
         .carousel {
           width: 100%;
           height: 100%;
+          padding-bottom: 3rem !important;
+
+          .carousel-indicators {
+            margin-bottom: 2rem !important;
+          }
 
           .carousel-inner {
             position: relative;
@@ -568,6 +591,31 @@ body {
       justify-content: center;
       align-items: center;
       text-align: center;
+
+      .text-error {
+        color: red;
+        margin-top: 0.5rem;
+        margin-left: 0.1rem;
+        font-weight: normal;
+      }
+
+      .spinner-border,
+      .alert {
+        border-radius: 0;
+        margin-top: 1rem;
+      }
+
+      .text-err {
+        color: red;
+        margin: 1.5rem 0;
+        font-weight: normal;
+      }
+
+      .text-succ {
+        color: green;
+        margin: 1.5rem 0;
+        font-weight: normal;
+      }
 
       h1 {
         font-size: 1.5rem;
@@ -687,7 +735,8 @@ body {
           margin: 0 1rem;
           padding: 0.5rem;
 
-          .fa-instagram {
+          .fa-instagram,
+          .fa-youtube {
             font-size: 1.5rem;
             color: white;
           }

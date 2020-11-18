@@ -1,0 +1,35 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "AEqcgq8l8J1EL0g14Fn4DtDOckM",
+  "regionCode": "RO",
+  "pageInfo": {
+    "totalResults": 5,
+    "resultsPerPage": 5
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "m41J9DT8dw2C1TonHEXHBHhlUaw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "N31OInFu5sk"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "7wQUuf0xzDYfmIYlPR8u6n7BI_Y",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jVS6JOsG3S8"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "hBIXfcAqV1s1FpznKMl2XgpcWI0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "s9n2oCu-vU0"
+      }
+    }
+  ]
+}

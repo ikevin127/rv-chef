@@ -15,7 +15,11 @@ import { RocaBrunaModal, ReviewsCarousel, HomeCarousel } from "./Carousel";
 /* Bootstrap & FontAwesome */
 import { Alert, Button, Card, Form, Spinner } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import {
   faMapMarkerAlt,
   faBars,
@@ -35,10 +39,16 @@ import { pushRotate as Menu } from "react-burger-menu";
 // Axios
 import axios from "axios";
 
+// Form validation
+import { useFormik } from "formik";
+import * as Yup from "yup";
+
 // Array & Images
 import arr from "../array.json";
+import yt from "../yt.json";
 import logo from "../img/rv.png";
 import img1 from "../img/parallax/img1.jpg";
+import img4 from "../img/parallax/img4.jpg";
 import end from "../img/parallax/5.jpg";
 
 // Google analytics
@@ -63,21 +73,31 @@ export default function Home() {
   const [isLoading, setLoad] = useState(false);
   const [isSuccess, setSuccess] = useState(false);
   const [isError, setError] = useState(false);
-  const [validated, setValidated] = useState(false);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
 
   // Refs
   const homeRef = useRef();
   const chefRef = useRef();
+  const cookRef = useRef();
   const portfolioRef = useRef();
   const recenziiRef = useRef();
   const contactRef = useRef();
-  const formRef = useRef(null);
 
-  // Variables
-  let currentYear = new Date().getFullYear();
+  useEffect(() => {
+    document.addEventListener(
+      "scroll",
+      (e) => {
+        if (window.scrollY > 400) {
+          setIsTop(true);
+        } else {
+          setIsTop(false);
+        }
+        return () => {
+          document.removeEventListener("scroll");
+        };
+      },
+      []
+    );
+  }, []);
 
   const toggleMenu = () => {
     setOpenNav(!openNav);
@@ -87,57 +107,62 @@ export default function Home() {
     setOpenNav(state.isOpen);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    setValidated(true);
-    setLoad(true);
-    axios
-      .post(process.env.REACT_APP_EMAIL, {
-        name: name,
-        phone: phone,
-        text: message,
-      })
-      .then((res) => {
-        if (res.data.status === "true") {
-          setLoad(false);
-          setSuccess(true);
-          setName("");
-          setPhone("");
-          setMessage("");
-          setValidated(false);
-          setTimeout(() => {
-            setSuccess(false);
-          }, 3000);
-        } else {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      phone: "",
+      message: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().min(1).required("Numele este necesar"),
+      phone: Yup.number()
+        .typeError("Numărul de telefon trebuie să conţină doar cifre")
+        .min(
+          1111111111,
+          "Numărul de telefon trebuie să conţină cel puţin 10 cifre"
+        )
+        .required("Numărul de telefon este necesar"),
+      message: Yup.string()
+        .min(1)
+        .required(
+          "Un scurt mesaj este necesar pentru a ştii cu ce vă pot ajuta"
+        ),
+    }),
+    onSubmit: (values, { setSubmitting, setErrors, setStatus, resetForm }) => {
+      setLoad(true);
+      axios
+        .post(process.env.REACT_APP_EMAIL, {
+          name: values.name,
+          phone: values.phone,
+          text: values.message,
+        })
+        .then((res) => {
+          if (res.data.status === "true") {
+            resetForm({});
+            setLoad(false);
+            setSuccess(true);
+            setTimeout(() => {
+              setSuccess(false);
+            }, 4000);
+          } else {
+            resetForm({});
+            setLoad(false);
+            setError(true);
+            setTimeout(() => {
+              setError(false);
+            }, 4000);
+          }
+        })
+        .catch(() => {
           setLoad(false);
           setError(true);
-          setName("");
-          setPhone("");
-          setMessage("");
-          setValidated(false);
+          resetForm({});
           setTimeout(() => {
             setError(false);
-          }, 3000);
-        }
-      })
-      .catch((err) => {
-        setLoad(false);
-        setError(true);
-        setName("");
-        setPhone("");
-        setMessage("");
-        setValidated(false);
-        setTimeout(() => {
-          setError(false);
-        }, 3000);
-      });
-  };
+          }, 4000);
+        });
+    },
+  });
 
   const portFunc = (id) => {
     switch (id) {
@@ -158,22 +183,7 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    document.addEventListener(
-      "scroll",
-      (e) => {
-        if (window.scrollY > 400) {
-          setIsTop(true);
-        } else {
-          setIsTop(false);
-        }
-        return () => {
-          document.removeEventListener("scroll");
-        };
-      },
-      []
-    );
-  });
+  let currentYear = new Date().getFullYear();
 
   return (
     <>
@@ -224,6 +234,15 @@ export default function Home() {
                 className="btn-about"
               >
                 Chef
+              </span>
+              <span
+                onClick={() => {
+                  toggleMenu();
+                  window.scrollTo(0, cookRef.current.offsetTop);
+                }}
+                className="btn-recipes"
+              >
+                Găteşte
               </span>
               <span
                 onClick={() => {
@@ -297,6 +316,14 @@ export default function Home() {
                 Chef
               </span>
               <span
+                onClick={() => {
+                  window.scrollTo(0, cookRef.current.offsetTop);
+                }}
+                className="btn-recipes"
+              >
+                Găteşte
+              </span>
+              <span
                 onClick={() =>
                   window.scrollTo(0, portfolioRef.current.offsetTop)
                 }
@@ -358,6 +385,26 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <Parallax className="parallax2" bgImage={img4} strength={200}>
+            <div id="img2" />
+          </Parallax>
+          <div ref={cookRef} className="title-sep">
+            <h1 id="meet">Găteşte cu Chef</h1>
+            <span />
+          </div>
+          <div className="posts">
+            {yt.items.slice(0, 4).map((obj) => (
+              <iframe
+                key={obj.etag}
+                title="YouTube"
+                className="youtube-video"
+                src={`https://www.youtube.com/embed/${obj.id.videoId}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ))}
+          </div>
           <Parallax className="parallax2" bgImage={img1} strength={200}>
             <div id="img2" />
           </Parallax>
@@ -414,58 +461,46 @@ export default function Home() {
             <p>
               <b>Tel</b>: 0751 988 273
             </p>
-            <Form ref={formRef} validated={validated} onSubmit={handleSubmit}>
+            <Form onSubmit={formik.handleSubmit}>
               <Form.Group controlId="ControlName1">
                 <Form.Label>Nume</Form.Label>
                 <Form.Control
-                  required
-                  value={name}
-                  onInvalid={(e) =>
-                    e.target.setCustomValidity("Câmp obligatoriu")
-                  }
-                  onInput={(e) => e.target.setCustomValidity("")}
-                  onChange={(e) => setName(e.target.value)}
+                  {...formik.getFieldProps("name")}
                   type="text"
                   placeholder="Numele dvs."
                 />
+                {formik.touched.name && formik.errors.name ? (
+                  <span className="text-error">{formik.errors.name}</span>
+                ) : null}
               </Form.Group>
               <Form.Group controlId="ControlNumber1">
                 <Form.Label>Telefon</Form.Label>
                 <Form.Control
-                  required
-                  value={phone}
-                  onInvalid={(e) =>
-                    e.target.setCustomValidity(
-                      "Câmp obligatoriu. Să înceapă cu 07 şi să conţină în total 10 cifre"
-                    )
-                  }
-                  onInput={(e) => e.target.setCustomValidity("")}
-                  onChange={(e) => setPhone(e.target.value)}
+                  {...formik.getFieldProps("phone")}
                   type="tel"
-                  pattern="^07+\d{8}$"
                   placeholder="07xx xxx xxx"
                 />
+                {formik.touched.phone && formik.errors.phone ? (
+                  <span className="text-error">{formik.errors.phone}</span>
+                ) : null}
               </Form.Group>
               <Form.Group controlId="ControlTextarea1">
                 <Form.Label>Mesaj</Form.Label>
                 <Form.Control
-                  required
-                  value={message}
-                  onInvalid={(e) =>
-                    e.target.setCustomValidity("Câmp obligatoriu")
-                  }
-                  onInput={(e) => e.target.setCustomValidity("")}
-                  onChange={(e) => setMessage(e.target.value)}
+                  {...formik.getFieldProps("message")}
                   as="textarea"
                   rows="3"
-                  placeholder="Cu ce vă pot ajuta ?"
+                  placeholder="Mesajul dvs."
                 />
+                {formik.touched.message && formik.errors.message ? (
+                  <span className="text-error">{formik.errors.message}</span>
+                ) : null}
               </Form.Group>
               {isSuccess ? (
-                <Alert variant={"success"}>Mesajul a fost trimis.</Alert>
+                <Alert variant={"success"}>Mesajul a fost trimis !</Alert>
               ) : null}
               {isError ? (
-                <Alert variant={"danger"}>Mesajul nu fost trimis.</Alert>
+                <Alert variant={"danger"}>Mesajul nu putut fi trimis.</Alert>
               ) : null}
               {isLoading ? (
                 <Spinner size="lg" animation="border" />
@@ -475,7 +510,7 @@ export default function Home() {
                   variant={"outline-dark"}
                   type="submit"
                 >
-                  Submit
+                  Trimite
                 </Button>
               )}
             </Form>
@@ -485,7 +520,7 @@ export default function Home() {
               <a
                 title="Pagină Facebook"
                 id="fb"
-                href="https://www.facebook.com/vidicanraul1/"
+                href="https://www.facebook.com/vidicanraul1"
               >
                 <FontAwesomeIcon icon={faFacebook} />
                 <label>Facebook</label>
@@ -493,10 +528,18 @@ export default function Home() {
               <a
                 title="Pagină Instagram"
                 id="ig"
-                href="https://www.instagram.com/raul_vidican1/"
+                href="https://www.instagram.com/raul_vidican1"
               >
                 <FontAwesomeIcon icon={faInstagram} />
                 <label>Instagram</label>
+              </a>
+              <a
+                title="Canal YouTube"
+                id="ig"
+                href="https://www.youtube.com/user/ZbeengBeeef"
+              >
+                <FontAwesomeIcon icon={faYoutube} />
+                <label>YouTube</label>
               </a>
             </div>
             <div className="footer-sep">
