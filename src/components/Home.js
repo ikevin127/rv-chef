@@ -456,9 +456,6 @@ export default function Home() {
           <div className="contact-form">
             <h1>La serviciul dumneavoastră pentru evenimente și consultanță</h1>
             <p>
-              <b>Email</b>: vidraul069@gmail.com
-            </p>
-            <p>
               <b>Tel</b>: 0751 988 273
             </p>
             <Form onSubmit={formik.handleSubmit}>
