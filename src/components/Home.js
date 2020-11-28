@@ -287,7 +287,7 @@ export default function Home() {
           </div>
           <div className="side-footer">
             <div className="footer-data">
-              <p id="copy">&copy; Copyright {currentYear} | #ChefRaulVidican</p>
+              <p id="copy">Copyright &copy; {currentYear} | #ChefRaulVidican</p>
             </div>
           </div>
         </div>
@@ -543,7 +543,7 @@ export default function Home() {
               <span />
             </div>
             <div className="footer-data">
-              <p id="copy">&copy; Copyright {currentYear} | #ChefRaulVidican</p>
+              <p id="copy">Copyright &copy; {currentYear} | #ChefRaulVidican</p>
             </div>
           </div>
         </div>
