@@ -354,7 +354,7 @@ export default function Home() {
           <div className="home-page">
             <HomeCarousel />
             <span ref={chefRef} />
-            <div data-aos="fade" className="about-text">
+            <div className="about-text">
               <div className="title-sep">
                 <h1 id="meet2">Chef</h1>
                 <span />
@@ -383,9 +383,10 @@ export default function Home() {
             <h1 id="meet">Găteşte cu Chef</h1>
             <span />
           </div>
-          <div data-aos="fade" className="posts">
+          <div className="posts">
             {yt.items.slice(0, 4).map((obj) => (
               <iframe
+              data-aos="fade"
                 key={obj.etag}
                 title="YouTube"
                 className="youtube-video"
@@ -403,9 +404,9 @@ export default function Home() {
             <h1 id="meet">Portofoliu</h1>
             <span />
           </div>
-          <div data-aos="fade" className="posts">
+          <div className="posts">
             {arr.portfolios.map((obj) => (
-              <Card key={obj.id}>
+              <Card data-aos="fade" key={obj.id}>
                 <Card.Img
                   onClick={() => portFunc(obj.id)}
                   variant="top"
