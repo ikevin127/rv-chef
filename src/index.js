@@ -4,6 +4,7 @@ import App from "./App";
 
 // Styles
 import "./index.scss";
+import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));

@@ -51,14 +51,6 @@ import img1 from "../img/parallax/img1.jpg";
 import img4 from "../img/parallax/img4.jpg";
 import end from "../img/parallax/5.jpg";
 
-// Google analytics
-import TagManager from "react-gtm-module";
-const tagManagerArgs = {
-  gtmId: "GTM-MFXND56",
-};
-
-TagManager.initialize(tagManagerArgs);
-
 export default function Home() {
   // State
   const [isTop, setIsTop] = useState(false);
@@ -362,7 +354,7 @@ export default function Home() {
           <div className="home-page">
             <HomeCarousel />
             <span ref={chefRef} />
-            <div className="about-text">
+            <div data-aos="fade" className="about-text">
               <div className="title-sep">
                 <h1 id="meet2">Chef</h1>
                 <span />
@@ -371,9 +363,7 @@ export default function Home() {
                 Bucătar şef la Roca Brună, Raul Vidican a lucrat câțiva ani în
                 restaurante din Germania, perioadă în care a ajuns să se
                 califice în semifinalele regionale ale competiției S. Pellegrino
-                Young Chef 2018, concurând pentru regiunea Germania - Austria
-                <br />
-                <br />
+                Young Chef 2018, concurând pentru regiunea Germania - Austria.
                 Reîntors în țară, a colaborat cu mai multe restaurante din zona
                 Transilvaniei, pentru ca anul trecut să se implice în{" "}
                 <button
@@ -382,6 +372,7 @@ export default function Home() {
                 >
                   Proiectul Roca Brună
                 </button>
+                .
               </p>
             </div>
           </div>
@@ -392,7 +383,7 @@ export default function Home() {
             <h1 id="meet">Găteşte cu Chef</h1>
             <span />
           </div>
-          <div className="posts">
+          <div data-aos="fade" className="posts">
             {yt.items.slice(0, 4).map((obj) => (
               <iframe
                 key={obj.etag}
@@ -412,7 +403,7 @@ export default function Home() {
             <h1 id="meet">Portofoliu</h1>
             <span />
           </div>
-          <div className="posts">
+          <div data-aos="fade" className="posts">
             {arr.portfolios.map((obj) => (
               <Card key={obj.id}>
                 <Card.Img
@@ -458,7 +449,7 @@ export default function Home() {
             <p>
               <b>Tel</b>: 0751 988 273
             </p>
-            <Form onSubmit={formik.handleSubmit}>
+            <Form data-aos="fade" onSubmit={formik.handleSubmit}>
               <Form.Group controlId="ControlName1">
                 <Form.Label>Nume</Form.Label>
                 <Form.Control
@@ -515,14 +506,6 @@ export default function Home() {
           <div className="footer">
             <div className="sm-icons">
               <a
-                title="Pagină Facebook"
-                id="fb"
-                href="https://www.facebook.com/vidicanraul1"
-              >
-                <FontAwesomeIcon icon={faFacebook} />
-                <label>Facebook</label>
-              </a>
-              <a
                 title="Pagină Instagram"
                 id="ig"
                 href="https://www.instagram.com/raul_vidican1"
@@ -537,6 +520,14 @@ export default function Home() {
               >
                 <FontAwesomeIcon icon={faYoutube} />
                 <label>YouTube</label>
+              </a>
+              <a
+                title="Pagină Facebook"
+                id="fb"
+                href="https://www.facebook.com/vidicanraul1"
+              >
+                <FontAwesomeIcon icon={faFacebook} />
+                <label>Facebook</label>
               </a>
             </div>
             <div className="footer-sep">
