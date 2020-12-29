@@ -29,7 +29,11 @@ export function RocaBrunaModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <a href="https://g.page/rocabruna-ro">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://g.page/rocabruna-ro"
+        >
           <FontAwesomeIcon icon={faMapMarkerAlt} /> Roca Brună, Judeţul Arad
         </a>
         <br />

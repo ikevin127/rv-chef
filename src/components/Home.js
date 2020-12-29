@@ -386,7 +386,7 @@ export default function Home() {
           <div className="posts">
             {yt.items.slice(0, 4).map((obj) => (
               <iframe
-              data-aos="fade"
+                data-aos="fade"
                 key={obj.etag}
                 title="YouTube"
                 className="youtube-video"
@@ -509,7 +509,9 @@ export default function Home() {
               <a
                 title="Pagină Instagram"
                 id="ig"
-                href="https://www.instagram.com/raul_vidican1"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/raul_vidican"
               >
                 <FontAwesomeIcon icon={faInstagram} />
                 <label>Instagram</label>
@@ -517,6 +519,8 @@ export default function Home() {
               <a
                 title="Canal YouTube"
                 id="ig"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.youtube.com/user/ZbeengBeeef"
               >
                 <FontAwesomeIcon icon={faYoutube} />
@@ -525,6 +529,8 @@ export default function Home() {
               <a
                 title="Pagină Facebook"
                 id="fb"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.facebook.com/vidicanraul1"
               >
                 <FontAwesomeIcon icon={faFacebook} />

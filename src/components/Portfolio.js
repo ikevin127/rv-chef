@@ -35,7 +35,11 @@ export function ArtCafe(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            <a href="https://g.page/ArtCafeArad">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://g.page/ArtCafeArad"
+            >
               <FontAwesomeIcon icon={faMapMarkerAlt} /> Art Cafe, Arad
             </a>
           </Modal.Title>
@@ -83,7 +87,11 @@ export function CaeliaMamaia(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            <a href="https://goo.gl/maps/Rmanuf9JXsasZFRo7">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://goo.gl/maps/Rmanuf9JXsasZFRo7"
+            >
               <FontAwesomeIcon icon={faMapMarkerAlt} /> Caelia Beach, Mamaia
             </a>
           </Modal.Title>
@@ -110,7 +118,7 @@ export function CaeliaMamaia(props) {
 }
 
 export function RocaBruna(props) {
-  let Caelia = arr.rocabruna.map((obj) => ({
+  let Roca = arr.rocabruna.map((obj) => ({
     key: obj.id,
     src: obj.src,
     thumbnail: obj.thumbnail,
@@ -135,7 +143,11 @@ export function RocaBruna(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            <a href="https://g.page/rocabruna-ro">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://g.page/rocabruna-ro"
+            >
               <FontAwesomeIcon icon={faMapMarkerAlt} /> Roca Brună, Păuliş
             </a>
           </Modal.Title>
@@ -144,7 +156,7 @@ export function RocaBruna(props) {
           <Gallery
             onClick={() => {}}
             backdropClosesModal={true}
-            images={Caelia}
+            images={Roca}
           />
         </Modal.Body>
         <Modal.Footer>
@@ -187,7 +199,11 @@ export function NukaCluj(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            <a href="https://goo.gl/maps/cyTe8PdpbEYTNTqM6">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://goo.gl/maps/cyTe8PdpbEYTNTqM6"
+            >
               <FontAwesomeIcon icon={faMapMarkerAlt} /> Nuka, Cluj-Napoca
             </a>
           </Modal.Title>
@@ -239,7 +255,11 @@ export function AtraPraova(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            <a href="https://g.page/atra-doftana-896">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://g.page/atra-doftana-896"
+            >
               <FontAwesomeIcon icon={faMapMarkerAlt} /> Atra Doftana, Prahova
             </a>
           </Modal.Title>
@@ -291,7 +311,11 @@ export function VinSibiu(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            <a href="https://goo.gl/maps/YtWNfdetX7RYYmEx7">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://goo.gl/maps/YtWNfdetX7RYYmEx7"
+            >
               <FontAwesomeIcon icon={faMapMarkerAlt} /> Degustare vinuri, Sibiu
             </a>
           </Modal.Title>
