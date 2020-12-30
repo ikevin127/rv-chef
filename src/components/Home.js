@@ -450,7 +450,7 @@ export default function Home() {
             <p>
               <b>Tel</b>: 0751 988 273
             </p>
-            <Form data-aos="fade" onSubmit={formik.handleSubmit}>
+            <Form onSubmit={formik.handleSubmit}>
               <Form.Group controlId="ControlName1">
                 <Form.Label>Nume</Form.Label>
                 <Form.Control
