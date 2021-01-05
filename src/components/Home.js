@@ -265,8 +265,7 @@ export default function Home() {
               </span>
               <Button
                 onClick={() =>
-                  (window.location.href =
-                    "https://www.facebook.com/lapachet01/")
+                  window.open("https://www.facebook.com/lapachet01/", "_blank")
                 }
                 variant="outline-dark"
               >
@@ -339,8 +338,7 @@ export default function Home() {
               </span>
               <Button
                 onClick={() =>
-                  (window.location.href =
-                    "https://www.facebook.com/lapachet01/")
+                  window.open("https://www.facebook.com/lapachet01/", "_blank")
                 }
                 variant="outline-dark"
               >
