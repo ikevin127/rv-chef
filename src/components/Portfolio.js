@@ -24,14 +24,16 @@ export function ArtCafe(props) {
       <Modal
         {...props}
         size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
+        //aria-labelledby="contained-modal-title-vcenter"
         centered
-        onEnter={() =>
-          (document.getElementById("html").style.overflow = "hidden")
-        }
-        onExit={() =>
-          (document.getElementById("html").style.overflow = "scroll")
-        }
+        onEnter={() => {
+          document.getElementById("html").style.overflowY = "hidden";
+          document.getElementById("html").style.overflowX = "hidden";
+        }}
+        onExit={() => {
+          document.getElementById("html").style.overflowY = "scroll";
+          document.getElementById("html").style.overflowX = "hidden";
+        }}
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
@@ -40,7 +42,8 @@ export function ArtCafe(props) {
               rel="noopener noreferrer"
               href="https://g.page/ArtCafeArad"
             >
-              <FontAwesomeIcon icon={faMapMarkerAlt} /> Art Cafe, Arad
+              <FontAwesomeIcon aria-hidden="false" icon={faMapMarkerAlt} /> Art
+              Cafe, Arad
             </a>
           </Modal.Title>
         </Modal.Header>
@@ -76,7 +79,7 @@ export function CaeliaMamaia(props) {
       <Modal
         {...props}
         size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
+        //aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() =>
           (document.getElementById("html").style.overflow = "hidden")
@@ -92,7 +95,8 @@ export function CaeliaMamaia(props) {
               rel="noopener noreferrer"
               href="https://goo.gl/maps/Rmanuf9JXsasZFRo7"
             >
-              <FontAwesomeIcon icon={faMapMarkerAlt} /> Caelia Beach, Mamaia
+              <FontAwesomeIcon aria-hidden="false" icon={faMapMarkerAlt} />{" "}
+              Caelia Beach, Mamaia
             </a>
           </Modal.Title>
         </Modal.Header>
@@ -132,7 +136,7 @@ export function RocaBruna(props) {
       <Modal
         {...props}
         size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
+        //aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() =>
           (document.getElementById("html").style.overflow = "hidden")
@@ -148,7 +152,8 @@ export function RocaBruna(props) {
               rel="noopener noreferrer"
               href="https://g.page/rocabruna-ro"
             >
-              <FontAwesomeIcon icon={faMapMarkerAlt} /> Roca Brună, Păuliş
+              <FontAwesomeIcon aria-hidden="false" icon={faMapMarkerAlt} /> Roca
+              Brună, Păuliş
             </a>
           </Modal.Title>
         </Modal.Header>
@@ -188,7 +193,7 @@ export function NukaCluj(props) {
       <Modal
         {...props}
         size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
+        //aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() =>
           (document.getElementById("html").style.overflow = "hidden")
@@ -204,7 +209,8 @@ export function NukaCluj(props) {
               rel="noopener noreferrer"
               href="https://goo.gl/maps/cyTe8PdpbEYTNTqM6"
             >
-              <FontAwesomeIcon icon={faMapMarkerAlt} /> Nuka, Cluj-Napoca
+              <FontAwesomeIcon aria-hidden="false" icon={faMapMarkerAlt} />{" "}
+              Nuka, Cluj-Napoca
             </a>
           </Modal.Title>
         </Modal.Header>
@@ -244,7 +250,7 @@ export function AtraPraova(props) {
       <Modal
         {...props}
         size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
+        //aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() =>
           (document.getElementById("html").style.overflow = "hidden")
@@ -260,7 +266,8 @@ export function AtraPraova(props) {
               rel="noopener noreferrer"
               href="https://g.page/atra-doftana-896"
             >
-              <FontAwesomeIcon icon={faMapMarkerAlt} /> Atra Doftana, Prahova
+              <FontAwesomeIcon aria-hidden="false" icon={faMapMarkerAlt} /> Atra
+              Doftana, Prahova
             </a>
           </Modal.Title>
         </Modal.Header>
@@ -300,7 +307,7 @@ export function VinSibiu(props) {
       <Modal
         {...props}
         size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
+        //aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() =>
           (document.getElementById("html").style.overflow = "hidden")
@@ -316,7 +323,8 @@ export function VinSibiu(props) {
               rel="noopener noreferrer"
               href="https://goo.gl/maps/YtWNfdetX7RYYmEx7"
             >
-              <FontAwesomeIcon icon={faMapMarkerAlt} /> Degustare vinuri, Sibiu
+              <FontAwesomeIcon aria-hidden="false" icon={faMapMarkerAlt} />{" "}
+              Degustare vinuri, Sibiu
             </a>
           </Modal.Title>
         </Modal.Header>

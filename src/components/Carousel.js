@@ -7,9 +7,9 @@ import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
 // Array & Images
 import arr from "../array.json";
-import img0 from "../img/parallax/img0.jpg";
-import img2 from "../img/parallax/img2.jpg";
-import img3 from "../img/parallax/img3.jpg";
+import img0 from "../img/parallax/img0.webp";
+import img2 from "../img/parallax/img2.webp";
+import img3 from "../img/parallax/img3.webp";
 
 export function RocaBrunaModal(props) {
   return (
@@ -34,7 +34,8 @@ export function RocaBrunaModal(props) {
           rel="noopener noreferrer"
           href="https://g.page/rocabruna-ro"
         >
-          <FontAwesomeIcon icon={faMapMarkerAlt} /> Roca Brună, Judeţul Arad
+          <FontAwesomeIcon aria-hidden="false" icon={faMapMarkerAlt} /> Roca
+          Brună, Judeţul Arad
         </a>
         <br />
         <br />
@@ -96,7 +97,13 @@ export function ReviewsCarousel() {
                 „<i>{obj.text}</i>”
               </Card.Text>
               <span />
-              <Card.Img variant="bottom" src={obj.src} alt={obj.name} />
+              <Card.Img
+                width="200"
+                height="200"
+                variant="bottom"
+                src={obj.src}
+                alt={obj.name}
+              />
               <Card.Subtitle className="mt-2 text-muted">
                 {obj.name}
               </Card.Subtitle>
@@ -124,7 +131,13 @@ export function HomeCarousel() {
       onSelect={handleSelect}
     >
       <Carousel.Item>
-        <img className="carousel-img" src={img3} alt="First slide" />
+        <img
+          width="1364"
+          height="1384"
+          className="carousel-img"
+          src={img3}
+          alt="First slide"
+        />
         <Carousel.Caption>
           <h3>Raul Vidican</h3>
           <p>
@@ -135,13 +148,25 @@ export function HomeCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="carousel-img" src={img0} alt="Second slide" />
+        <img
+          width="2456"
+          height="3070"
+          className="carousel-img"
+          src={img0}
+          alt="Second slide"
+        />
         <Carousel.Caption>
           <h3>Atenţie la detalii</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="carousel-img" src={img2} alt="Third slide" />
+        <img
+          width="2000"
+          height="3000"
+          className="carousel-img"
+          src={img2}
+          alt="Third slide"
+        />
         <Carousel.Caption>
           <h3>Pasiune</h3>
         </Carousel.Caption>

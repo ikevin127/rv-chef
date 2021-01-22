@@ -5,6 +5,7 @@ import Aos from "aos";
 
 // Pages
 import Home from "./components/Home";
+import Masterclass from './components/Masterclass';
 import Not from "./components/Not";
 
 Aos.init({
@@ -25,6 +26,7 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/masterclass" component={Masterclass} />
           <Route component={Not} />
         </Switch>
       </BrowserRouter>

@@ -46,10 +46,10 @@ import * as Yup from "yup";
 // Array & Images
 import arr from "../array.json";
 import yt from "../yt.json";
-import logo from "../img/rv.png";
-import img1 from "../img/parallax/img1.jpg";
-import img4 from "../img/parallax/img4.jpg";
-import end from "../img/parallax/5.jpg";
+import logo from "../img/rv.webp";
+import img1 from "../img/parallax/img1.webp";
+import img4 from "../img/parallax/img4.webp";
+import end from "../img/parallax/5.webp";
 
 export default function Home() {
   // State
@@ -184,7 +184,7 @@ export default function Home() {
           onClick={() => window.scrollTo(0, homeRef.current.offsetTop)}
           className="scroll-up"
         >
-          <FontAwesomeIcon icon={faAngleDoubleUp} />
+          <FontAwesomeIcon aria-hidden="false" icon={faAngleDoubleUp} />
         </div>
       </CSSTransition>
       <Menu
@@ -207,10 +207,16 @@ export default function Home() {
                   fontSize: "1.5rem",
                 }}
                 icon={faTimes}
+                aria-hidden="false"
               />
             </div>
             <NavLink to="/">
-              <img src={logo} alt="Vidican Raul Logo" />
+              <img
+                width="407"
+                height="267"
+                src={logo}
+                alt="Vidican Raul Logo"
+              />
             </NavLink>
           </div>
           <div id="span-line">
@@ -295,7 +301,12 @@ export default function Home() {
         <div className="main-nav">
           <div className="logo-area">
             <NavLink to="/">
-              <img src={logo} alt="Vidican Raul Logo" />
+              <img
+                width="407"
+                height="267"
+                src={logo}
+                alt="Vidican Raul Logo"
+              />
             </NavLink>
           </div>
           <div className="main-menu">
@@ -345,7 +356,11 @@ export default function Home() {
                 LaPachet
               </Button>
             </div>
-            <FontAwesomeIcon onClick={() => setOpenNav(true)} icon={faBars} />
+            <FontAwesomeIcon
+              aria-hidden="false"
+              onClick={() => setOpenNav(true)}
+              icon={faBars}
+            />
           </div>
         </div>
         <div className="home-wrapper">
@@ -410,11 +425,17 @@ export default function Home() {
                   variant="top"
                   src={obj.src}
                   alt={obj.caption}
+                  width="400"
+                  height="400"
                 />
                 <Card.Body>
                   <Card.Title>{obj.title}</Card.Title>
                   <Card.Subtitle className="mb-2 mt-2 text-muted">
-                    <FontAwesomeIcon icon={faMapMarkerAlt} /> {obj.location}
+                    <FontAwesomeIcon
+                      aria-hidden="false"
+                      icon={faMapMarkerAlt}
+                    />{" "}
+                    {obj.location}
                   </Card.Subtitle>
                   <Card.Text>{obj.text}</Card.Text>
                   <Button
@@ -511,17 +532,17 @@ export default function Home() {
                 rel="noopener noreferrer"
                 href="https://www.instagram.com/raul_vidican"
               >
-                <FontAwesomeIcon icon={faInstagram} />
+                <FontAwesomeIcon aria-hidden="false" icon={faInstagram} />
                 <label>Instagram</label>
               </a>
               <a
                 title="Canal YouTube"
-                id="ig"
+                id="yt"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.youtube.com/user/ZbeengBeeef"
               >
-                <FontAwesomeIcon icon={faYoutube} />
+                <FontAwesomeIcon aria-hidden="false" icon={faYoutube} />
                 <label>YouTube</label>
               </a>
               <a
@@ -531,7 +552,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/vidicanraul1"
               >
-                <FontAwesomeIcon icon={faFacebook} />
+                <FontAwesomeIcon aria-hidden="false" icon={faFacebook} />
                 <label>Facebook</label>
               </a>
             </div>
