@@ -504,8 +504,9 @@ export default function Home() {
 									</Button>
 								)}
 							</Form>
+							<FT className="position-relative fixed-bottom w-100" />
 						</div>
-						<FT className="position-relative fixed-top w-100" />
+
 						<div className="footer">
 							<div className="sm-icons">
 								<a

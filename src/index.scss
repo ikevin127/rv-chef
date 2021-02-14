@@ -674,11 +674,12 @@ body {
     #contact-ref {
       display: block;
       height: 5rem;
+      background-color: white;
     }
 
     .contact-form {
       width: 100%;
-      padding: 1rem;
+      //padding: 1rem;
       padding-bottom: 0 !important;
       background-color: white;
       display: flex;
