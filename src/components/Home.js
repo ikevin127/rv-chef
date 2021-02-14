@@ -291,13 +291,21 @@ export default function Home() {
 						</div>
 					</div>
 				</Menu>
-				<ArtCafe show={art} onHide={() => setArt(false)} />
-				<CaeliaMamaia show={caelia} onHide={() => setCaelia(false)} />
-				<RocaBruna show={roca} onHide={() => setRoca(false)} />
-				<NukaCluj show={nuka} onHide={() => setNuka(false)} />
-				<AtraPraova show={atra} onHide={() => setAtra(false)} />
-				<VinSibiu show={sibiu} onHide={() => setSibiu(false)} />
-				<RocaBrunaModal show={rocaModal} onHide={() => setRocaModal(false)} />
+				<ArtCafe id="modal-zindex" show={art} onHide={() => setArt(false)} />
+				<CaeliaMamaia
+					id="modal-zindex"
+					show={caelia}
+					onHide={() => setCaelia(false)}
+				/>
+				<RocaBruna id="modal-zindex" show={roca} onHide={() => setRoca(false)} />
+				<NukaCluj id="modal-zindex" show={nuka} onHide={() => setNuka(false)} />
+				<AtraPraova id="modal-zindex" show={atra} onHide={() => setAtra(false)} />
+				<VinSibiu id="modal-zindex" show={sibiu} onHide={() => setSibiu(false)} />
+				<RocaBrunaModal
+					id="modal-zindex"
+					show={rocaModal}
+					onHide={() => setRocaModal(false)}
+				/>
 				<div id="page-wrapper">
 					<span ref={homeRef} />
 					<div className="main-nav">
