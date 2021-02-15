@@ -1,13 +1,13 @@
 import React from 'react'
-//import StripeForm from './Stripe'
+// import StripeForm from './Stripe'
 export default function Masterclass() {
     return (
-					<div className="master-container">
-						<div class="coming-soon">
-							<h1>MASTERCLASS</h1>
-							<h6>Coming soon...</h6>
-						</div>
-						{/* <StripeForm /> */}
-					</div>
-				);
+		<div className="master-container">
+			<div className="coming-soon">
+				<h1>MASTERCLASS</h1>
+				<h6>Coming soon...</h6>
+			</div>
+			{/* <StripeForm /> */}
+		</div>
+	);
 }
