@@ -1,5 +1,5 @@
 import React from 'react'
-// import StripeForm from './Stripe'
+// import Stripe from './stripe/Stripe';
 export default function Masterclass() {
     return (
 		<div className="master-container">
@@ -7,7 +7,7 @@ export default function Masterclass() {
 				<h1>MASTERCLASS</h1>
 				<h6>Coming soon...</h6>
 			</div>
-			{/* <StripeForm /> */}
+			{/* <Stripe /> */}
 		</div>
 	);
 }
