@@ -7,9 +7,9 @@ import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
 // Array & Images
 import arr from "../array.json";
-import img0 from "../img/parallax/img0.webp";
-import img2 from "../img/parallax/img2.webp";
-import img3 from "../img/parallax/img3.webp";
+import img0 from "../img/parallax/img0.jpg";
+import img2 from "../img/parallax/img2.jpg";
+import img3 from "../img/parallax/img3.jpg";
 
 export function RocaBrunaModal(props) {
   return (

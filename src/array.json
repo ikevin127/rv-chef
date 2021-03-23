@@ -2,42 +2,42 @@
   "portfolios": [
     {
       "id": 1,
-      "src": "main/art.webp",
+      "src": "main/art.jpg",
       "caption": "Art Cafe, Arad",
       "location": "Arad",
       "text": "Am pregătit un meniu călduros pentru sezonul rece, meniu toamnă-iarnă."
     },
     {
       "id": 2,
-      "src": "main/atra.webp",
+      "src": "main/atra.jpg",
       "caption": "Atra Doftana, Prahova",
       "location": "Prahova",
       "text": "Meniu de primăvară, Pensiune Atra Doftana, Prahova."
     },
     {
       "id": 3,
-      "src": "main/caelia.webp",
+      "src": "main/caelia.jpg",
       "caption": "Caelia, Mamaia",
       "location": "Mamaia",
       "text": "Meniu de vară, Caelia Beach Mamaia."
     },
     {
       "id": 4,
-      "src": "main/roca.webp",
+      "src": "main/roca.jpg",
       "caption": "Botez, Roca Brună",
       "location": "Păuliş",
       "text": "Botez, Roca Brună, un meniu special creat pentru un eveniment unic."
     },
     {
       "id": 5,
-      "src": "main/nuka.webp",
+      "src": "main/nuka.jpg",
       "caption": "Nuka, Cluj-Napoca",
       "location": "Cluj-Napoca",
       "text": "Restaurantul Nuka din Cluj, unde am pregatit un meniu de toamnă-iarnă."
     },
     {
       "id": 6,
-      "src": "main/sb.webp",
+      "src": "main/sb.jpg",
       "caption": "Degustare de Vinuri, Sibiu",
       "location": "Sibiu",
       "text": "Degustare de vinuri asociate cu mâncare la Sibiu."
@@ -46,31 +46,31 @@
   "reviews": [
     {
       "id": 1,
-      "src": "fb/1.webp",
+      "src": "fb/1.jpg",
       "name": "Susana Szekely, Lleida",
       "text": "Raul Vidican este un tânâr de o valoare inestimabilă, cu viziuni înalte şi potenţial inegalabil. Raul te felicit şi te urmăresc cu mult interes!"
     },
     {
       "id": 2,
-      "src": "fb/2.webp",
+      "src": "fb/2.jpg",
       "name": "Marius Ciobanu, Bucureşti",
       "text": "Un chef cu o personalitate demnă de toate laudele. Mult succes!"
     },
     {
       "id": 3,
-      "src": "fb/3.webp",
+      "src": "fb/3.jpg",
       "name": "Gabriela Miu Rînja, Dej",
       "text": "Un om valoros şi talentat care pune pasiune şi transformă orice aliment în artă!"
     },
     {
       "id": 4,
-      "src": "fb/4.webp",
+      "src": "fb/4.jpg",
       "name": "Johann Marianne Streit, Timişoara",
       "text": "Om serios, bine pregătit profesional și cu mult interes pentru prosperitate. Succes și respect pentru tot ceea ce faci!"
     },
     {
       "id": 5,
-      "src": "fb/5.webp",
+      "src": "fb/5.jpg",
       "name": "Adelina Iancu, Arad",
       "text": "Un bucătar excelent cu rafinament, simplitate şi gust. Demn de un succes măreţ."
     }
@@ -78,72 +78,72 @@
   "artcafe": [
     {
       "id": "5f451624092d6d99c0d14f44",
-      "src": "portfolios/1.webp",
-      "thumbnail": "portfolios/1.webp",
+      "src": "portfolios/1.jpg",
+      "thumbnail": "portfolios/1.jpg",
       "width": 3,
       "height": 2,
       "caption": "Art Cafe #1"
     },
     {
       "id": "5f451624017d917d461fce99",
-      "src": "portfolios/2.webp",
-      "thumbnail": "portfolios/2.webp",
+      "src": "portfolios/2.jpg",
+      "thumbnail": "portfolios/2.jpg",
       "width": 3,
       "height": 2,
       "caption": "Art Cafe #2"
     },
     {
       "id": "5f4516243498930883482647",
-      "src": "portfolios/3.webp",
-      "thumbnail": "portfolios/3.webp",
+      "src": "portfolios/3.jpg",
+      "thumbnail": "portfolios/3.jpg",
       "width": 3,
       "height": 2,
       "caption": "Art Cafe #3"
     },
     {
       "id": "5f451624ddab3494a3810158",
-      "src": "portfolios/4.webp",
-      "thumbnail": "portfolios/4.webp",
+      "src": "portfolios/4.jpg",
+      "thumbnail": "portfolios/4.jpg",
       "width": 1.41,
       "height": 1,
       "caption": "Art Cafe #4"
     },
     {
       "id": "5f4516247afe03259f3dc5b0",
-      "src": "portfolios/5.webp",
-      "thumbnail": "portfolios/5.webp",
+      "src": "portfolios/5.jpg",
+      "thumbnail": "portfolios/5.jpg",
       "width": 1.51,
       "height": 1,
       "caption": "Art Cafe #5"
     },
     {
       "id": "5f451624b4fe5ab3cbfe4bf5",
-      "src": "portfolios/6.webp",
-      "thumbnail": "portfolios/6.webp",
+      "src": "portfolios/6.jpg",
+      "thumbnail": "portfolios/6.jpg",
       "width": 3,
       "height": 2,
       "caption": "Art Cafe #6"
     },
     {
       "id": "5f451624ac8f95ee78952b28",
-      "src": "portfolios/7.webp",
-      "thumbnail": "portfolios/7.webp",
+      "src": "portfolios/7.jpg",
+      "thumbnail": "portfolios/7.jpg",
       "width": 3,
       "height": 2,
       "caption": "Art Cafe #7"
     },
     {
       "id": "5f4516241d5159e12256460f",
-      "src": "portfolios/8.webp",
-      "thumbnail": "portfolios/8.webp",
+      "src": "portfolios/8.jpg",
+      "thumbnail": "portfolios/8.jpg",
       "width": 3,
       "height": 2,
       "caption": "Art Cafe #8"
     },
     {
       "id": "5f45162409e7c7346d4fde33",
-      "src": "portfolios/9.webp",
-      "thumbnail": "portfolios/9.webp",
+      "src": "portfolios/9.jpg",
+      "thumbnail": "portfolios/9.jpg",
       "width": 1.57,
       "height": 1,
       "caption": "Art Cafe #9"
@@ -152,48 +152,48 @@
   "atraprahova": [
     {
       "id": "5f451624682c52f84bb808be",
-      "src": "portfolios/11.webp",
-      "thumbnail": "portfolios/11.webp",
+      "src": "portfolios/11.jpg",
+      "thumbnail": "portfolios/11.jpg",
       "width": 1.49,
       "height": 1,
       "caption": "Atra Doftana #1"
     },
     {
       "id": "5f4516243ad1890bc24d4d04",
-      "src": "portfolios/22.webp",
-      "thumbnail": "portfolios/22.webp",
+      "src": "portfolios/22.jpg",
+      "thumbnail": "portfolios/22.jpg",
       "width": 1.06,
       "height": 1,
       "caption": "Atra Doftana #2"
     },
     {
       "id": "5f4516243ba8ebc6d832959b",
-      "src": "portfolios/33.webp",
-      "thumbnail": "portfolios/33.webp",
+      "src": "portfolios/33.jpg",
+      "thumbnail": "portfolios/33.jpg",
       "width": 1.94,
       "height": 2,
       "caption": "Atra Doftana #3"
     },
     {
       "id": "5f45162449d6d4b2b84bcfe8",
-      "src": "portfolios/44.webp",
-      "thumbnail": "portfolios/44.webp",
+      "src": "portfolios/44.jpg",
+      "thumbnail": "portfolios/44.jpg",
       "width": 1.19,
       "height": 1,
       "caption": "Atra Doftana #4"
     },
     {
       "id": "5f45162409631064a8f5c441",
-      "src": "portfolios/55.webp",
-      "thumbnail": "portfolios/55.webp",
+      "src": "portfolios/55.jpg",
+      "thumbnail": "portfolios/55.jpg",
       "width": 1.12,
       "height": 1,
       "caption": "Atra Doftana #5"
     },
     {
       "id": "5f45162454100de01dcb298a",
-      "src": "portfolios/66.webp",
-      "thumbnail": "portfolios/66.webp",
+      "src": "portfolios/66.jpg",
+      "thumbnail": "portfolios/66.jpg",
       "width": 1.34,
       "height": 2,
       "caption": "Atra Doftana #6"
@@ -202,64 +202,64 @@
   "rocabruna": [
     {
       "id": "5f4516240d92d6d99c0d14f44",
-      "src": "portfolios/d1.webp",
-      "thumbnail": "portfolios/d1.webp",
+      "src": "portfolios/d1.jpg",
+      "thumbnail": "portfolios/d1.jpg",
       "width": 1.5,
       "height": 2,
       "caption": "Roca Brună #1"
     },
     {
       "id": "5f451624017dg917d461fce99",
-      "src": "portfolios/d2.webp",
-      "thumbnail": "portfolios/d2.webp",
+      "src": "portfolios/d2.jpg",
+      "thumbnail": "portfolios/d2.jpg",
       "width": 1.5,
       "height": 2,
       "caption": "Roca Brună #2"
     },
     {
       "id": "5f45162434g98930883482647",
-      "src": "portfolios/d3.webp",
-      "thumbnail": "portfolios/d3.webp",
+      "src": "portfolios/d3.jpg",
+      "thumbnail": "portfolios/d3.jpg",
       "width": 1.5,
       "height": 2,
       "caption": "Roca Brună #3"
     },
     {
       "id": "5f451624ddhab3494a3810158",
-      "src": "portfolios/d4.webp",
-      "thumbnail": "portfolios/d4.webp",
+      "src": "portfolios/d4.jpg",
+      "thumbnail": "portfolios/d4.jpg",
       "width": 1.5,
       "height": 2,
       "caption": "Roca Brună #4"
     },
     {
       "id": "5f4516247afe0k3259f3dc5b0",
-      "src": "portfolios/d5.webp",
-      "thumbnail": "portfolios/d5.webp",
+      "src": "portfolios/d5.jpg",
+      "thumbnail": "portfolios/d5.jpg",
       "width": 1.5,
       "height": 2,
       "caption": "Roca Brună #5"
     },
     {
       "id": "5f451624b4fe5lab3cbfe4bf5",
-      "src": "portfolios/d6.webp",
-      "thumbnail": "portfolios/d6.webp",
+      "src": "portfolios/d6.jpg",
+      "thumbnail": "portfolios/d6.jpg",
       "width": 1.5,
       "height": 2,
       "caption": "Roca Brună #6"
     },
     {
       "id": "5f451624kac8f95ee78952b28",
-      "src": "portfolios/d7.webp",
-      "thumbnail": "portfolios/d7.webp",
+      "src": "portfolios/d7.jpg",
+      "thumbnail": "portfolios/d7.jpg",
       "width": 1.34,
       "height": 2,
       "caption": "Roca Brună #7"
     },
     {
       "id": "5f4516241d51j59e12256460f",
-      "src": "portfolios/d8.webp",
-      "thumbnail": "portfolios/d8.webp",
+      "src": "portfolios/d8.jpg",
+      "thumbnail": "portfolios/d8.jpg",
       "width": 1.34,
       "height": 2,
       "caption": "Roca Brună #8"
@@ -268,80 +268,80 @@
   "nukacluj": [
     {
       "id": "5f451624b3f0321d5bd19558",
-      "src": "portfolios/c1.webp",
-      "thumbnail": "portfolios/c1.webp",
+      "src": "portfolios/c1.jpg",
+      "thumbnail": "portfolios/c1.jpg",
       "width": 3,
       "height": 2,
       "caption": "NUKA #1"
     },
     {
       "id": "5f4516248389a58e965907c2",
-      "src": "portfolios/c2.webp",
-      "thumbnail": "portfolios/c2.webp",
+      "src": "portfolios/c2.jpg",
+      "thumbnail": "portfolios/c2.jpg",
       "width": 3,
       "height": 2,
       "caption": "NUKA #2"
     },
     {
       "id": "5f4516241b596a117f25746a",
-      "src": "portfolios/c3.webp",
-      "thumbnail": "portfolios/c3.webp",
+      "src": "portfolios/c3.jpg",
+      "thumbnail": "portfolios/c3.jpg",
       "width": 3,
       "height": 2,
       "caption": "NUKA #3"
     },
     {
       "id": "5f451624f53b86cd07566d6e",
-      "src": "portfolios/c4.webp",
-      "thumbnail": "portfolios/c4.webp",
+      "src": "portfolios/c4.jpg",
+      "thumbnail": "portfolios/c4.jpg",
       "width": 3,
       "height": 2,
       "caption": "NUKA #4"
     },
     {
       "id": "5f451624bad699489c3dabd9",
-      "src": "portfolios/c5.webp",
-      "thumbnail": "portfolios/c5.webp",
+      "src": "portfolios/c5.jpg",
+      "thumbnail": "portfolios/c5.jpg",
       "width": 3,
       "height": 2,
       "caption": "NUKA #5"
     },
     {
       "id": "5f4516241b1baa33d808c094",
-      "src": "portfolios/c6.webp",
-      "thumbnail": "portfolios/c6.webp",
+      "src": "portfolios/c6.jpg",
+      "thumbnail": "portfolios/c6.jpg",
       "width": 3,
       "height": 2,
       "caption": "NUKA #6"
     },
     {
       "id": "5f451624c0454c9f7f90534c",
-      "src": "portfolios/c7.webp",
-      "thumbnail": "portfolios/c7.webp",
+      "src": "portfolios/c7.jpg",
+      "thumbnail": "portfolios/c7.jpg",
       "width": 3,
       "height": 2,
       "caption": "NUKA #7"
     },
     {
       "id": "5f451624c48deb4f9f464086",
-      "src": "portfolios/c8.webp",
-      "thumbnail": "portfolios/c8.webp",
+      "src": "portfolios/c8.jpg",
+      "thumbnail": "portfolios/c8.jpg",
       "width": 3,
       "height": 2,
       "caption": "NUKA #8"
     },
     {
       "id": "5f45162482515603f4e8ca18",
-      "src": "portfolios/c9.webp",
-      "thumbnail": "portfolios/c9.webp",
+      "src": "portfolios/c9.jpg",
+      "thumbnail": "portfolios/c9.jpg",
       "width": 3,
       "height": 2,
       "caption": "NUKA #9"
     },
     {
       "id": "5f4516244ff9e607b76665dc",
-      "src": "portfolios/c10.webp",
-      "thumbnail": "portfolios/c10.webp",
+      "src": "portfolios/c10.jpg",
+      "thumbnail": "portfolios/c10.jpg",
       "width": 3,
       "height": 2,
       "caption": "NUKA #10"
@@ -350,80 +350,80 @@
   "caeliamamaia": [
     {
       "id": "5f451624b3f0321d5bd19558",
-      "src": "portfolios/b1.webp",
-      "thumbnail": "portfolios/b1.webp",
+      "src": "portfolios/b1.jpg",
+      "thumbnail": "portfolios/b1.jpg",
       "width": 1.34,
       "height": 2,
       "caption": "Caelia #1"
     },
     {
       "id": "5f4516248389a58e965907c2",
-      "src": "portfolios/b2.webp",
-      "thumbnail": "portfolios/b2.webp",
+      "src": "portfolios/b2.jpg",
+      "thumbnail": "portfolios/b2.jpg",
       "width": 1.34,
       "height": 2,
       "caption": "Caelia #2"
     },
     {
       "id": "5f4516241b596a117f25746a",
-      "src": "portfolios/b3.webp",
-      "thumbnail": "portfolios/b3.webp",
+      "src": "portfolios/b3.jpg",
+      "thumbnail": "portfolios/b3.jpg",
       "width": 1,
       "height": 1,
       "caption": "Caelia #3"
     },
     {
       "id": "5f451624f53b86cd07566d6e",
-      "src": "portfolios/b4.webp",
-      "thumbnail": "portfolios/b4.webp",
+      "src": "portfolios/b4.jpg",
+      "thumbnail": "portfolios/b4.jpg",
       "width": 1,
       "height": 1,
       "caption": "Caelia #4"
     },
     {
       "id": "5f451624bad699489c3dabd9",
-      "src": "portfolios/b5.webp",
-      "thumbnail": "portfolios/b5.webp",
+      "src": "portfolios/b5.jpg",
+      "thumbnail": "portfolios/b5.jpg",
       "width": 1,
       "height": 1,
       "caption": "Caelia #5"
     },
     {
       "id": "5f4516241b1baa33d808c094",
-      "src": "portfolios/b6.webp",
-      "thumbnail": "portfolios/b6.webp",
+      "src": "portfolios/b6.jpg",
+      "thumbnail": "portfolios/b6.jpg",
       "width": 1.5,
       "height": 2,
       "caption": "Caelia #6"
     },
     {
       "id": "5f451624c0454c9f7f90534c",
-      "src": "portfolios/b7.webp",
-      "thumbnail": "portfolios/b7.webp",
+      "src": "portfolios/b7.jpg",
+      "thumbnail": "portfolios/b7.jpg",
       "width": 1.5,
       "height": 2,
       "caption": "Caelia #7"
     },
     {
       "id": "5f451624c48deb4f9f464086",
-      "src": "portfolios/b8.webp",
-      "thumbnail": "portfolios/b8.webp",
+      "src": "portfolios/b8.jpg",
+      "thumbnail": "portfolios/b8.jpg",
       "width": 1,
       "height": 1,
       "caption": "Caelia #8"
     },
     {
       "id": "5f45162482515603f4e8ca18",
-      "src": "portfolios/b9.webp",
-      "thumbnail": "portfolios/b9.webp",
+      "src": "portfolios/b9.jpg",
+      "thumbnail": "portfolios/b9.jpg",
       "width": 1,
       "height": 1,
       "caption": "Caelia #9"
     },
     {
       "id": "5f4516244ff9e607b76665dc",
-      "src": "portfolios/b10.webp",
-      "thumbnail": "portfolios/b10.webp",
+      "src": "portfolios/b10.jpg",
+      "thumbnail": "portfolios/b10.jpg",
       "width": 1,
       "height": 1,
       "caption": "Caelia #10"
@@ -432,56 +432,56 @@
   "vinsibiu": [
     {
       "id": "5f4516245fde498014eabb91",
-      "src": "portfolios/110.webp",
-      "thumbnail": "portfolios/110.webp",
+      "src": "portfolios/110.jpg",
+      "thumbnail": "portfolios/110.jpg",
       "width": 3,
       "height": 2,
       "caption": "Sibiu #1"
     },
     {
       "id": "5f4516247a487943b1c49626",
-      "src": "portfolios/120.webp",
-      "thumbnail": "portfolios/120.webp",
+      "src": "portfolios/120.jpg",
+      "thumbnail": "portfolios/120.jpg",
       "width": 3,
       "height": 2,
       "caption": "Sibiu #2"
     },
     {
       "id": "5f4516246737e5ff980ead1f",
-      "src": "portfolios/130.webp",
-      "thumbnail": "portfolios/130.webp",
+      "src": "portfolios/130.jpg",
+      "thumbnail": "portfolios/130.jpg",
       "width": 3,
       "height": 2,
       "caption": "Sibiu #3"
     },
     {
       "id": "5f451624a0d4056e94aaeb1f",
-      "src": "portfolios/140.webp",
-      "thumbnail": "portfolios/140.webp",
+      "src": "portfolios/140.jpg",
+      "thumbnail": "portfolios/140.jpg",
       "width": 3,
       "height": 2,
       "caption": "Sibiu #4"
     },
     {
       "id": "5f451624b9826433643e8f58",
-      "src": "portfolios/150.webp",
-      "thumbnail": "portfolios/150.webp",
+      "src": "portfolios/150.jpg",
+      "thumbnail": "portfolios/150.jpg",
       "width": 3,
       "height": 2,
       "caption": "Sibiu #5"
     },
     {
       "id": "5f4516249b9a5e566274d15d",
-      "src": "portfolios/160.webp",
-      "thumbnail": "portfolios/160.webp",
+      "src": "portfolios/160.jpg",
+      "thumbnail": "portfolios/160.jpg",
       "width": 3,
       "height": 2,
       "caption": "Sibiu #6"
     },
     {
       "id": "5f451624de17a494554a0e30",
-      "src": "portfolios/170.webp",
-      "thumbnail": "portfolios/170.webp",
+      "src": "portfolios/170.jpg",
+      "thumbnail": "portfolios/170.jpg",
       "width": 3,
       "height": 2,
       "caption": "Sibiu #7"

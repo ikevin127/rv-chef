@@ -46,10 +46,10 @@ import * as Yup from "yup";
 // Array & Images
 import arr from "../array.json";
 import yt from "../yt.json";
-import logo from "../img/rv.webp";
-import img1 from "../img/parallax/img1.webp";
-import img4 from "../img/parallax/img4.webp";
-import end from "../img/parallax/5.webp";
+import logo from "../img/rv.png";
+import img1 from "../img/parallax/img1.jpg";
+import img4 from "../img/parallax/img4.jpg";
+import end from "../img/parallax/5.jpg";
 import { ReactComponent as UP1 } from "../img/svg/top1.svg";
 import { ReactComponent as BT1 } from "../img/svg/bottom1.svg";
 import { ReactComponent as UP2 } from "../img/svg/top2.svg";
@@ -442,7 +442,11 @@ export default function Home() {
 							))}
 						</div>
 						<span ref={recenziiRef} />
-						<Parallax className="parallax22" bgImage={end} strength={400}>
+						<Parallax
+							className="parallax22"
+							bgImage={end}
+							strength={400}
+						>
 							<UP3 className="position-absolute w-100" />
 							<div id="img3">
 								<div className="title-sep2">

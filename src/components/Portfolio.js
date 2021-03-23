@@ -24,7 +24,6 @@ export function ArtCafe(props) {
       <Modal
         {...props}
         size="lg"
-        //aria-labelledby="contained-modal-title-vcenter"
         centered
         onEnter={() => {
           document.getElementById("html").style.overflowY = "hidden";
