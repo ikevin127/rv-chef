@@ -5,33 +5,35 @@ import Aos from "aos";
 
 // Pages
 import Home from "./components/Home";
-import Masterclass from './components/Masterclass';
 import Not from "./components/Not";
+import Masterclass from "./components/Masterclass";
+import WatchMasterclass from "./components/WatchMasterclass";
 
 Aos.init({
-  delay: 100,
-  offset: 150,
-  once: true,
-  duration: 1000,
+	delay: 100,
+	offset: 150,
+	once: true,
+	duration: 1000,
 });
 
 const tagManagerArgs = {
-  gtmId: "GTM-MFXND56",
+	gtmId: "GTM-MFXND56",
 };
 TagManager.initialize(tagManagerArgs);
 
 class App extends React.Component {
-  render() {
+	render() {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/masterclass/:id" component={Masterclass} />
-          <Route component={Not} />
-        </Switch>
-      </BrowserRouter>
-    );
-  }
+		<BrowserRouter>
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route exact path="/masterclass" component={Masterclass} />
+				<Route exact path="/masterclass/:id" component={WatchMasterclass} />
+				<Route component={Not} />
+			</Switch>
+		</BrowserRouter>
+	);
+}
 }
 
 export default App;
