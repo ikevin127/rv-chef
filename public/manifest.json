@@ -1,0 +1,16 @@
+{
+  "short_name": "RaulVidican",
+  "name": "Raul Vidican - Head Chef | RaulVidican.ro",
+  "description": "Raul Vidican Head Chef - Bucatar Sef la serviciul dumneavoastra pentru evenimente si consultanta. Semifinalist S.Pellegrino Young Chef 2018 si Next Chef Award 2017. Afla mai multe aici.",
+  "icons": [
+    {
+      "src": "%PUBLIC_URL%/icons/128a.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FFFFFF",
+  "background_color": "#000000"
+}
