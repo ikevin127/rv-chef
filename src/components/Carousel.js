@@ -21,7 +21,7 @@ export function RocaBrunaModal(props) {
       onEnter={() =>
         (document.getElementById("html").style.overflow = "hidden")
       }
-      onExit={() => (document.getElementById("html").style.overflow = "scroll")}
+      onExit={() => (document.getElementById("html").style.overflow = "initial")}
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">

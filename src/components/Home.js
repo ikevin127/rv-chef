@@ -34,7 +34,7 @@ import { Parallax } from "react-parallax";
 import { CSSTransition } from "react-transition-group";
 
 // Side menu
-import { pushRotate as Menu } from "react-burger-menu";
+import { slide as Menu } from "react-burger-menu";
 
 // Axios
 import axios from "axios";
@@ -97,6 +97,14 @@ export default function Home() {
       []
     );
   }, []);
+
+  useEffect(() => {
+	if (openNav) {
+		document.getElementById("html").style.overflow = "hidden";
+	} else {
+		document.getElementById("html").style.overflow = "initial";
+	}
+}, [openNav]);
 
   const toggleMenu = () => {
     setOpenNav(!openNav);
@@ -442,11 +450,7 @@ export default function Home() {
 							))}
 						</div>
 						<span ref={recenziiRef} />
-						<Parallax
-							className="parallax22"
-							bgImage={end}
-							strength={400}
-						>
+						<Parallax className="parallax22" bgImage={end} strength={400}>
 							<UP3 className="position-absolute w-100" />
 							<div id="img3">
 								<div className="title-sep2">

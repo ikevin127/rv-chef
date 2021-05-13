@@ -84,7 +84,7 @@ export function CaeliaMamaia(props) {
           (document.getElementById("html").style.overflow = "hidden")
         }
         onExit={() =>
-          (document.getElementById("html").style.overflow = "scroll")
+          (document.getElementById("html").style.overflow = "initial")
         }
       >
         <Modal.Header closeButton>
@@ -141,7 +141,7 @@ export function RocaBruna(props) {
           (document.getElementById("html").style.overflow = "hidden")
         }
         onExit={() =>
-          (document.getElementById("html").style.overflow = "scroll")
+          (document.getElementById("html").style.overflow = "initial")
         }
       >
         <Modal.Header closeButton>
@@ -198,7 +198,7 @@ export function NukaCluj(props) {
           (document.getElementById("html").style.overflow = "hidden")
         }
         onExit={() =>
-          (document.getElementById("html").style.overflow = "scroll")
+          (document.getElementById("html").style.overflow = "initial")
         }
       >
         <Modal.Header closeButton>
@@ -255,7 +255,7 @@ export function AtraPraova(props) {
           (document.getElementById("html").style.overflow = "hidden")
         }
         onExit={() =>
-          (document.getElementById("html").style.overflow = "scroll")
+          (document.getElementById("html").style.overflow = "initial")
         }
       >
         <Modal.Header closeButton>
@@ -312,7 +312,7 @@ export function VinSibiu(props) {
           (document.getElementById("html").style.overflow = "hidden")
         }
         onExit={() =>
-          (document.getElementById("html").style.overflow = "scroll")
+          (document.getElementById("html").style.overflow = "initial")
         }
       >
         <Modal.Header closeButton>
