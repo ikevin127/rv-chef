@@ -528,7 +528,7 @@ body {
 
     .parallax2 {
       #img1, #img2 {
-        height: 50rem;
+        height: 70rem;
 
         @media (max-width: 412px) {
           height: 25rem;
@@ -604,7 +604,7 @@ body {
 
     .parallax22 {
       #img3 {
-        height: 45rem;
+        height: 50rem;
       }
 
       .title-sep2,
@@ -733,9 +733,12 @@ body {
         font-weight: normal;
       }
 
-      .spinner-border,
       .alert {
         border-radius: 0;
+        margin-top: 1rem;
+      }
+
+      .spinner-border {
         margin-top: 1rem;
       }
 
