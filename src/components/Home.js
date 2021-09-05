@@ -125,7 +125,7 @@ export default function Home() {
       phone: Yup.number()
         .typeError("Numărul de telefon trebuie să conţină doar cifre")
         .min(
-          1111111111,
+          111111111,
           "Numărul de telefon trebuie să conţină cel puţin 10 cifre"
         )
         .required("Numărul de telefon este necesar"),

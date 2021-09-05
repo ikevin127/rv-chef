@@ -13,18 +13,19 @@ body {
   background-color: black;
   overflow-x: hidden;
 
-  // Scrollbar
-  scrollbar-color: #000 rgb(216, 216, 216);
-
+  // Firefox
+  scrollbar-width: thin;
+  scrollbar-color: rgb(20, 20, 20) rgb(216, 216, 216);
+  
+  // Chrome & Safari
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
   }
   ::-webkit-scrollbar-track {
       background: rgb(216, 216, 216); 
   }
   ::-webkit-scrollbar-thumb {
-    background: #000;
-    border-radius: 34px;
+    background: rgb(20, 20, 20);
   }
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(32, 32, 32); 
@@ -796,6 +797,9 @@ body {
 
           input,
           textarea {
+            // Firefox
+            scrollbar-width: thin;
+            scrollbar-color: rgb(20, 20, 20) rgb(216, 216, 216);
             resize: none;
             border-radius: 0;
             &:focus {
