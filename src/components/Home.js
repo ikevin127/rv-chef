@@ -430,7 +430,7 @@ export default function Home() {
 						display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center',
-						marginBottom: '2rem',
+						paddingBottom: '2rem',
 					}}>
 						<div style={{
 							background: 'white',
