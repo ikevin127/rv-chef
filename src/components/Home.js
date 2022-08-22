@@ -496,7 +496,7 @@ export default function Home() {
 					<div className="contact-form">
 						<h1>La serviciul dumneavoastră pentru evenimente și consultanță</h1>
 						<p>
-							<b>Tel</b>: 0751 988 273
+							<b>Tel</b>: <a href="tel:+40751988273">0751 988 273</a>
 						</p>
 						<Form onSubmit={formik.handleSubmit}>
 							<Form.Group controlId="ControlName1">

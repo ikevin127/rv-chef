@@ -40,7 +40,7 @@ body {
   }
 
   .w-100 {
-    min-width: 102%;
+    min-width: 100%;
   }
 
   .modal-footer {
@@ -729,6 +729,7 @@ body {
     }
 
     #contact-ref {
+      overflow: hidden;
       display: block;
       height: 3rem;
       background-color: white;
