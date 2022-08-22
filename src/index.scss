@@ -310,6 +310,23 @@ body {
       margin: 0;
       font-weight: bold;
       color: black;
+      padding: 20px 0;
+
+      @media (max-width: 360px) {
+        font-weight: normal;
+      }
+    }
+
+    #pachet {
+      margin: 0;
+      font-weight: bold;
+      color: black;
+      padding: 20px 0 100px;
+
+      @media (max-width: 1200px) {
+        padding: 0 0 40px;
+        font-weight: normal;
+      }
 
       @media (max-width: 360px) {
         font-weight: normal;
@@ -476,7 +493,7 @@ body {
         flex-direction: column;
         justify-content: flex-start;
         background-color: white;
-        padding: 2rem 2rem;
+        padding: 4rem 2rem;
 
         .title-sep,
         #text {
@@ -543,7 +560,7 @@ body {
       flex-direction: row;
       justify-content: center;
       align-items: flex-start;
-      padding: 2rem 0;
+      padding: 2rem 0 4rem;
       background-color: white;
 
       .youtube-video {

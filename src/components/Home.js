@@ -77,6 +77,7 @@ export default function Home() {
 	const homeRef = useRef();
 	const chefRef = useRef();
 	const cookRef = useRef();
+	const pachetRef = useRef();
 	const portfolioRef = useRef();
 	const recenziiRef = useRef();
 	const contactRef = useRef();
@@ -113,8 +114,6 @@ export default function Home() {
 	const handleStateChange = (state) => {
 		setOpenNav(state.isOpen);
 	};
-
-	console.log(process.env.REACT_APP_EMAIL);
 
 	const formik = useFormik({
 		initialValues: {
@@ -281,14 +280,12 @@ export default function Home() {
 							>
 								Contact
 							</span>
-							<Button
-								onClick={() =>
-									window.open("https://www.facebook.com/lapachet01/", "_blank")
-								}
-								variant="outline-dark"
+							<span
+								onClick={() => window.scrollTo(0, pachetRef.current.offsetTop)}
+								className="btn-contact"
 							>
-								LaPachet
-							</Button>
+								Oferta LaPachet
+							</span>
 						</div>
 					</div>
 					<div id="span-line2">
@@ -358,14 +355,12 @@ export default function Home() {
 							>
 								Contact
 							</span>
-							<Button
-								onClick={() =>
-									window.open("https://www.facebook.com/lapachet01/", "_blank")
-								}
-								variant="outline-dark"
+							<span
+								onClick={() => window.scrollTo(0, pachetRef.current.offsetTop)}
+								className="btn-contact"
 							>
-								LaPachet
-							</Button>
+								Oferta LaPachet
+							</span>
 						</div>
 						<FontAwesomeIcon
 							aria-hidden="false"
@@ -383,15 +378,23 @@ export default function Home() {
 								<h1 id="meet2">Chef</h1>
 							</div>
 							<p id="text">
-								Bucătar şef la Roca Brună, Raul Vidican a lucrat câțiva ani în
+								Bucătar şef la Rădăcini, Raul Vidican a lucrat câțiva ani în
 								restaurante din Germania, perioadă în care a ajuns să se califice în
 								semifinalele regionale ale competiției S. Pellegrino Young Chef 2018,
 								concurând pentru regiunea Germania - Austria. Reîntors în țară, a
 								colaborat cu mai multe restaurante din zona Transilvaniei, pentru ca
-								anul trecut să se implice în{" "}
-								<button className="link-button" onClick={() => setRocaModal(true)}>
-									Proiectul Roca Brună
-								</button>
+								anul acesta să îşi deschidă propriul restaurant{" "}
+								<a
+									style={{
+										cursor: 'pointer',
+									}}
+									title="Rădăcini by Raul Vidican"
+									target="_blank"
+									rel="noopener noreferrer"
+									href="https://www.facebook.com/radacinibyraulvidican"
+								>
+									<label>Rădăcini by Raul Vidican</label>
+								</a>
 								.
 							</p>
 						</div>
@@ -417,6 +420,26 @@ export default function Home() {
 								allowFullScreen
 							/>
 						))}
+					</div>
+					<div ref={pachetRef} className="title-sep">
+						<h1 id="pachet">La Pachet</h1>
+					</div>
+					<div style={{
+						width: '100%',
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						marginBottom: '2rem',
+					}}>
+						<div style={{
+							width: '80vw',
+						}}>
+							<img 
+								width="100%"
+								height="100%"
+								src="https://dlc4jqsejiyjs.cloudfront.net/meniu_vidican_site_compressed_page-0001.jpg"
+								alt="Oferta LaPachet"/>
+						</div>
 					</div>
 					<Parallax className="parallax2" bgImage={img1} strength={200}>
 						<UP2 className="position-absolute w-100" />
