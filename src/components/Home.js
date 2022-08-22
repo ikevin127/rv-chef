@@ -425,6 +425,7 @@ export default function Home() {
 						<h1 id="pachet">La Pachet</h1>
 					</div>
 					<div style={{
+						background: 'white',
 						width: '100%',
 						display: 'flex',
 						justifyContent: 'center',
@@ -432,6 +433,7 @@ export default function Home() {
 						marginBottom: '2rem',
 					}}>
 						<div style={{
+							background: 'white',
 							width: '80vw',
 						}}>
 							<img 
