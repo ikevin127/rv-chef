@@ -13,7 +13,13 @@ import {
 import { RocaBrunaModal, ReviewsCarousel, HomeCarousel } from "./Carousel";
 
 /* Bootstrap & FontAwesome */
-import { Alert, Button, Card, Form, Spinner } from "react-bootstrap";
+import { 
+	// Alert,
+	Button,
+	Card,
+	// Form,
+	// Spinner
+} from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faFacebook,
@@ -37,11 +43,11 @@ import { CSSTransition } from "react-transition-group";
 import { slide as Menu } from "react-burger-menu";
 
 // Axios
-import axios from "axios";
+// import axios from "axios";
 
 // Form validation
-import { useFormik } from "formik";
-import * as Yup from "yup";
+// import { useFormik } from "formik";
+// import * as Yup from "yup";
 
 // Array & Images
 import arr from "../array.json";
@@ -69,9 +75,9 @@ export default function Home() {
 	const [roca, setRoca] = useState(false);
 	const [nuka, setNuka] = useState(false);
 	const [sibiu, setSibiu] = useState(false);
-	const [isLoading, setLoad] = useState(false);
-	const [isSuccess, setSuccess] = useState(false);
-	const [isError, setError] = useState(false);
+	// const [isLoading, setLoad] = useState(false);
+	// const [isSuccess, setSuccess] = useState(false);
+	// const [isError, setError] = useState(false);
 
 	// Refs
 	const homeRef = useRef();
@@ -115,62 +121,62 @@ export default function Home() {
 		setOpenNav(state.isOpen);
 	};
 
-	const formik = useFormik({
-		initialValues: {
-			name: "",
-			phone: "",
-			message: "",
-		},
-		validationSchema: Yup.object({
-			name: Yup.string().min(1).required("Numele este necesar"),
-			phone: Yup.number()
-				.typeError("Numărul de telefon trebuie să conţină doar cifre")
-				.min(
-					111111111,
-					"Numărul de telefon trebuie să conţină cel puţin 10 cifre"
-				)
-				.required("Numărul de telefon este necesar"),
-			message: Yup.string()
-				.min(1)
-				.required(
-					"Un scurt mesaj este necesar pentru a ştii cu ce vă pot ajuta"
-				),
-		}),
-		onSubmit: (values, { setSubmitting, setErrors, setStatus, resetForm }) => {
-			setLoad(true);
-			axios
-				.post(process.env.REACT_APP_EMAIL, {
-					name: values.name,
-					phone: values.phone,
-					message: values.message,
-				})
-				.then((res) => {
-					if (res.data.success === true) {
-						resetForm({});
-						setLoad(false);
-						setSuccess(true);
-						setTimeout(() => {
-							setSuccess(false);
-						}, 4000);
-					} else {
-						resetForm({});
-						setLoad(false);
-						setError(true);
-						setTimeout(() => {
-							setError(false);
-						}, 4000);
-					}
-				})
-				.catch(() => {
-					setLoad(false);
-					setError(true);
-					resetForm({});
-					setTimeout(() => {
-						setError(false);
-					}, 4000);
-				});
-		},
-	});
+	// const formik = useFormik({
+	// 	initialValues: {
+	// 		name: "",
+	// 		phone: "",
+	// 		message: "",
+	// 	},
+	// 	validationSchema: Yup.object({
+	// 		name: Yup.string().min(1).required("Numele este necesar"),
+	// 		phone: Yup.number()
+	// 			.typeError("Numărul de telefon trebuie să conţină doar cifre")
+	// 			.min(
+	// 				111111111,
+	// 				"Numărul de telefon trebuie să conţină cel puţin 10 cifre"
+	// 			)
+	// 			.required("Numărul de telefon este necesar"),
+	// 		message: Yup.string()
+	// 			.min(1)
+	// 			.required(
+	// 				"Un scurt mesaj este necesar pentru a ştii cu ce vă pot ajuta"
+	// 			),
+	// 	}),
+	// 	onSubmit: (values, { setSubmitting, setErrors, setStatus, resetForm }) => {
+	// 		setLoad(true);
+	// 		axios
+	// 			.post(process.env.REACT_APP_EMAIL, {
+	// 				name: values.name,
+	// 				phone: values.phone,
+	// 				message: values.message,
+	// 			})
+	// 			.then((res) => {
+	// 				if (res.data.success === true) {
+	// 					resetForm({});
+	// 					setLoad(false);
+	// 					setSuccess(true);
+	// 					setTimeout(() => {
+	// 						setSuccess(false);
+	// 					}, 4000);
+	// 				} else {
+	// 					resetForm({});
+	// 					setLoad(false);
+	// 					setError(true);
+	// 					setTimeout(() => {
+	// 						setError(false);
+	// 					}, 4000);
+	// 				}
+	// 			})
+	// 			.catch(() => {
+	// 				setLoad(false);
+	// 				setError(true);
+	// 				resetForm({});
+	// 				setTimeout(() => {
+	// 					setError(false);
+	// 				}, 4000);
+	// 			});
+	// 	},
+	// });
 
 	const portFunc = (id) => {
 		switch (id) {
@@ -498,7 +504,7 @@ export default function Home() {
 						<p>
 							<b>Tel</b>: <a href="tel:+40751988273">0751 988 273</a>
 						</p>
-						<Form onSubmit={formik.handleSubmit}>
+						{/* <Form onSubmit={formik.handleSubmit}>
 							<Form.Group controlId="ControlName1">
 								<Form.Label>Nume</Form.Label>
 								<Form.Control
@@ -546,7 +552,7 @@ export default function Home() {
 									Trimite
 								</Button>
 							)}
-						</Form>
+						</Form> */}
 						<FT className="position-relative fixed-bottom w-100" />
 					</div>
 
