@@ -19,11 +19,10 @@
     "axios": ">=0.21.1",
     "bootstrap": "^4.6.0",
     "formik": "^2.2.6",
-    "node-sass": "^4.14.1",
-    "react": "^17.0.2",
+    "react": "^16.8.0",
     "react-bootstrap": "^1.4.3",
     "react-burger-menu": "^3.0.3",
-    "react-dom": "^17.0.1",
+    "react-dom": "^16.8.0",
     "react-grid-gallery": "^0.5.5",
     "react-gtm-module": "^2.0.11",
     "react-parallax": "^3.1.2",
@@ -31,15 +30,16 @@
     "react-scripts": "^4.0.1",
     "react-transition-group": "^4.4.1",
     "react-youtube": "^7.13.0",
+    "sass": "^1.77.4",
     "shaka-player-react": "^1.1.2",
     "uuid": "^8.3.2",
     "yup": "^0.32.8"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "test": "NODE_OPTIONS=--openssl-legacy-provider react-scripts test",
+    "eject": "NODE_OPTIONS=--openssl-legacy-provider react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
