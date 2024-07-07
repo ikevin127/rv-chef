@@ -14,11 +14,8 @@ import { RocaBrunaModal, ReviewsCarousel, HomeCarousel } from "./Carousel";
 
 /* Bootstrap & FontAwesome */
 import { 
-	// Alert,
 	Button,
 	Card,
-	// Form,
-	// Spinner
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -42,27 +39,17 @@ import { CSSTransition } from "react-transition-group";
 // Side menu
 import { slide as Menu } from "react-burger-menu";
 
-// Axios
-// import axios from "axios";
-
-// Form validation
-// import { useFormik } from "formik";
-// import * as Yup from "yup";
-
 // Array & Images
 import arr from "../array.json";
 import yt from "../yt.json";
-import logo from "../img/rv.png";
-import img1 from "../img/parallax/img1.jpg";
-import img4 from "../img/parallax/img4.jpg";
-import end from "../img/parallax/5.jpg";
-import { ReactComponent as UP1 } from "../img/svg/top1.svg";
-import { ReactComponent as BT1 } from "../img/svg/bottom1.svg";
-import { ReactComponent as UP2 } from "../img/svg/top2.svg";
-import { ReactComponent as BT2 } from "../img/svg/bottom2.svg";
-import { ReactComponent as UP3 } from "../img/svg/top3.svg";
-import { ReactComponent as BT3 } from "../img/svg/bottom3.svg";
-import { ReactComponent as FT } from "../img/svg/footer.svg";
+import { ReactComponent as UP1 } from "../svg/top1.svg";
+import { ReactComponent as BT1 } from "../svg/bottom1.svg";
+import { ReactComponent as UP2 } from "../svg/top2.svg";
+import { ReactComponent as BT2 } from "../svg/bottom2.svg";
+import { ReactComponent as UP3 } from "../svg/top3.svg";
+import { ReactComponent as BT3 } from "../svg/bottom3.svg";
+import { ReactComponent as FT } from "../svg/footer.svg";
+import { addMediaPrefix } from "../utils";
 
 export default function Home() {
 	// State
@@ -75,9 +62,6 @@ export default function Home() {
 	const [roca, setRoca] = useState(false);
 	const [nuka, setNuka] = useState(false);
 	const [sibiu, setSibiu] = useState(false);
-	// const [isLoading, setLoad] = useState(false);
-	// const [isSuccess, setSuccess] = useState(false);
-	// const [isError, setError] = useState(false);
 
 	// Refs
 	const homeRef = useRef();
@@ -121,63 +105,6 @@ export default function Home() {
 		setOpenNav(state.isOpen);
 	};
 
-	// const formik = useFormik({
-	// 	initialValues: {
-	// 		name: "",
-	// 		phone: "",
-	// 		message: "",
-	// 	},
-	// 	validationSchema: Yup.object({
-	// 		name: Yup.string().min(1).required("Numele este necesar"),
-	// 		phone: Yup.number()
-	// 			.typeError("Numărul de telefon trebuie să conţină doar cifre")
-	// 			.min(
-	// 				111111111,
-	// 				"Numărul de telefon trebuie să conţină cel puţin 10 cifre"
-	// 			)
-	// 			.required("Numărul de telefon este necesar"),
-	// 		message: Yup.string()
-	// 			.min(1)
-	// 			.required(
-	// 				"Un scurt mesaj este necesar pentru a ştii cu ce vă pot ajuta"
-	// 			),
-	// 	}),
-	// 	onSubmit: (values, { setSubmitting, setErrors, setStatus, resetForm }) => {
-	// 		setLoad(true);
-	// 		axios
-	// 			.post(process.env.REACT_APP_EMAIL, {
-	// 				name: values.name,
-	// 				phone: values.phone,
-	// 				message: values.message,
-	// 			})
-	// 			.then((res) => {
-	// 				if (res.data.success === true) {
-	// 					resetForm({});
-	// 					setLoad(false);
-	// 					setSuccess(true);
-	// 					setTimeout(() => {
-	// 						setSuccess(false);
-	// 					}, 4000);
-	// 				} else {
-	// 					resetForm({});
-	// 					setLoad(false);
-	// 					setError(true);
-	// 					setTimeout(() => {
-	// 						setError(false);
-	// 					}, 4000);
-	// 				}
-	// 			})
-	// 			.catch(() => {
-	// 				setLoad(false);
-	// 				setError(true);
-	// 				resetForm({});
-	// 				setTimeout(() => {
-	// 					setError(false);
-	// 				}, 4000);
-	// 			});
-	// 	},
-	// });
-
 	const portFunc = (id) => {
 		switch (id) {
 			case 6:
@@ -197,7 +124,8 @@ export default function Home() {
 		}
 	};
 
-	let currentYear = new Date().getFullYear();
+	const logo = addMediaPrefix('rv/img/rv.png');
+	const currentYear = new Date().getFullYear();
 
 	return (
 		<>
@@ -405,7 +333,7 @@ export default function Home() {
 							</p>
 						</div>
 					</div>
-					<Parallax className="parallax2" bgImage={img4} strength={200}>
+					<Parallax className="parallax2" bgImage={addMediaPrefix('rv/img/parallax/img4.jpg')} strength={200}>
 						<UP1 className="position-absolute w-100" />
 						<div id="img1" />
 						<BT1 className="position-absolute fixed-bottom w-100" />
@@ -449,7 +377,7 @@ export default function Home() {
 								alt="Oferta LaPachet"/>
 						</div>
 					</div>
-					<Parallax className="parallax2" bgImage={img1} strength={200}>
+					<Parallax className="parallax2" bgImage={addMediaPrefix('rv/img/parallax/img1.jpg')} strength={200}>
 						<UP2 className="position-absolute w-100" />
 						<div id="img2" />
 						<BT2 className="position-absolute fixed-bottom w-100" />
@@ -463,7 +391,7 @@ export default function Home() {
 								<Card.Img
 									onClick={() => portFunc(obj.id)}
 									variant="top"
-									src={obj.src}
+									src={addMediaPrefix(obj.asset)}
 									alt={obj.caption}
 									width="400"
 									height="400"
@@ -483,7 +411,7 @@ export default function Home() {
 						))}
 					</div>
 					<span ref={recenziiRef} />
-					<Parallax className="parallax22" bgImage={end} strength={400}>
+					<Parallax className="parallax22" bgImage={addMediaPrefix('rv/img/parallax/5.jpg')} strength={400}>
 						<UP3 className="position-absolute w-100" />
 						<div id="img3">
 							<div className="title-sep2">

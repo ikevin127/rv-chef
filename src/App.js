@@ -6,8 +6,6 @@ import Aos from "aos";
 // Pages
 import Home from "./components/Home";
 import Not from "./components/Not";
-import Masterclass from "./components/Masterclass";
-import WatchMasterclass from "./components/WatchMasterclass";
 
 Aos.init({
 	delay: 100,
@@ -27,8 +25,6 @@ class App extends React.Component {
 		<BrowserRouter>
 			<Switch>
 				<Route exact path="/" component={Home} />
-				<Route exact path="/masterclass" component={Masterclass} />
-				<Route exact path="/masterclass/:id" component={WatchMasterclass} />
 				<Route component={Not} />
 			</Switch>
 		</BrowserRouter>

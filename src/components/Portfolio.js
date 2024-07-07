@@ -8,12 +8,13 @@ import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 // Gallery & Array
 import Gallery from "react-grid-gallery";
 import arr from "../array.json";
+import { addMediaPrefix } from "../utils";
 
 export function ArtCafe(props) {
   let Art = arr.artcafe.map((obj) => ({
     key: obj.id,
-    src: obj.src,
-    thumbnail: obj.thumbnail,
+    src: addMediaPrefix(obj.asset),
+    thumbnail: addMediaPrefix(obj.asset),
     thumbnailWidth: obj.width,
     thumbnailHeight: obj.height,
     caption: obj.caption,
@@ -66,8 +67,8 @@ export function ArtCafe(props) {
 export function CaeliaMamaia(props) {
   let Caelia = arr.caeliamamaia.map((obj) => ({
     key: obj.id,
-    src: obj.src,
-    thumbnail: obj.thumbnail,
+    src: addMediaPrefix(obj.asset),
+    thumbnail: addMediaPrefix(obj.asset),
     thumbnailWidth: obj.width,
     thumbnailHeight: obj.height,
     caption: obj.caption,
@@ -123,8 +124,8 @@ export function CaeliaMamaia(props) {
 export function RocaBruna(props) {
   let Roca = arr.rocabruna.map((obj) => ({
     key: obj.id,
-    src: obj.src,
-    thumbnail: obj.thumbnail,
+    src: addMediaPrefix(obj.asset),
+    thumbnail: addMediaPrefix(obj.asset),
     thumbnailWidth: obj.width,
     thumbnailHeight: obj.height,
     caption: obj.caption,
@@ -180,8 +181,8 @@ export function RocaBruna(props) {
 export function NukaCluj(props) {
   let Nuka = arr.nukacluj.map((obj) => ({
     key: obj.id,
-    src: obj.src,
-    thumbnail: obj.thumbnail,
+    src: addMediaPrefix(obj.asset),
+    thumbnail: addMediaPrefix(obj.asset),
     thumbnailWidth: obj.width,
     thumbnailHeight: obj.height,
     caption: obj.caption,
@@ -237,8 +238,8 @@ export function NukaCluj(props) {
 export function AtraPraova(props) {
   let Atra = arr.atraprahova.map((obj) => ({
     key: obj.id,
-    src: obj.src,
-    thumbnail: obj.thumbnail,
+    src: addMediaPrefix(obj.asset),
+    thumbnail: addMediaPrefix(obj.asset),
     thumbnailWidth: obj.width,
     thumbnailHeight: obj.height,
     caption: obj.caption,
@@ -294,8 +295,8 @@ export function AtraPraova(props) {
 export function VinSibiu(props) {
   let Sibiu = arr.vinsibiu.map((obj) => ({
     key: obj.id,
-    src: obj.src,
-    thumbnail: obj.thumbnail,
+    src: addMediaPrefix(obj.asset),
+    thumbnail: addMediaPrefix(obj.asset),
     thumbnailWidth: obj.width,
     thumbnailHeight: obj.height,
     caption: obj.caption,

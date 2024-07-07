@@ -7,9 +7,7 @@ import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
 // Array & Images
 import arr from "../array.json";
-import img0 from "../img/parallax/img0.jpg";
-import img2 from "../img/parallax/img2.jpg";
-import img3 from "../img/parallax/img3.jpg";
+import { addMediaPrefix } from "../utils";
 
 export function RocaBrunaModal(props) {
   return (
@@ -101,7 +99,7 @@ export function ReviewsCarousel() {
                 width="200"
                 height="200"
                 variant="bottom"
-                src={obj.src}
+                src={addMediaPrefix(obj.asset)}
                 alt={obj.name}
               />
               <Card.Subtitle className="mt-2 text-muted">
@@ -135,7 +133,7 @@ export function HomeCarousel() {
           width="1364"
           height="1384"
           className="carousel-img"
-          src={img3}
+          src={addMediaPrefix('rv/img/parallax/img3.jpg')}
           alt="First slide"
         />
         <Carousel.Caption>
@@ -152,7 +150,7 @@ export function HomeCarousel() {
           width="2456"
           height="3070"
           className="carousel-img"
-          src={img0}
+          src={addMediaPrefix('rv/img/parallax/img0.jpg')}
           alt="Second slide"
         />
         <Carousel.Caption>
@@ -164,7 +162,7 @@ export function HomeCarousel() {
           width="2000"
           height="3000"
           className="carousel-img"
-          src={img2}
+          src={addMediaPrefix('rv/img/parallax/img2.jpg')}
           alt="Third slide"
         />
         <Carousel.Caption>
